@@ -5,6 +5,7 @@ import {
   counters,
   DAY,
   events,
+  kitchenRegions,
   kitchenStaff,
   lookup,
   occupancySessions,
@@ -14,6 +15,9 @@ import {
   timeWindows,
   waiters,
 } from './data'
+
+/** One "attention" unit: how often a server should touch an occupied table. */
+export const ATTENTION_UNIT_MS = 15 * 60 * 1000
 
 export function padClock(value) {
   const [h = '00', m = '00', s = '00'] = String(value || '00:00:00').split(':')
@@ -267,7 +271,7 @@ export function insightsFor(windowStart, windowEnd) {
       text: `${longestTable.code} had the longest occupancy duration during the selected period.`,
       recipeId: 'rcp-table-occupancy',
       eventIds: occupancyInWindow(windowStart, windowEnd, longestTable.tableId).map((event) => event.eventId),
-      href: `/restaurant/tables/${longestTable.tableId}`,
+      href: `/restaurant/analytics/tables/${longestTable.tableId}`,
     })
   }
   if (busiestWaiter?.visitCount) {
@@ -276,7 +280,7 @@ export function insightsFor(windowStart, windowEnd) {
       text: `${busiestWaiter.name} recorded the highest number of table visits during the selected period.`,
       recipeId: 'rcp-waiter-service',
       eventIds: visitsInWindow(windowStart, windowEnd, { personId: busiestWaiter.personId }).map((event) => event.eventId),
-      href: `/restaurant/service/${busiestWaiter.personId}`,
+      href: `/restaurant/analytics/servers/${busiestWaiter.personId}`,
     })
   }
   if (busiestCounter?.dwellMs) {
@@ -285,7 +289,7 @@ export function insightsFor(windowStart, windowEnd) {
       text: `${busiestCounter.name} recorded the highest cumulative employee dwell time during the selected kitchen period.`,
       recipeId: 'rcp-kitchen-utilisation',
       eventIds: kitchenInWindow(windowStart, windowEnd, { counterId: busiestCounter.counterId }).map((event) => event.eventId),
-      href: `/restaurant/kitchen?counter=${busiestCounter.counterId}`,
+      href: `/restaurant/live/kitchen?counter=${busiestCounter.counterId}`,
     })
   }
   if (busiestKitchen?.dwellMs) {
@@ -294,7 +298,7 @@ export function insightsFor(windowStart, windowEnd) {
       text: `${busiestKitchen.name} accumulated the most station dwell time across kitchen counters.`,
       recipeId: 'rcp-kitchen-utilisation',
       eventIds: kitchenInWindow(windowStart, windowEnd, { personId: busiestKitchen.personId }).map((event) => event.eventId),
-      href: `/restaurant/kitchen/${busiestKitchen.personId}`,
+      href: `/restaurant/analytics/kitchen/${busiestKitchen.personId}`,
     })
   }
   if (underServed?.occupancyMs) {
@@ -306,7 +310,7 @@ export function insightsFor(windowStart, windowEnd) {
         ...occupancyInWindow(windowStart, windowEnd, underServed.tableId),
         ...visitsInWindow(windowStart, windowEnd, { tableId: underServed.tableId }),
       ].map((event) => event.eventId),
-      href: `/restaurant/tables/${underServed.tableId}`,
+      href: `/restaurant/analytics/tables/${underServed.tableId}`,
     })
   }
   return items
@@ -413,6 +417,267 @@ export function resolveEvent(eventId, date = DAY) {
 
 export function availableDates() {
   return [DAY]
+}
+
+// ---------------------------------------------------------------------------
+// Occupancy-aware analytics (CTO rules)
+//
+// Granularity is the table occupancy session, not the guest. A waiter visit
+// only counts while that table is occupied. Every function below accepts a
+// list of {start,end,date} ranges so a single service window or a multi-day
+// period is handled by the same code path.
+// ---------------------------------------------------------------------------
+
+/** Shift a YYYY-MM-DD string by whole days without touching time zones. */
+export function addDays(date, count) {
+  const value = new Date(`${date}T00:00:00`)
+  value.setDate(value.getDate() + count)
+  const y = value.getFullYear()
+  const m = String(value.getMonth() + 1).padStart(2, '0')
+  const d = String(value.getDate()).padStart(2, '0')
+  return `${y}-${m}-${d}`
+}
+
+/** Expand a date (or date range) plus a time window into per-day bounds. */
+export function rangeBoundsList(dateStart, dateEnd, windowId, customStart, customEnd) {
+  const first = dateStart || DAY
+  const last = dateEnd && dateEnd >= first ? dateEnd : first
+  const out = []
+  let cursor = first
+  let guard = 0
+  while (cursor <= last && guard < 31) {
+    const bounds = windowBounds(cursor, windowId, customStart, customEnd)
+    out.push({ ...bounds, date: cursor })
+    cursor = addDays(cursor, 1)
+    guard += 1
+  }
+  return out
+}
+
+export function attentionScore(visits, occupancyMs) {
+  if (!occupancyMs) return 0
+  return visits / (occupancyMs / ATTENTION_UNIT_MS)
+}
+
+/** Bands calibrated for fine dining: a touch every ~25 min is attentive, ~35 min is steady. */
+export const ATTENTION_THRESHOLDS = { attentive: 0.6, steady: 0.4 }
+
+export function attentionBand(score, lowBelow = ATTENTION_THRESHOLDS.steady) {
+  if (score >= ATTENTION_THRESHOLDS.attentive) return { tone: 'good', label: 'Attentive' }
+  if (score >= lowBelow) return { tone: 'steady', label: 'Steady' }
+  if (score > 0) return { tone: 'low', label: 'Under-served' }
+  return { tone: 'none', label: 'No visits' }
+}
+
+function clipToSession(visit, session) {
+  const start = Math.max(new Date(visit.startAt).getTime(), new Date(session.startAt).getTime())
+  const end = Math.min(new Date(visit.endAt).getTime(), new Date(session.endAt).getTime())
+  return Math.max(0, end - start)
+}
+
+/**
+ * One record per occupancy session in the ranges, with the server visits that
+ * happened while the table was occupied. Visits outside occupancy are dropped.
+ */
+export function sessionRecords(ranges, { tableId, personId } = {}) {
+  const records = []
+  for (const range of ranges) {
+    const sessions = occupancyInWindow(range.start, range.end, tableId)
+    const visits = visitsInWindow(range.start, range.end, { tableId })
+    for (const session of sessions) {
+      const during = visits.filter((visit) => (
+        visit.tableId === session.tableId
+        && (visit.occupancyId === session.occupancyId || clipToSession(visit, session) > 0)
+      )).map((visit) => ({ ...visit, durationMs: clipToSession(visit, session) })).filter((visit) => visit.durationMs > 0)
+      if (personId && !during.some((visit) => visit.personId === personId)) continue
+      const byServer = {}
+      for (const visit of during) {
+        const bucket = byServer[visit.personId] || { personId: visit.personId, person: lookup.person[visit.personId], visits: 0, dwellMs: 0 }
+        bucket.visits += 1
+        bucket.dwellMs += visit.durationMs
+        byServer[visit.personId] = bucket
+      }
+      const servers = Object.values(byServer).sort((a, b) => b.visits - a.visits || b.dwellMs - a.dwellMs)
+      const serverDwellMs = during.reduce((sum, visit) => sum + visit.durationMs, 0)
+      records.push({
+        ...session,
+        date: range.date,
+        table: lookup.table[session.tableId],
+        servers,
+        visits: during,
+        visitCount: during.length,
+        serverDwellMs,
+        attention: attentionScore(during.length, session.durationMs),
+        gapMs: during.length ? Math.round(session.durationMs / (during.length + 1)) : session.durationMs,
+      })
+    }
+  }
+  return records.sort((a, b) => a.date.localeCompare(b.date) || a.startAt.localeCompare(b.startAt))
+}
+
+/** Ranked server comparison. Visits are only counted during table occupancy. */
+export function serverPerformance(ranges) {
+  const records = sessionRecords(ranges)
+  const rows = waiters.map((waiter) => {
+    const covered = records.filter((record) => record.servers.some((server) => server.personId === waiter.personId))
+    const visits = covered.flatMap((record) => record.visits.filter((visit) => visit.personId === waiter.personId))
+    const occupancyMs = covered.reduce((sum, record) => sum + record.durationMs, 0)
+    const dwellMs = visits.reduce((sum, visit) => sum + visit.durationMs, 0)
+    const tableIds = [...new Set(covered.map((record) => record.tableId))]
+    const allVisits = ranges.reduce((sum, range) => sum + visitsInWindow(range.start, range.end, { personId: waiter.personId }).length, 0)
+    const byTable = tableIds.map((tableId) => {
+      const tableRecords = covered.filter((record) => record.tableId === tableId)
+      const tableVisits = visits.filter((visit) => visit.tableId === tableId)
+      const tableOccupancy = tableRecords.reduce((sum, record) => sum + record.durationMs, 0)
+      return {
+        tableId,
+        table: lookup.table[tableId],
+        sessions: tableRecords.length,
+        visits: tableVisits.length,
+        dwellMs: tableVisits.reduce((sum, visit) => sum + visit.durationMs, 0),
+        occupancyMs: tableOccupancy,
+        attention: attentionScore(tableVisits.length, tableOccupancy),
+      }
+    }).sort((a, b) => b.visits - a.visits)
+    const score = attentionScore(visits.length, occupancyMs)
+    return {
+      ...waiter,
+      sessionsCovered: covered.length,
+      tablesServed: tableIds.length,
+      tableIds,
+      byTable,
+      occupancyMs,
+      visitCount: visits.length,
+      visitsOutsideOccupancy: Math.max(0, allVisits - visits.length),
+      dwellMs,
+      averageVisitMs: visits.length ? Math.round(dwellMs / visits.length) : 0,
+      attention: score,
+      band: attentionBand(score),
+      sessions: covered,
+    }
+  })
+  return rows
+    .sort((a, b) => b.attention - a.attention || b.visitCount - a.visitCount || b.dwellMs - a.dwellMs)
+    .map((row, index) => ({ ...row, rank: index + 1 }))
+}
+
+/** Per-table roll-up of occupancy sessions with server coverage. */
+export function tablePerformance(ranges) {
+  const records = sessionRecords(ranges)
+  return tables.map((table) => {
+    const rows = records.filter((record) => record.tableId === table.tableId)
+    const occupancyMs = rows.reduce((sum, record) => sum + record.durationMs, 0)
+    const visitCount = rows.reduce((sum, record) => sum + record.visitCount, 0)
+    const covers = rows.reduce((sum, record) => sum + (record.guestCount || 0), 0)
+    const serverIds = [...new Set(rows.flatMap((record) => record.servers.map((server) => server.personId)))]
+    const score = attentionScore(visitCount, occupancyMs)
+    return {
+      ...table,
+      camera: lookup.camera[table.cameraId],
+      sessions: rows,
+      sessionCount: rows.length,
+      occupancyMs,
+      averageSessionMs: rows.length ? Math.round(occupancyMs / rows.length) : 0,
+      covers,
+      visitCount,
+      serverDwellMs: rows.reduce((sum, record) => sum + record.serverDwellMs, 0),
+      serverIds,
+      servers: serverIds.map((personId) => lookup.person[personId]).filter(Boolean),
+      attention: score,
+      band: attentionBand(score),
+    }
+  }).sort((a, b) => b.occupancyMs - a.occupancyMs)
+}
+
+/** Ranked kitchen staff by station time, rolled up into the two CTO regions. */
+export function kitchenPerformance(ranges) {
+  const windowMs = ranges.reduce((sum, range) => sum + Math.max(0, new Date(range.end) - new Date(range.start)), 0)
+  const rows = kitchenStaff.map((person) => {
+    const dwells = ranges.flatMap((range) => kitchenInWindow(range.start, range.end, { personId: person.personId }))
+    const dwellMs = dwells.reduce((sum, dwell) => sum + dwell.durationMs, 0)
+    const byRegion = Object.fromEntries(kitchenRegions.map((region) => [region.regionId, { ...region, dwellMs: 0, visits: 0 }]))
+    const byCounter = {}
+    for (const dwell of dwells) {
+      const counter = lookup.counter[dwell.counterId]
+      if (counter?.regionId && byRegion[counter.regionId]) {
+        byRegion[counter.regionId].dwellMs += dwell.durationMs
+        byRegion[counter.regionId].visits += 1
+      }
+      const bucket = byCounter[dwell.counterId] || { counterId: dwell.counterId, counter, visits: 0, dwellMs: 0 }
+      bucket.visits += 1
+      bucket.dwellMs += dwell.durationMs
+      byCounter[dwell.counterId] = bucket
+    }
+    const regions = Object.values(byRegion)
+    const primary = [...regions].sort((a, b) => b.dwellMs - a.dwellMs)[0]
+    return {
+      ...person,
+      dwells,
+      dwellMs,
+      visitCount: dwells.length,
+      averageMs: dwells.length ? Math.round(dwellMs / dwells.length) : 0,
+      utilisation: windowMs ? Math.min(1, dwellMs / windowMs) : 0,
+      regions,
+      primaryRegion: primary?.dwellMs ? primary : null,
+      counters: Object.values(byCounter).sort((a, b) => b.dwellMs - a.dwellMs),
+      lastActivity: [...dwells].sort((a, b) => b.endAt.localeCompare(a.endAt))[0] || null,
+    }
+  })
+  return rows
+    .sort((a, b) => b.dwellMs - a.dwellMs || b.visitCount - a.visitCount)
+    .map((row, index) => ({ ...row, rank: index + 1 }))
+}
+
+export function regionSummaries(ranges) {
+  const staff = kitchenPerformance(ranges)
+  return kitchenRegions.map((region) => {
+    const dwellMs = staff.reduce((sum, row) => sum + (row.regions.find((item) => item.regionId === region.regionId)?.dwellMs || 0), 0)
+    const visits = staff.reduce((sum, row) => sum + (row.regions.find((item) => item.regionId === region.regionId)?.visits || 0), 0)
+    const people = staff.filter((row) => (row.regions.find((item) => item.regionId === region.regionId)?.dwellMs || 0) > 0)
+    return {
+      ...region,
+      dwellMs,
+      visits,
+      staffCount: people.length,
+      stations: counters.filter((counter) => counter.regionId === region.regionId).map((counter) => ({
+        ...counter,
+        dwellMs: staff.reduce((sum, row) => sum + (row.counters.find((item) => item.counterId === counter.counterId)?.dwellMs || 0), 0),
+      })).sort((a, b) => b.dwellMs - a.dwellMs),
+    }
+  }).sort((a, b) => b.dwellMs - a.dwellMs)
+}
+
+/** Whole-restaurant scoreboard numbers for the period. */
+export function restaurantSummary(ranges) {
+  const records = sessionRecords(ranges)
+  const servers = serverPerformance(ranges)
+  const kitchen = kitchenPerformance(ranges)
+  const occupancyMs = records.reduce((sum, record) => sum + record.durationMs, 0)
+  const visitCount = records.reduce((sum, record) => sum + record.visitCount, 0)
+  const covers = records.reduce((sum, record) => sum + (record.guestCount || 0), 0)
+  const kitchenDwellMs = kitchen.reduce((sum, row) => sum + row.dwellMs, 0)
+  const tablesUsed = new Set(records.map((record) => record.tableId)).size
+  const score = attentionScore(visitCount, occupancyMs)
+  return {
+    days: ranges.length,
+    sessions: records.length,
+    covers,
+    tablesUsed,
+    totalTables: tables.length,
+    occupancyMs,
+    averageSessionMs: records.length ? Math.round(occupancyMs / records.length) : 0,
+    visitCount,
+    attention: score,
+    band: attentionBand(score),
+    activeServers: servers.filter((row) => row.visitCount > 0).length,
+    activeKitchen: kitchen.filter((row) => row.dwellMs > 0).length,
+    kitchenDwellMs,
+    underServed: records.filter((record) => record.visitCount > 0 && record.attention < ATTENTION_THRESHOLDS.steady).length,
+    unvisited: records.filter((record) => record.visitCount === 0).length,
+    records,
+    servers,
+    kitchen,
+  }
 }
 
 export { cameras, recipes, restaurant, tables, timeWindows }

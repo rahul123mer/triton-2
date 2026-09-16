@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { createBrowserRouter, Navigate, useLocation, useParams } from 'react-router-dom'
 import { AppShell } from './components/AppShell'
 import { PlaceholderPage } from './pages/PlaceholderPage'
 import { RouteErrorPage } from './pages/RouteErrorPage'
@@ -22,16 +22,26 @@ const ExtractionReviewPage = lazy(() => import('./pages/ExtractionReviewPage').t
 const RecipeDrilldownPage = lazy(() => import('./pages/RecipeDrilldownPage').then(module => ({ default: module.RecipeDrilldownPage })))
 const RestaurantLayout = lazy(() => import('./restaurant/RestaurantLayout').then(module => ({ default: module.RestaurantLayout })))
 const RestaurantOverviewPage = lazy(() => import('./restaurant/pages/OverviewPage').then(module => ({ default: module.RestaurantOverviewPage })))
-const TablesPage = lazy(() => import('./restaurant/pages/TablesPage').then(module => ({ default: module.TablesPage })))
+const AnalyticsPage = lazy(() => import('./restaurant/pages/AnalyticsPage').then(module => ({ default: module.AnalyticsPage })))
 const TableDetailPage = lazy(() => import('./restaurant/pages/TableDetailPage').then(module => ({ default: module.TableDetailPage })))
-const ServicePage = lazy(() => import('./restaurant/pages/ServicePage').then(module => ({ default: module.ServicePage })))
 const WaiterDetailPage = lazy(() => import('./restaurant/pages/WaiterDetailPage').then(module => ({ default: module.WaiterDetailPage })))
-const KitchenPage = lazy(() => import('./restaurant/pages/KitchenPage').then(module => ({ default: module.KitchenPage })))
 const KitchenEmployeePage = lazy(() => import('./restaurant/pages/KitchenEmployeePage').then(module => ({ default: module.KitchenEmployeePage })))
-const RestaurantCookbooksPage = lazy(() => import('./restaurant/pages/CookbooksPage').then(module => ({ default: module.RestaurantCookbooksPage })))
-const RestaurantAnalysisPage = lazy(() => import('./restaurant/pages/AnalysisPage').then(module => ({ default: module.RestaurantAnalysisPage })))
-const RestaurantReportsPage = lazy(() => import('./restaurant/pages/ReportsPage').then(module => ({ default: module.RestaurantReportsPage })))
+const LiveKitchenPage = lazy(() => import('./restaurant/pages/LiveKitchenPage').then(module => ({ default: module.LiveKitchenPage })))
+const LiveTablesPage = lazy(() => import('./restaurant/pages/LiveTablesPage').then(module => ({ default: module.LiveTablesPage })))
+const CohortPage = lazy(() => import('./restaurant/pages/CohortPage').then(module => ({ default: module.CohortPage })))
+const UploadsPage = lazy(() => import('./restaurant/pages/settings/UploadsPage').then(module => ({ default: module.UploadsPage })))
+const TablesConfigPage = lazy(() => import('./restaurant/pages/settings/TablesConfigPage').then(module => ({ default: module.TablesConfigPage })))
+const CookbooksConfigPage = lazy(() => import('./restaurant/pages/settings/CookbooksConfigPage').then(module => ({ default: module.CookbooksConfigPage })))
+const PolygonsPage = lazy(() => import('./restaurant/pages/settings/PolygonsPage').then(module => ({ default: module.PolygonsPage })))
 const load = (element) => <Suspense fallback={<div className="route-loading" aria-label="Loading page"><span/></div>}>{element}</Suspense>
+
+/** Old restaurant URLs still circulate in bookmarks and the CTO deck. */
+function LegacyRedirect({ to, param = false }) {
+  const params = useParams()
+  const location = useLocation()
+  const value = param ? (params.tableId || params.personId) : null
+  return <Navigate to={`${to}${value ? `/${value}` : ''}${location.search || ''}`} replace />
+}
 
 export const router = createBrowserRouter([{
   path: '/', element: <AppShell />, errorElement: <RouteErrorPage />, children: [
@@ -60,15 +70,38 @@ export const router = createBrowserRouter([{
     { path: 'settings', element: load(<SettingsPage />) },
     { path: 'restaurant', element: load(<RestaurantLayout />), children: [
       { index: true, element: load(<RestaurantOverviewPage />) },
-      { path: 'tables', element: load(<TablesPage />) },
-      { path: 'tables/:tableId', element: load(<TableDetailPage />) },
-      { path: 'service', element: load(<ServicePage />) },
-      { path: 'service/:personId', element: load(<WaiterDetailPage />) },
-      { path: 'kitchen', element: load(<KitchenPage />) },
-      { path: 'kitchen/:personId', element: load(<KitchenEmployeePage />) },
-      { path: 'cookbooks', element: load(<RestaurantCookbooksPage />) },
-      { path: 'analysis', element: load(<RestaurantAnalysisPage />) },
-      { path: 'reports', element: load(<RestaurantReportsPage />) },
+      // Analytics hub + drilldowns
+      { path: 'analytics', element: load(<AnalyticsPage view="restaurant" />) },
+      { path: 'analytics/tables', element: load(<AnalyticsPage view="tables" />) },
+      { path: 'analytics/tables/:tableId', element: load(<TableDetailPage />) },
+      { path: 'analytics/servers', element: load(<AnalyticsPage view="servers" />) },
+      { path: 'analytics/servers/:personId', element: load(<WaiterDetailPage />) },
+      { path: 'analytics/kitchen', element: load(<AnalyticsPage view="kitchen" />) },
+      { path: 'analytics/kitchen/:personId', element: load(<KitchenEmployeePage />) },
+      // Live feeds
+      { path: 'live', element: <Navigate to="/restaurant/live/kitchen" replace /> },
+      { path: 'live/kitchen', element: load(<LiveKitchenPage />) },
+      { path: 'live/tables', element: load(<LiveTablesPage />) },
+      // Cohorts
+      { path: 'cohorts', element: <Navigate to="/restaurant/cohorts/serving" replace /> },
+      { path: 'cohorts/kitchen', element: load(<CohortPage role="kitchen" />) },
+      { path: 'cohorts/serving', element: load(<CohortPage role="waiter" />) },
+      // Settings & configurations
+      { path: 'settings', element: <Navigate to="/restaurant/settings/uploads" replace /> },
+      { path: 'settings/uploads', element: load(<UploadsPage />) },
+      { path: 'settings/tables', element: load(<TablesConfigPage />) },
+      { path: 'settings/cookbooks', element: load(<CookbooksConfigPage />) },
+      { path: 'settings/polygons', element: load(<PolygonsPage />) },
+      // Legacy redirects
+      { path: 'tables', element: <Navigate to="/restaurant/live/tables" replace /> },
+      { path: 'tables/:tableId', element: <LegacyRedirect to="/restaurant/analytics/tables" param /> },
+      { path: 'service', element: <Navigate to="/restaurant/cohorts/serving" replace /> },
+      { path: 'service/:personId', element: <LegacyRedirect to="/restaurant/analytics/servers" param /> },
+      { path: 'kitchen', element: <LegacyRedirect to="/restaurant/live/kitchen" /> },
+      { path: 'kitchen/:personId', element: <LegacyRedirect to="/restaurant/analytics/kitchen" param /> },
+      { path: 'cookbooks', element: <Navigate to="/restaurant/settings/cookbooks" replace /> },
+      { path: 'analysis', element: <Navigate to="/restaurant/analytics" replace /> },
+      { path: 'reports', element: <Navigate to="/restaurant/analytics" replace /> },
     ] },
     { path: ':section/*', element: <PlaceholderPage /> },
   ],

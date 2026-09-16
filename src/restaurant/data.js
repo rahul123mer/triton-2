@@ -23,8 +23,14 @@ export const cameras = [
   { cameraId: 'cam-df-01', name: 'Dining Floor 01', zone: 'dining', coverage: 'T01–T04' },
   { cameraId: 'cam-df-02', name: 'Dining Floor 02', zone: 'dining', coverage: 'T05–T07' },
   { cameraId: 'cam-df-03', name: 'Dining Floor 03', zone: 'dining', coverage: 'T08–T10' },
-  { cameraId: 'cam-kit-01', name: 'Kitchen 01', zone: 'kitchen', coverage: 'Grill, Prep, Plating' },
-  { cameraId: 'cam-kit-02', name: 'Kitchen 02', zone: 'kitchen', coverage: 'Pastry, Cold Station, Pass' },
+  { cameraId: 'cam-kit-01', name: 'Kitchen 01', zone: 'kitchen', coverage: 'Food prep / cooking line' },
+  { cameraId: 'cam-kit-02', name: 'Kitchen 02', zone: 'kitchen', coverage: 'Final food assembly and pass' },
+]
+
+/** Kitchen regions the prospect will recognise. Stations roll up into these. */
+export const kitchenRegions = [
+  { regionId: 'reg-prep', name: 'Food prep / cooking', cameraId: 'cam-kit-01', description: 'Mise en place, grill and range work before plating.' },
+  { regionId: 'reg-assembly', name: 'Final food assembly', cameraId: 'cam-kit-02', description: 'Plating, pastry finishing and the pass.' },
 ]
 
 export const videos = [
@@ -38,16 +44,16 @@ export const videos = [
 
 export const videoPersonZones = {
   'vid-kitchen-activity': [
-    { zoneId: 'kit-area-plating', kind: 'area', role: 'station', label: 'Plating', badge: 'plating zone', color: '#22c55e', points: [[4, 48], [48, 42], [50, 96], [2, 98]] },
+    { zoneId: 'kit-area-plating', kind: 'area', role: 'station', label: 'Final assembly', badge: 'assembly zone', color: '#22c55e', points: [[4, 48], [48, 42], [50, 96], [2, 98]] },
     { zoneId: 'kit-area-pass', kind: 'area', role: 'station', label: 'Pass', badge: 'pass zone', color: '#3b82f6', points: [[52, 44], [98, 40], [98, 96], [54, 98]] },
-    { zoneId: 'kit-act-daniel', kind: 'person', personId: 'kit-daniel', role: 'staff', label: 'Daniel Carter', detail: 'Plating', color: '#22c55e', x: 28, y: 62, rx: 5.5, ry: 3.2 },
+    { zoneId: 'kit-act-daniel', kind: 'person', personId: 'kit-daniel', role: 'staff', label: 'Daniel Carter', detail: 'Final assembly', color: '#22c55e', x: 28, y: 62, rx: 5.5, ry: 3.2 },
     { zoneId: 'kit-act-james', kind: 'person', personId: 'kit-james', role: 'staff', label: 'James Wilson', detail: 'Pass', color: '#60a5fa', x: 78, y: 70, rx: 5.5, ry: 3.2 },
   ],
   'vid-kitchen-movement': [
-    { zoneId: 'kit-area-pastry', kind: 'area', role: 'station', label: 'Pastry', badge: 'pastry zone', color: '#a855f7', points: [[4, 40], [36, 36], [38, 92], [2, 96]] },
-    { zoneId: 'kit-area-cold', kind: 'area', role: 'station', label: 'Cold', badge: 'cold zone', color: '#f59e0b', points: [[38, 34], [68, 32], [70, 90], [36, 94]] },
+    { zoneId: 'kit-area-pastry', kind: 'area', role: 'station', label: 'Pastry finishing', badge: 'pastry zone', color: '#a855f7', points: [[4, 40], [36, 36], [38, 92], [2, 96]] },
+    { zoneId: 'kit-area-cold', kind: 'area', role: 'station', label: 'Cold prep', badge: 'cold zone', color: '#f59e0b', points: [[38, 34], [68, 32], [70, 90], [36, 94]] },
     { zoneId: 'kit-area-pass2', kind: 'area', role: 'station', label: 'Pass', badge: 'pass zone', color: '#22c55e', points: [[68, 30], [98, 28], [98, 88], [70, 92]] },
-    { zoneId: 'kit-mov-olivia', kind: 'person', personId: 'kit-olivia', role: 'staff', label: 'Olivia Bennett', detail: 'Pastry', color: '#c084fc', x: 48, y: 38, rx: 4.5, ry: 2.6 },
+    { zoneId: 'kit-mov-olivia', kind: 'person', personId: 'kit-olivia', role: 'staff', label: 'Olivia Bennett', detail: 'Pastry finishing', color: '#c084fc', x: 48, y: 38, rx: 4.5, ry: 2.6 },
     { zoneId: 'kit-mov-daniel', kind: 'person', personId: 'kit-daniel', role: 'staff', label: 'Daniel Carter', detail: 'Pass', color: '#4ade80', x: 74, y: 54, rx: 5, ry: 2.8 },
   ],
   'vid-dining-floor': [
@@ -137,21 +143,68 @@ export const tables = [
   { tableId: 'tbl-10', code: 'T10', seats: 8, x: 70, y: 70, w: 26, h: 22, cameraId: 'cam-df-03', reservedDinner: false },
 ]
 
+const portrait = (personId) => `/restaurant-media/portraits/${personId}.png`
+
 export const waiters = [
-  { personId: 'wtr-alex', name: 'Alex Morgan', role: 'waiter', employeeCode: 'SRV-041', enrolled: true },
-  { personId: 'wtr-sofia', name: 'Sofia Bennett', role: 'waiter', employeeCode: 'SRV-018', enrolled: true },
-  { personId: 'wtr-ethan', name: 'Ethan Carter', role: 'waiter', employeeCode: 'SRV-027', enrolled: true },
-  { personId: 'wtr-danielb', name: 'Daniel Brooks', role: 'waiter', employeeCode: 'SRV-033', enrolled: true },
+  { personId: 'wtr-alex', name: 'Alex Morgan', role: 'waiter', employeeCode: 'SRV-041', enrolled: true, enrolledOn: '2026-08-02', samples: 6, avatar: portrait('wtr-alex') },
+  { personId: 'wtr-sofia', name: 'Sofia Bennett', role: 'waiter', employeeCode: 'SRV-018', enrolled: true, enrolledOn: '2026-07-19', samples: 8, avatar: portrait('wtr-sofia') },
+  { personId: 'wtr-ethan', name: 'Ethan Carter', role: 'waiter', employeeCode: 'SRV-027', enrolled: true, enrolledOn: '2026-08-11', samples: 5, avatar: portrait('wtr-ethan') },
+  { personId: 'wtr-danielb', name: 'Daniel Brooks', role: 'waiter', employeeCode: 'SRV-033', enrolled: true, enrolledOn: '2026-08-11', samples: 4, avatar: portrait('wtr-danielb') },
 ]
 
 export const kitchenStaff = [
-  { personId: 'kit-daniel', name: 'Daniel Carter', role: 'kitchen', station: 'Plating', employeeCode: 'KIT-012', enrolled: true },
-  { personId: 'kit-maria', name: 'Maria Thompson', role: 'kitchen', station: 'Prep', employeeCode: 'KIT-007', enrolled: true },
-  { personId: 'kit-james', name: 'James Wilson', role: 'kitchen', station: 'Grill', employeeCode: 'KIT-021', enrolled: true },
-  { personId: 'kit-olivia', name: 'Olivia Bennett', role: 'kitchen', station: 'Pastry', employeeCode: 'KIT-015', enrolled: true },
+  { personId: 'kit-daniel', name: 'Daniel Carter', role: 'kitchen', title: 'Head chef', station: 'Final assembly', employeeCode: 'KIT-012', enrolled: true, enrolledOn: '2026-07-19', samples: 7, avatar: portrait('kit-daniel') },
+  { personId: 'kit-maria', name: 'Maria Thompson', role: 'kitchen', title: 'Chef de partie', station: 'Food prep', employeeCode: 'KIT-007', enrolled: true, enrolledOn: '2026-07-19', samples: 6, avatar: portrait('kit-maria') },
+  { personId: 'kit-james', name: 'James Wilson', role: 'kitchen', title: 'Grill cook', station: 'Cooking line', employeeCode: 'KIT-021', enrolled: true, enrolledOn: '2026-08-02', samples: 5, avatar: portrait('kit-james') },
+  { personId: 'kit-olivia', name: 'Olivia Bennett', role: 'kitchen', title: 'Pastry cook', station: 'Pastry', employeeCode: 'KIT-015', enrolled: true, enrolledOn: '2026-08-02', samples: 6, avatar: portrait('kit-olivia') },
 ]
 
 export const people = [...waiters, ...kitchenStaff]
+
+/**
+ * Detections the face gallery could not match to an enrolled employee. These
+ * feed the Resolve queue in Cohorts and the Servers analytics tab.
+ */
+export const unresolvedFaces = [
+  {
+    unresolvedId: 'unres-001',
+    role: 'waiter',
+    cameraId: 'cam-df-02',
+    videoId: 'vid-multi-table-service',
+    sample: portrait('unresolved-1'),
+    firstSeen: '19:33:40',
+    lastSeen: '20:41:12',
+    occurrences: 6,
+    tableIds: ['tbl-06', 'tbl-07'],
+    bestMatch: { personId: 'wtr-ethan', similarity: 0.61 },
+    note: 'Served T06 and T07 during dinner. Not in the serving-staff cohort.',
+  },
+  {
+    unresolvedId: 'unres-002',
+    role: 'kitchen',
+    cameraId: 'cam-kit-01',
+    videoId: 'vid-kitchen-activity',
+    sample: portrait('unresolved-2'),
+    firstSeen: '18:05:10',
+    lastSeen: '18:41:00',
+    occurrences: 3,
+    counterIds: ['ctr-prep'],
+    bestMatch: { personId: 'kit-maria', similarity: 0.54 },
+    note: 'Seen at Food prep before service. Possibly a new hire or agency cover.',
+  },
+]
+
+/** Video uploads processed for this restaurant. Newest first. */
+export const uploadHistory = [
+  { uploadId: 'upl-0142', fileName: 'dining-floor-01_2026-09-15_dinner.mp4', cameraId: 'cam-df-01', recordedOn: '2026-09-15', window: 'Dinner', durationMs: 3 * 3600000, sizeMb: 2140, uploadedAt: '2026-09-15T23:12:40+05:30', status: 'processed', events: 96, faces: 4 },
+  { uploadId: 'upl-0141', fileName: 'dining-floor-02_2026-09-15_dinner.mp4', cameraId: 'cam-df-02', recordedOn: '2026-09-15', window: 'Dinner', durationMs: 3 * 3600000, sizeMb: 2088, uploadedAt: '2026-09-15T23:10:02+05:30', status: 'processed', events: 74, faces: 4 },
+  { uploadId: 'upl-0140', fileName: 'kitchen-01_2026-09-15_dinner.mp4', cameraId: 'cam-kit-01', recordedOn: '2026-09-15', window: 'Dinner', durationMs: 3 * 3600000, sizeMb: 1980, uploadedAt: '2026-09-15T23:04:18+05:30', status: 'processed', events: 41, faces: 4 },
+  { uploadId: 'upl-0139', fileName: 'kitchen-02_2026-09-15_dinner.mp4', cameraId: 'cam-kit-02', recordedOn: '2026-09-15', window: 'Dinner', durationMs: 3 * 3600000, sizeMb: 2012, uploadedAt: '2026-09-15T23:01:55+05:30', status: 'processed', events: 38, faces: 3 },
+  { uploadId: 'upl-0138', fileName: 'dining-floor-01_2026-09-15_lunch.mp4', cameraId: 'cam-df-01', recordedOn: '2026-09-15', window: 'Lunch', durationMs: 3 * 3600000, sizeMb: 2101, uploadedAt: '2026-09-15T16:20:08+05:30', status: 'processed', events: 63, faces: 4 },
+  { uploadId: 'upl-0137', fileName: 'dining-floor-03_2026-09-15_lunch.mp4', cameraId: 'cam-df-03', recordedOn: '2026-09-15', window: 'Lunch', durationMs: 3 * 3600000, sizeMb: 2064, uploadedAt: '2026-09-15T16:18:44+05:30', status: 'processed', events: 48, faces: 3 },
+  { uploadId: 'upl-0136', fileName: 'kitchen-01_2026-09-15_morning.mp4', cameraId: 'cam-kit-01', recordedOn: '2026-09-15', window: 'Morning', durationMs: 3 * 3600000, sizeMb: 1876, uploadedAt: '2026-09-15T12:40:31+05:30', status: 'processed', events: 22, faces: 3 },
+  { uploadId: 'upl-0135', fileName: 'dining-floor-02_2026-09-14_dinner.mp4', cameraId: 'cam-df-02', recordedOn: '2026-09-14', window: 'Dinner', durationMs: 3 * 3600000, sizeMb: 2122, uploadedAt: '2026-09-14T23:08:12+05:30', status: 'failed', events: 0, faces: 0, error: 'Container truncated at 02:41:10. Re-export from NVR and upload again.' },
+]
 
 export function videoForWaiter(personId, tableFilter) {
   if (tableFilter) {
@@ -163,8 +216,8 @@ export function videoForWaiter(personId, tableFilter) {
   return 'vid-waiter-visit'
 }
 
-export function resolveVideoZones(videoId, timeSec = 0, focusPersonId = null) {
-  const zones = videoPersonZones[videoId] || []
+export function resolveVideoZones(videoId, timeSec = 0, focusPersonId = null, zoneMap = videoPersonZones) {
+  const zones = (zoneMap || videoPersonZones)[videoId] || []
   const resolved = []
 
   for (const zone of zones) {
@@ -228,12 +281,12 @@ export function resolveVideoZones(videoId, timeSec = 0, focusPersonId = null) {
 }
 
 export const counters = [
-  { counterId: 'ctr-grill', name: 'Grill', cameraId: 'cam-kit-01', x: 6, y: 14, w: 28, h: 30 },
-  { counterId: 'ctr-prep', name: 'Prep', cameraId: 'cam-kit-01', x: 38, y: 14, w: 28, h: 30 },
-  { counterId: 'ctr-plating', name: 'Plating', cameraId: 'cam-kit-01', x: 70, y: 14, w: 24, h: 30 },
-  { counterId: 'ctr-pastry', name: 'Pastry', cameraId: 'cam-kit-02', x: 6, y: 56, w: 28, h: 30 },
-  { counterId: 'ctr-cold', name: 'Cold Station', cameraId: 'cam-kit-02', x: 38, y: 56, w: 28, h: 30 },
-  { counterId: 'ctr-pass', name: 'Pass', cameraId: 'cam-kit-02', x: 70, y: 56, w: 24, h: 30 },
+  { counterId: 'ctr-grill', name: 'Cooking line', shortName: 'Cooking', regionId: 'reg-prep', cameraId: 'cam-kit-01', x: 6, y: 14, w: 28, h: 30 },
+  { counterId: 'ctr-prep', name: 'Food prep', shortName: 'Prep', regionId: 'reg-prep', cameraId: 'cam-kit-01', x: 38, y: 14, w: 28, h: 30 },
+  { counterId: 'ctr-cold', name: 'Cold prep', shortName: 'Cold', regionId: 'reg-prep', cameraId: 'cam-kit-02', x: 38, y: 56, w: 28, h: 30 },
+  { counterId: 'ctr-plating', name: 'Final assembly', shortName: 'Assembly', regionId: 'reg-assembly', cameraId: 'cam-kit-01', x: 70, y: 14, w: 24, h: 30 },
+  { counterId: 'ctr-pastry', name: 'Pastry finishing', shortName: 'Pastry', regionId: 'reg-assembly', cameraId: 'cam-kit-02', x: 6, y: 56, w: 28, h: 30 },
+  { counterId: 'ctr-pass', name: 'Pass', shortName: 'Pass', regionId: 'reg-assembly', cameraId: 'cam-kit-02', x: 70, y: 56, w: 24, h: 30 },
 ]
 
 function clampPct(value) {
@@ -254,11 +307,11 @@ function haloPolygon(x, y, w, h, pad = 3.6) {
 }
 
 export const kitchenZones = [
-  { zoneId: 'zone-grill', name: 'Grill', kind: 'station', counterId: 'ctr-grill', points: haloPolygon(6, 14, 28, 30, 4.2) },
-  { zoneId: 'zone-prep', name: 'Prep', kind: 'station', counterId: 'ctr-prep', points: haloPolygon(38, 14, 28, 30, 3.8) },
-  { zoneId: 'zone-plating', name: 'Plating', kind: 'station', counterId: 'ctr-plating', points: haloPolygon(70, 14, 24, 30, 4) },
-  { zoneId: 'zone-pastry', name: 'Pastry', kind: 'station', counterId: 'ctr-pastry', points: haloPolygon(6, 56, 28, 30, 4) },
-  { zoneId: 'zone-cold', name: 'Cold Station', kind: 'station', counterId: 'ctr-cold', points: haloPolygon(38, 56, 28, 30, 3.6) },
+  { zoneId: 'zone-grill', name: 'Cooking line', kind: 'station', counterId: 'ctr-grill', points: haloPolygon(6, 14, 28, 30, 4.2) },
+  { zoneId: 'zone-prep', name: 'Food prep', kind: 'station', counterId: 'ctr-prep', points: haloPolygon(38, 14, 28, 30, 3.8) },
+  { zoneId: 'zone-plating', name: 'Final assembly', kind: 'station', counterId: 'ctr-plating', points: haloPolygon(70, 14, 24, 30, 4) },
+  { zoneId: 'zone-pastry', name: 'Pastry finishing', kind: 'station', counterId: 'ctr-pastry', points: haloPolygon(6, 56, 28, 30, 4) },
+  { zoneId: 'zone-cold', name: 'Cold prep', kind: 'station', counterId: 'ctr-cold', points: haloPolygon(38, 56, 28, 30, 3.6) },
   { zoneId: 'zone-pass', name: 'Pass', kind: 'station', counterId: 'ctr-pass', points: haloPolygon(70, 56, 24, 30, 4.4) },
   {
     zoneId: 'zone-hot-aisle',
@@ -538,7 +591,7 @@ export const recipes = [
     recipeId: 'rcp-kitchen-utilisation',
     cookbookId: 'cbk-fine-dining-ops',
     name: 'Kitchen Counter Utilisation',
-    description: 'Employee dwell time across grill, prep, plating, pastry, cold station, and pass.',
+    description: 'Employee dwell time across Food prep / cooking and Final food assembly stations.',
     status: 'evaluated',
     eventTypes: ['kitchen.dwell'],
   },
@@ -772,6 +825,7 @@ export const lookup = {
   table: Object.fromEntries(tables.map((row) => [row.tableId, row])),
   person: Object.fromEntries(people.map((row) => [row.personId, row])),
   counter: Object.fromEntries(counters.map((row) => [row.counterId, row])),
+  region: Object.fromEntries(kitchenRegions.map((row) => [row.regionId, row])),
   camera: Object.fromEntries(cameras.map((row) => [row.cameraId, row])),
   video: Object.fromEntries(videos.map((row) => [row.videoId, row])),
   event: Object.fromEntries(events.map((row) => [row.eventId, row])),

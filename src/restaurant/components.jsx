@@ -2,9 +2,11 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CalendarDays, X } from 'lucide-react'
 import { Card, Button, SectionLabel, PageNav } from '../components/ui'
-import { windowBounds } from './analytics'
+import { addDays, rangeBoundsList, windowBounds } from './analytics'
 import { formatClock, formatDateChip, formatDwell, eventTypeLabel, personTypeLabel } from './format'
 import { useRestaurantStore } from './store'
+import { useConfigStore } from './configStore'
+import { Avatar } from './widgets'
 import { cameras, lookup, timeWindows, resolveVideoZones, videos } from './data'
 
 export function useRestaurantWindow() {
@@ -15,11 +17,26 @@ export function useRestaurantWindow() {
   return useMemo(() => windowBounds(date, windowId, customStart, customEnd), [date, windowId, customStart, customEnd])
 }
 
-export function DateChip() {
+/** Per-day bounds for the selected date or date range. Analytics uses this. */
+export function useRestaurantRanges() {
   const date = useRestaurantStore((s) => s.date)
-  const setDate = useRestaurantStore((s) => s.setDate)
+  const dateEnd = useRestaurantStore((s) => s.dateEnd)
+  const windowId = useRestaurantStore((s) => s.windowId)
+  const customStart = useRestaurantStore((s) => s.customStart)
+  const customEnd = useRestaurantStore((s) => s.customEnd)
+  return useMemo(() => {
+    const ranges = rangeBoundsList(date, dateEnd, windowId, customStart, customEnd)
+    const first = ranges[0]
+    const last = ranges[ranges.length - 1]
+    const periodLabel = ranges.length > 1
+      ? `${formatDateChip(first.date)} – ${formatDateChip(last.date)} · ${ranges.length} days · ${first.label.split(' · ')[0]}`
+      : `${formatDateChip(first.date)} · ${first.label}`
+    return { ranges, periodLabel, isRange: ranges.length > 1, start: first.start, end: last.end, windowLabel: first.label }
+  }, [date, dateEnd, windowId, customStart, customEnd])
+}
+
+function useNativePicker() {
   const inputRef = useRef(null)
-  const label = formatDateChip(date)
   const openPicker = (event) => {
     if (event.target.tagName === 'INPUT') return
     const input = inputRef.current
@@ -31,18 +48,56 @@ export function DateChip() {
       input.click()
     }
   }
+  return { inputRef, openPicker }
+}
+
+export function DateChip() {
+  const date = useRestaurantStore((s) => s.date)
+  const dateEnd = useRestaurantStore((s) => s.dateEnd)
+  const setDate = useRestaurantStore((s) => s.setDate)
+  const setDateEnd = useRestaurantStore((s) => s.setDateEnd)
+  const clearRange = useRestaurantStore((s) => s.clearRange)
+  const startPicker = useNativePicker()
+  const endPicker = useNativePicker()
   return (
-    <label className="ss-date-chip" onClick={openPicker}>
-      <CalendarDays size={16} />
-      <span>{label}</span>
-      <input
-        ref={inputRef}
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        aria-label="Service date"
-      />
-    </label>
+    <div className="ss-date-group" role="group" aria-label="Service date or period">
+      <label className="ss-date-chip" onClick={startPicker.openPicker}>
+        <CalendarDays size={16} />
+        <span>{formatDateChip(date)}</span>
+        <input
+          ref={startPicker.inputRef}
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          aria-label="Service date"
+        />
+      </label>
+      {dateEnd ? (
+        <>
+          <span className="ss-date-to">to</span>
+          <label className="ss-date-chip" onClick={endPicker.openPicker}>
+            <span>{formatDateChip(dateEnd)}</span>
+            <input
+              ref={endPicker.inputRef}
+              type="date"
+              min={date}
+              value={dateEnd}
+              onChange={(e) => setDateEnd(e.target.value)}
+              aria-label="Period end date"
+            />
+          </label>
+          <button type="button" className="ss-date-clear" onClick={clearRange} aria-label="Back to a single day"><X size={13} /></button>
+        </>
+      ) : (
+        <button
+          type="button"
+          className="ss-date-range-btn"
+          onClick={() => setDateEnd(addDays(date, 6))}
+        >
+          + Period
+        </button>
+      )}
+    </div>
   )
 }
 
@@ -197,13 +252,13 @@ export function MetricStack({ items }) {
 }
 
 export function RestaurantFilters() {
-  const date = useRestaurantStore((s) => s.date)
   const windowId = useRestaurantStore((s) => s.windowId)
   const customStart = useRestaurantStore((s) => s.customStart)
   const customEnd = useRestaurantStore((s) => s.customEnd)
   const setWindowId = useRestaurantStore((s) => s.setWindowId)
   const setCustomRange = useRestaurantStore((s) => s.setCustomRange)
-  const bounds = useMemo(() => windowBounds(date, windowId, customStart, customEnd), [date, windowId, customStart, customEnd])
+  const { periodLabel, isRange } = useRestaurantRanges()
+  const bounds = { label: periodLabel }
   return (
     <div className="rdi-filters ss-filters-bar">
       <DateChip />
@@ -238,7 +293,7 @@ export function RestaurantFilters() {
       )}
       <div className="ss-filter-summary" aria-live="polite">
         <strong>{bounds.label}</strong>
-        <span>Data updates with this window</span>
+        <span>{isRange ? 'Analytics aggregate the period; live feeds show the first day' : 'Data updates with this window'}</span>
       </div>
     </div>
   )
@@ -568,10 +623,11 @@ export function EventTimeline({ events, onSelect, windowStart, windowEnd, select
 }
 
 export function CameraDesk({ video, label, cameraName, title, detail, focusPersonId = null, children }) {
-  const [liveZones, setLiveZones] = useState(() => resolveVideoZones(video?.videoId, 0, focusPersonId))
+  const zonesByVideo = useConfigStore((s) => s.zonesByVideo)
+  const [liveZones, setLiveZones] = useState(() => resolveVideoZones(video?.videoId, 0, focusPersonId, zonesByVideo))
   useEffect(() => {
-    setLiveZones(resolveVideoZones(video?.videoId, 0, focusPersonId))
-  }, [video?.videoId, focusPersonId])
+    setLiveZones(resolveVideoZones(video?.videoId, 0, focusPersonId, zonesByVideo))
+  }, [video?.videoId, focusPersonId, zonesByVideo])
   return (
     <div className="ss-cam-desk">
       <aside className="ss-cam-desk-side">
@@ -615,9 +671,10 @@ export function LiveCamera({ video, label, cameraName, size = 'hero', focusPerso
   const [ready, setReady] = useState(false)
   const [timeSec, setTimeSec] = useState(0)
   const title = cameraName || label || video?.title
+  const zonesByVideo = useConfigStore((s) => s.zonesByVideo)
   const zones = useMemo(
-    () => (video ? resolveVideoZones(video.videoId, timeSec, focusPersonId) : []),
-    [video, timeSec, focusPersonId],
+    () => (video ? resolveVideoZones(video.videoId, timeSec, focusPersonId, zonesByVideo) : []),
+    [video, timeSec, focusPersonId, zonesByVideo],
   )
   const areaZones = zones.filter((zone) => zone.kind === 'area')
   const peopleCount = zones.filter((zone) => zone.kind === 'person').length
@@ -871,8 +928,11 @@ export function EventDrawer({ detail, onClose, onOpen }) {
           </div>
           {detail.person ? (
             <div className="ss-drawer-person">
-              <strong>{detail.person.name}</strong>
-              <span>{detail.person.employeeCode || personTypeLabel(detail.person.role)} · matched to this event</span>
+              <Avatar person={detail.person} size={36} />
+              <div>
+                <strong>{detail.person.name}</strong>
+                <span>{detail.person.employeeCode || personTypeLabel(detail.person.role)} · matched to this event</span>
+              </div>
             </div>
           ) : null}
           <div className="rdi-meta">
@@ -890,9 +950,9 @@ export function EventDrawer({ detail, onClose, onOpen }) {
             <div><span>Video</span><strong>{detail.video?.title || 'Not available'}</strong></div>
           </div>
           <div className="ss-drawer-actions">
-            {detail.table && <Button variant="secondary" onClick={() => onOpen(`/restaurant/tables/${detail.table.tableId}`)}>Open table</Button>}
-            {detail.person?.role === 'waiter' && <Button variant="secondary" onClick={() => onOpen(`/restaurant/service/${detail.person.personId}`)}>Open waiter</Button>}
-            {detail.person?.role === 'kitchen' && <Button variant="secondary" onClick={() => onOpen(`/restaurant/kitchen/${detail.person.personId}`)}>Open employee</Button>}
+            {detail.table && <Button variant="secondary" onClick={() => onOpen(`/restaurant/analytics/tables/${detail.table.tableId}`)}>Open table</Button>}
+            {detail.person?.role === 'waiter' && <Button variant="secondary" onClick={() => onOpen(`/restaurant/analytics/servers/${detail.person.personId}`)}>Open server</Button>}
+            {detail.person?.role === 'kitchen' && <Button variant="secondary" onClick={() => onOpen(`/restaurant/analytics/kitchen/${detail.person.personId}`)}>Open employee</Button>}
           </div>
         </div>
       </aside>

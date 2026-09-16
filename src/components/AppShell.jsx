@@ -2,43 +2,113 @@ import { useEffect, useMemo, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import {
   Bell,
-  BookOpen,
-  ChefHat,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ClipboardList,
-  ConciergeBell,
   LayoutDashboard,
-  LayoutGrid,
   LineChart,
   Menu,
   MoreHorizontal,
+  Settings2,
+  Users,
+  Video,
   X,
 } from 'lucide-react'
 
 const navItems = [
   { id: 'overview', label: 'Overview', to: '/restaurant', icon: LayoutDashboard, end: true },
-  { id: 'tables', label: 'Tables', to: '/restaurant/tables', icon: LayoutGrid },
-  { id: 'service', label: 'Service', to: '/restaurant/service', icon: ConciergeBell },
-  { id: 'kitchen', label: 'Kitchen', to: '/restaurant/kitchen', icon: ChefHat },
-  { id: 'cookbook', label: 'Cookbook', to: '/restaurant/cookbooks', icon: BookOpen },
-  { id: 'analysis', label: 'Analysis', to: '/restaurant/analysis', icon: LineChart },
-  { id: 'reports', label: 'Reports', to: '/restaurant/reports', icon: ClipboardList },
+  { id: 'analytics', label: 'Analytics', to: '/restaurant/analytics', icon: LineChart },
+  {
+    id: 'live',
+    label: 'Live Feeds',
+    icon: Video,
+    base: '/restaurant/live',
+    children: [
+      { id: 'live-kitchen', label: 'Kitchen', to: '/restaurant/live/kitchen' },
+      { id: 'live-tables', label: 'Tables', to: '/restaurant/live/tables' },
+    ],
+  },
+  {
+    id: 'cohorts',
+    label: 'Cohorts',
+    icon: Users,
+    base: '/restaurant/cohorts',
+    children: [
+      { id: 'cohorts-kitchen', label: 'Kitchen Staffs', to: '/restaurant/cohorts/kitchen' },
+      { id: 'cohorts-serving', label: 'Serving Staffs', to: '/restaurant/cohorts/serving' },
+    ],
+  },
+  {
+    id: 'settings',
+    label: 'Settings & Configurations',
+    icon: Settings2,
+    base: '/restaurant/settings',
+    children: [
+      { id: 'settings-uploads', label: 'Uploads video', to: '/restaurant/settings/uploads' },
+      { id: 'settings-tables', label: 'Tables', to: '/restaurant/settings/tables' },
+      { id: 'settings-cookbooks', label: 'Cookbooks', to: '/restaurant/settings/cookbooks' },
+      { id: 'settings-polygons', label: 'Polygons', to: '/restaurant/settings/polygons' },
+    ],
+  },
 ]
 
 const pages = [
-  ['/restaurant/tables', 'Tables', 'Floor occupancy, guest load, and waiter visits by table.'],
-  ['/restaurant/service', 'Service', 'Face-recognised waiter visits and dwell across the dining room.'],
-  ['/restaurant/kitchen', 'Kitchen', 'Station utilisation and identified kitchen staff dwell.'],
-  ['/restaurant/cookbooks', 'Cookbook', 'Recipes that evaluate occupancy, service, and kitchen events.'],
-  ['/restaurant/analysis', 'Analysis', 'Run a cookbook recipe over the captured event stream and inspect supporting evidence.'],
-  ['/restaurant/reports', 'Reports', 'Period findings derived from the same occupancy and dwell events.'],
-  ['/restaurant', 'Overview', 'Occupancy, service, and kitchen activity for The Ember Room.'],
+  ['/restaurant/analytics/tables', 'Table analytics', 'Every occupancy session as its own record, with the servers who covered it.'],
+  ['/restaurant/analytics/servers', 'Server performance', 'Ranked by attention score. Visits only count while a table is occupied.'],
+  ['/restaurant/analytics/kitchen', 'Kitchen performance', 'Station time by employee across Food prep / cooking and Final food assembly.'],
+  ['/restaurant/analytics', 'Analytics', 'Restaurant, table, server and kitchen performance for the selected period.'],
+  ['/restaurant/live/kitchen', 'Live Feeds · Kitchen', 'Kitchen cameras with station polygons and recognised staff.'],
+  ['/restaurant/live/tables', 'Live Feeds · Tables', 'Dining-floor cameras with table zones and live occupancy status.'],
+  ['/restaurant/cohorts/kitchen', 'Kitchen Staffs', 'Enrolled kitchen employees and detections still waiting to be resolved.'],
+  ['/restaurant/cohorts/serving', 'Serving Staffs', 'Enrolled servers and detections still waiting to be resolved.'],
+  ['/restaurant/settings/uploads', 'Uploads video', 'Upload camera recordings for processing and review the history.'],
+  ['/restaurant/settings/tables', 'Tables', 'Table codes, seat counts, cameras and reservation flags.'],
+  ['/restaurant/settings/cookbooks', 'Cookbooks', 'Recipes that evaluate occupancy, service and kitchen events.'],
+  ['/restaurant/settings/polygons', 'Polygons', 'Draw and rename the zones each camera watches.'],
+  ['/restaurant', 'Overview', 'Performance snapshot for The Ember Room.'],
 ]
 
 function pageMeta(pathname) {
   const match = pages.find(([href]) => pathname === href || pathname.startsWith(`${href}/`))
   return { title: match?.[1] || 'Overview', lead: match?.[2] || '' }
+}
+
+function NavGroup({ item, pathname, collapsed }) {
+  const Icon = item.icon
+  const childActive = pathname.startsWith(item.base)
+  const [open, setOpen] = useState(childActive)
+  useEffect(() => {
+    if (childActive) setOpen(true)
+  }, [childActive])
+  const expanded = collapsed ? childActive : open
+  return (
+    <div className={`ss-nav-group${childActive ? ' child-active' : ''}`}>
+      <button
+        type="button"
+        className={`nav-item ss-nav-parent${childActive ? ' child-active' : ''}`}
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={expanded}
+        title={collapsed ? item.label : undefined}
+      >
+        <Icon size={18} strokeWidth={1.75} />
+        <span>{item.label}</span>
+        <ChevronDown size={14} className={`nav-chevron ss-group-chevron${expanded ? ' open' : ''}`} />
+      </button>
+      {expanded ? (
+        <div className="ss-nav-children">
+          {item.children.map((child) => (
+            <NavLink
+              key={child.id}
+              to={child.to}
+              className={({ isActive }) => (isActive ? 'nav-item ss-nav-child active' : 'nav-item ss-nav-child')}
+            >
+              <span>{child.label}</span>
+            </NavLink>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  )
 }
 
 export function AppShell() {
@@ -69,12 +139,16 @@ export function AppShell() {
         </button>
         <nav aria-label="Primary navigation">
           {navItems.map((item) => {
+            if (item.children) {
+              return <NavGroup key={item.id} item={item} pathname={location.pathname} collapsed={collapsed} />
+            }
             const Icon = item.icon
             return (
               <NavLink
                 key={item.id}
                 to={item.to}
                 end={item.end}
+                title={collapsed ? item.label : undefined}
                 className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
               >
                 <Icon size={18} strokeWidth={1.75} />
