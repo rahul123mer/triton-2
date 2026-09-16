@@ -206,7 +206,7 @@ export function EnrollModal({ role, onClose, initialName = '', initialAvatar = n
           {role === 'kitchen' ? (
             <label className="field-label">Home station
               <select value={station} onChange={(e) => setStation(e.target.value)}>
-                {['Food prep', 'Cooking line', 'Cold prep', 'Final assembly', 'Pastry finishing', 'Pass'].map((option) => <option key={option}>{option}</option>)}
+                {['Food prep', 'Cooking line', 'Final assembly', 'Takeaway pack', 'Dish wash', 'Vegetable wash'].map((option) => <option key={option}>{option}</option>)}
               </select>
             </label>
           ) : null}

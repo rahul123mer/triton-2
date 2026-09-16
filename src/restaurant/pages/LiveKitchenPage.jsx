@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
 import { CameraDesk, LiveCamera, StationTimeline, useRestaurantWindow } from '../components'
 import { counterSummaries, kitchenInWindow } from '../analytics'
-import { cameras, kitchenRegions, lookup, videos } from '../data'
+import { cameras, kitchenRegions, lookup, videoPersonZones, videos } from '../data'
 import { formatClock, formatDwell } from '../format'
 import { Avatar } from '../widgets'
 import { useRestaurantStore } from '../store'
@@ -28,9 +28,15 @@ export function LiveKitchenPage() {
   const video = videos.find((item) => item.videoId === KITCHEN_VIDEOS[cameraId]) || videos[4]
   const dwells = useMemo(() => kitchenInWindow(start, end, { counterId: counterId || undefined }), [start, end, counterId])
   const onCamera = useMemo(() => {
+    const onClip = new Set(
+      (videoPersonZones[video?.videoId] || [])
+        .filter((zone) => zone.kind === 'person' && zone.personId)
+        .map((zone) => zone.personId),
+    )
     const byPerson = new Map()
     for (const dwell of dwells) {
       if (dwell.cameraId !== cameraId && !counterId) continue
+      if (onClip.size && !onClip.has(dwell.personId)) continue
       const entry = byPerson.get(dwell.personId) || { person: lookup.person[dwell.personId], dwellMs: 0, last: null, station: null }
       entry.dwellMs += dwell.durationMs
       if (!entry.last || dwell.endAt > entry.last) {
@@ -39,8 +45,19 @@ export function LiveKitchenPage() {
       }
       byPerson.set(dwell.personId, entry)
     }
+    for (const personId of onClip) {
+      if (!byPerson.has(personId) && lookup.person[personId]) {
+        const zone = (videoPersonZones[video?.videoId] || []).find((row) => row.personId === personId)
+        byPerson.set(personId, {
+          person: lookup.person[personId],
+          dwellMs: 0,
+          last: null,
+          station: { name: zone?.detail || lookup.person[personId]?.station },
+        })
+      }
+    }
     return [...byPerson.values()].sort((a, b) => b.dwellMs - a.dwellMs)
-  }, [dwells, cameraId, counterId])
+  }, [dwells, cameraId, counterId, video?.videoId])
   const timelineCounters = counterId ? counters.filter((row) => row.counterId === counterId) : counters.filter((row) => row.cameraId === cameraId)
   const timelineDwells = counterId ? dwells : dwells.filter((row) => row.cameraId === cameraId)
   const kitchenCams = cameras.filter((row) => row.zone === 'kitchen')
@@ -72,7 +89,7 @@ export function LiveKitchenPage() {
 
       <CameraDesk
         video={video}
-        label={`${camera?.name} · ${selected ? selected.name : lookup.region[kitchenRegions.find((r) => r.cameraId === cameraId)?.regionId]?.name}`}
+        label={`${camera?.name} · ${selected ? selected.name : (kitchenRegions.find((r) => r.cameraId === cameraId)?.name || camera?.coverage)}`}
         title={selected ? selected.name : camera?.name}
         detail={selected
           ? `Filtered to ${selected.name}. Turn on Polygons to see the station zone and tracked staff.`

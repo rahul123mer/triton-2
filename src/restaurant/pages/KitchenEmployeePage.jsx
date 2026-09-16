@@ -20,9 +20,9 @@ export function KitchenEmployeePage() {
   const person = ranking.find((row) => row.personId === personId)
   const dwells = kitchenInWindow(start, end, { personId, counterId: counterId || undefined })
   const timeline = useMemo(() => dwells, [dwells])
-  const movementStations = new Set(['ctr-pass', 'ctr-pastry', 'ctr-cold'])
+  const washStations = new Set(['ctr-dish', 'ctr-veg'])
   const preferredCounter = counterId || person?.counters?.[0]?.counterId || ''
-  const video = videos.find((item) => item.videoId === (movementStations.has(preferredCounter) ? 'vid-kitchen-movement' : 'vid-kitchen-activity'))
+  const video = videos.find((item) => item.videoId === (washStations.has(preferredCounter) ? 'vid-kitchen-movement' : 'vid-kitchen-activity'))
   if (!person) return <EmptyFilter title="Employee not found" detail="Return to kitchen analytics and select an enrolled employee." />
   return (
     <>

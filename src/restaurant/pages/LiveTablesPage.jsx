@@ -3,14 +3,14 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
 import { CameraDesk, FloorPlan, LiveCamera, StatusBadge, useRestaurantWindow } from '../components'
 import { tableSummaries, visitsInWindow } from '../analytics'
-import { cameras, lookup, videos } from '../data'
+import { cameras, lookup, videoPersonZones, videos } from '../data'
 import { formatClock, formatDwell } from '../format'
 import { Avatar } from '../widgets'
 
 const DINING_VIDEOS = {
   'cam-df-01': 'vid-dining-floor',
   'cam-df-02': 'vid-multi-table-service',
-  'cam-df-03': 'vid-dining-floor',
+  'cam-df-03': 'vid-dining-wide',
 }
 
 export function LiveTablesPage() {
@@ -23,20 +23,30 @@ export function LiveTablesPage() {
   const camera = lookup.camera[cameraId]
   const camTables = rows.filter((row) => row.cameraId === cameraId)
   const focusTable = camTables.find((row) => row.tableId === tableParam) || null
-  const video = focusTable?.tableId === 'tbl-04'
-    ? videos.find((item) => item.videoId === 'vid-table-occupancy')
-    : videos.find((item) => item.videoId === DINING_VIDEOS[cameraId]) || videos[0]
+  const video = videos.find((item) => item.videoId === DINING_VIDEOS[cameraId]) || videos[0]
   const visits = useMemo(() => visitsInWindow(start, end, { tableId: focusTable?.tableId }).filter((visit) => focusTable || visit.cameraId === cameraId), [start, end, focusTable, cameraId])
   const servers = useMemo(() => {
+    const onClip = new Set(
+      (videoPersonZones[video?.videoId] || [])
+        .filter((zone) => zone.kind === 'person' && zone.personId)
+        .map((zone) => zone.personId),
+    )
     const byPerson = new Map()
     for (const visit of visits) {
+      if (onClip.size && !onClip.has(visit.personId)) continue
       const entry = byPerson.get(visit.personId) || { person: lookup.person[visit.personId], visits: 0, last: null }
       entry.visits += 1
       if (!entry.last || visit.endAt > entry.last) entry.last = visit.endAt
       byPerson.set(visit.personId, entry)
     }
+    // Always surface everyone labeled on this clip, even if they have no visits in the window.
+    for (const personId of onClip) {
+      if (!byPerson.has(personId) && lookup.person[personId]) {
+        byPerson.set(personId, { person: lookup.person[personId], visits: 0, last: null })
+      }
+    }
     return [...byPerson.values()].sort((a, b) => b.visits - a.visits)
-  }, [visits])
+  }, [visits, video?.videoId])
   const diningCams = cameras.filter((row) => row.zone === 'dining')
   const occupied = camTables.filter((row) => row.status === 'occupied').length
 

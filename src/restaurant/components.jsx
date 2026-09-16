@@ -855,8 +855,9 @@ function VideoZoneOverlay({ zones }) {
 
 export function LiveFeedGrid() {
   const tiles = [
-    { video: videos.find((item) => item.videoId === 'vid-dining-floor'), name: 'Dining Floor 01' },
-    { video: videos.find((item) => item.videoId === 'vid-kitchen-activity'), name: 'Kitchen 01' },
+    { video: videos.find((item) => item.videoId === 'vid-dining-floor'), name: 'Dining Area 01' },
+    { video: videos.find((item) => item.videoId === 'vid-kitchen-activity'), name: 'Kitchen Prep' },
+    { video: videos.find((item) => item.videoId === 'vid-reception'), name: 'Reception' },
   ]
   return (
     <div className="ss-live-grid">
