@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
-import { Crumbs, DurationBars, EventTimeline, EmptyFilter, LiveCamera, useRestaurantWindow } from '../components'
+import { Crumbs, DurationBars, EventTimeline, EmptyFilter, CameraDesk, useRestaurantWindow } from '../components'
 import { kitchenEmployeeSummaries, kitchenInWindow } from '../analytics'
 import { lookup, videos } from '../data'
 import { formatClock, formatDwell } from '../format'
@@ -12,13 +12,14 @@ export function KitchenEmployeePage() {
   const [params, setParams] = useSearchParams()
   const counterId = params.get('counter') || ''
   const selectEvent = useRestaurantStore((s) => s.selectEvent)
+  const selectedEventId = useRestaurantStore((s) => s.selectedEventId)
   const { start, end } = useRestaurantWindow()
   const person = kitchenEmployeeSummaries(start, end).find((row) => row.personId === personId)
   const dwells = kitchenInWindow(start, end, { personId, counterId: counterId || undefined })
-  const timeline = useMemo(() => dwells.flatMap((dwell) => [
-    lookup.event[`evt-${dwell.dwellId}-enter`],
-    lookup.event[`evt-${dwell.dwellId}-exit`],
-  ].filter(Boolean)), [dwells])
+  const timeline = useMemo(() => dwells, [dwells])
+  const movementStations = new Set(['ctr-pass', 'ctr-pastry', 'ctr-cold'])
+  const preferredCounter = counterId || person?.countersVisited?.[0]?.counterId || ''
+  const video = videos.find((item) => item.videoId === (movementStations.has(preferredCounter) ? 'vid-kitchen-movement' : 'vid-kitchen-activity'))
   if (!person) return <EmptyFilter title="Employee not found" detail="Return to kitchen intelligence and select an identified employee." />
   return (
     <>
@@ -35,10 +36,27 @@ export function KitchenEmployeePage() {
         <Card className="rdi-kpi"><span>Station visits</span><strong>{person.visitCount}</strong></Card>
         <Card className="rdi-kpi"><span>Average dwell</span><strong>{formatDwell(person.averageMs)}</strong></Card>
       </div>
-      <Card className="rdi-live-card">
-        <SectionLabel>KITCHEN CAMERA</SectionLabel>
-        <LiveCamera video={videos.find((item) => item.videoId === 'vid-kitchen-movement')} label="Kitchen 02 · station movement" />
-      </Card>
+      <CameraDesk
+        video={video}
+        label={`${lookup.camera[video?.cameraId]?.name || 'Kitchen'} · ${person.name}`}
+        title={`${person.name} · live`}
+        detail={`${person.station} · overlays stay locked to ${person.name} when focused.`}
+        focusPersonId={personId}
+      >
+        <div className="ss-cam-desk-filters">
+          <button type="button" className={!counterId ? 'is-on' : ''} onClick={() => setParams({})}>All counters</button>
+          {person.countersVisited.map((row) => (
+            <button
+              key={row.counterId}
+              type="button"
+              className={counterId === row.counterId ? 'is-on' : ''}
+              onClick={() => setParams({ counter: row.counterId })}
+            >
+              {row.counter.name}
+            </button>
+          ))}
+        </div>
+      </CameraDesk>
       <div className="rdi-split" style={{ marginTop: 14 }}>
         <Card>
           <SectionLabel>DWELL BY COUNTER</SectionLabel>
@@ -61,9 +79,19 @@ export function KitchenEmployeePage() {
           ))}
         </Card>
       </div>
-      <Card style={{ marginTop: 14 }}>
-        <SectionLabel>EMPLOYEE / COUNTER TIMELINE</SectionLabel>
-        <EventTimeline events={timeline} onSelect={(event) => selectEvent(event.eventId)} />
+      <Card className="ss-panel-card" style={{ marginTop: 14 }}>
+        <header className="ss-section-head">
+          <SectionLabel>PARTICIPANT TIMELINE</SectionLabel>
+          <h3>Who was on camera at kitchen stations</h3>
+          <p>Click a segment to open {person.name}&apos;s matching video evidence.</p>
+        </header>
+        <EventTimeline
+          events={timeline}
+          windowStart={start}
+          windowEnd={end}
+          selectedId={selectedEventId}
+          onSelect={(event) => selectEvent(event.eventId)}
+        />
       </Card>
     </>
   )

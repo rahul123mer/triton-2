@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
-import { DurationBars, EmptyFilter, useRestaurantWindow } from '../components'
+import { DurationBars, EmptyFilter, LiveCamera, useRestaurantWindow } from '../components'
 import { evaluateRecipe, cookbookStatus } from '../analytics'
-import { counters, recipes, tables, waiters, kitchenStaff } from '../data'
+import { counters, lookup, recipes, tables, waiters, kitchenStaff } from '../data'
 import { formatClock, formatDwell } from '../format'
 import { useRestaurantStore } from '../store'
 
@@ -26,9 +26,12 @@ export function RestaurantAnalysisPage() {
     else next.delete(key)
     setParams(next)
   }
+  const totalDwell = (result.rows || []).reduce((sum, row) => sum + (row.dwellMs || row.occupancyMs || 0), 0)
+  const evidence = result.supportingEvents[0]
+  const evidenceVideo = evidence ? lookup.video[evidence.videoId] : null
   return (
-    <>
-      <div className="list-toolbar">
+    <div className="ss-analysis">
+      <div className="list-toolbar ss-analysis-filters">
         <select value={cookbook.cookbookId} aria-label="Cookbook" disabled>
           <option value={cookbook.cookbookId}>{cookbook.name}</option>
         </select>
@@ -48,32 +51,97 @@ export function RestaurantAnalysisPage() {
           {counters.map((counter) => <option key={counter.counterId} value={counter.counterId}>{counter.name}</option>)}
         </select>
       </div>
-      <Card>
-        <SectionLabel>RESULT</SectionLabel>
-        <h3 style={{ margin: '8px 0' }}>{result.recipe.name}</h3>
-        <p>{result.result}</p>
-        <div className="rdi-meta">
+
+      <Card className="ss-analysis-result">
+        <header className="ss-section-head">
+          <SectionLabel>Result</SectionLabel>
+          <h3>{result.recipe.name}</h3>
+          <p>{result.recipe.description}</p>
+        </header>
+        <p className="ss-analysis-finding">{result.result}</p>
+        <div className="ss-analysis-kpis">
           <div><span>Events evaluated</span><strong>{result.eventsEvaluated}</strong></div>
           <div><span>Supporting evidence</span><strong>{result.supportingEvents.length}</strong></div>
+          <div><span>Ranked subjects</span><strong>{result.rows?.length || 0}</strong></div>
+          <div><span>Total dwell</span><strong>{totalDwell ? formatDwell(totalDwell) : '—'}</strong></div>
         </div>
       </Card>
-      <div className="rdi-split" style={{ marginTop: 14 }}>
+
+      <div className="rdi-split equal">
         <Card>
-          <SectionLabel>AGGREGATION</SectionLabel>
+          <header className="ss-section-head">
+            <SectionLabel>Aggregation</SectionLabel>
+            <h3>Ranked dwell</h3>
+            <p>Dwell time for each waiter, table, or station returned by this recipe.</p>
+          </header>
           {result.rows?.length
-            ? <DurationBars rows={result.rows.map((row) => ({ id: row.id, label: row.label, dwellMs: row.dwellMs || row.occupancyMs || 0 }))} />
+            ? (
+              <>
+                <DurationBars rows={result.rows.map((row) => ({ id: row.id, label: row.label, dwellMs: row.dwellMs || row.occupancyMs || 0 }))} />
+                <table className="rdi-list ss-agg-table">
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      <th>Dwell</th>
+                      <th>{result.rows[0]?.visits != null ? 'Visits' : result.rows[0]?.sessions != null ? 'Sessions' : 'Count'}</th>
+                      <th>{result.rows[0]?.tables != null ? 'Tables' : result.rows[0]?.guests != null ? 'Guests' : result.rows[0]?.employees != null ? 'Staff' : '—'}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {result.rows.map((row) => (
+                      <tr key={row.id}>
+                        <td>{row.label}</td>
+                        <td>{formatDwell(row.dwellMs || row.occupancyMs || 0)}</td>
+                        <td>{row.visits ?? row.sessions ?? '—'}</td>
+                        <td>{row.tables ?? row.guests ?? row.employees ?? '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )
             : <EmptyFilter title="No matching aggregation" detail="The current filter combination does not return dwell-time totals." />}
         </Card>
-        <Card>
-          <SectionLabel>SUPPORTING EVENTS</SectionLabel>
-          {result.supportingEvents.length === 0 ? <EmptyFilter title="No supporting events" detail="Widen the window or remove a table, person, or counter filter." /> : result.supportingEvents.map((event) => (
-            <button key={event.eventId} type="button" className="card rdi-insight" style={{ marginBottom: 8 }} onClick={() => selectEvent(event.eventId)}>
-              <p><strong>{formatClock(event.startAt)}</strong> · {event.summary}</p>
-              <p>{event.durationMs ? formatDwell(event.durationMs) : 'Instant'} · {event.eventId}</p>
-            </button>
-          ))}
+        <Card className="ss-evidence-card">
+          <header className="ss-section-head">
+            <SectionLabel>Supporting events</SectionLabel>
+            <h3>Evidence stream</h3>
+            <p>Each event that contributed to this result. Open one for camera footage and timestamps.</p>
+          </header>
+          {evidenceVideo ? <LiveCamera video={evidenceVideo} cameraName={lookup.camera[evidence.cameraId]?.name} size="feed" /> : null}
+          {result.supportingEvents.length === 0 ? <EmptyFilter title="No supporting events" detail="Widen the window or remove a table, person, or counter filter." /> : (
+            <div className="ss-event-list">
+              {result.supportingEvents.map((event) => (
+                <button key={event.eventId} type="button" className="rdi-insight ss-event-item" onClick={() => selectEvent(event.eventId)}>
+                  <strong>{formatClock(event.startAt)} · {event.summary}</strong>
+                  <span>{event.durationMs ? formatDwell(event.durationMs) : 'Instant'} · {lookup.table[event.tableId]?.code || lookup.counter[event.counterId]?.name || 'Floor'}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </Card>
       </div>
-    </>
+
+      <Card>
+        <header className="ss-section-head">
+          <SectionLabel>Cookbook recipes</SectionLabel>
+          <h3>{cookbook.name}</h3>
+          <p>Switch recipe to re-evaluate the same window without leaving analysis.</p>
+        </header>
+        <div className="ss-recipe-switch">
+          {recipes.map((recipe) => (
+            <button
+              key={recipe.recipeId}
+              type="button"
+              className={recipe.recipeId === recipeId ? 'active' : ''}
+              onClick={() => update('recipe', recipe.recipeId)}
+            >
+              <strong>{recipe.name}</strong>
+              <span>{recipe.description}</span>
+            </button>
+          ))}
+        </div>
+      </Card>
+    </div>
   )
 }

@@ -18,6 +18,11 @@ export function formatDateLong(value) {
   return new Intl.DateTimeFormat('en-IN', { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' }).format(date)
 }
 
+export function formatDateChip(value) {
+  const date = new Date(`${value}T00:00:00`)
+  return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(date)
+}
+
 export function formatPercent(value) {
   return `${Math.round((value || 0) * 100)}%`
 }

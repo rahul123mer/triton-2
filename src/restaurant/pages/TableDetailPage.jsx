@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
-import { Crumbs, EventTimeline, StatusBadge, EmptyFilter, LiveCamera, useRestaurantWindow } from '../components'
+import { Crumbs, EventTimeline, StatusBadge, EmptyFilter, CameraDesk, useRestaurantWindow } from '../components'
 import { tableSummaries, timelineForTable, visitsInWindow, overlapsWindow } from '../analytics'
 import { at, lookup, msBetween, occupancySessions, videos } from '../data'
 import { formatClock, formatDwell } from '../format'
@@ -10,6 +10,7 @@ import { useRestaurantStore } from '../store'
 export function TableDetailPage() {
   const { tableId } = useParams()
   const selectEvent = useRestaurantStore((s) => s.selectEvent)
+  const selectedEventId = useRestaurantStore((s) => s.selectedEventId)
   const { start, end } = useRestaurantWindow()
   const table = lookup.table[tableId]
   const summary = tableSummaries(start, end).find((row) => row.tableId === tableId)
@@ -27,7 +28,10 @@ export function TableDetailPage() {
   const tableVideo = (tableId === 'tbl-04'
     ? videos.find((item) => item.videoId === 'vid-table-occupancy')
     : videos.find((item) => item.cameraId === table?.cameraId)) || videos[0]
-  const timeline = useMemo(() => timelineForTable(tableId, start, end).filter((event) => event.eventType !== 'table.occupancy'), [tableId, start, end])
+  const timeline = useMemo(() => {
+    const occupancy = timelineForTable(tableId, start, end).filter((event) => event.eventType === 'table.occupancy')
+    return [...occupancy, ...visits].sort((a, b) => a.startAt.localeCompare(b.startAt))
+  }, [tableId, start, end, visits])
   if (!table || !summary) {
     return <EmptyFilter title="Table not found" detail="Return to the dining floor and select a table from the layout." />
   }
@@ -49,10 +53,14 @@ export function TableDetailPage() {
         <Card className="rdi-kpi"><span>Waiter visits</span><strong>{summary.visitCount}</strong></Card>
         <Card className="rdi-kpi"><span>Waiter dwell</span><strong>{formatDwell(summary.waiterDwellMs)}</strong></Card>
       </div>
-      <Card className="rdi-live-card">
-        <SectionLabel>SOURCE CAMERA · {summary.camera.name}</SectionLabel>
-        <LiveCamera video={tableVideo} label={`${summary.camera.name} · ${table.code}`} />
-      </Card>
+      <CameraDesk
+        video={tableVideo}
+        label={`${summary.camera.name} · ${table.code}`}
+        title={`${table.code} camera`}
+        detail={`${table.seats}-top · ${summary.camera.name}. Each colour marks a guest or table standing area in the full frame.`}
+      >
+        <StatusBadge status={summary.status} label={summary.label} />
+      </CameraDesk>
       <div className="rdi-split" style={{ marginTop: 14 }}>
         <Card>
           <SectionLabel>OCCUPANCY SESSIONS</SectionLabel>
@@ -82,9 +90,19 @@ export function TableDetailPage() {
           )}
         </Card>
       </div>
-      <Card style={{ marginTop: 14 }}>
-        <SectionLabel>TABLE EVENT TIMELINE</SectionLabel>
-        <EventTimeline events={timeline} onSelect={(event) => selectEvent(event.eventId)} />
+      <Card className="ss-panel-card" style={{ marginTop: 14 }}>
+        <header className="ss-section-head">
+          <SectionLabel>PARTICIPANT TIMELINE</SectionLabel>
+          <h3>Who was on camera at {table.code}</h3>
+          <p>Click a segment to open that person&apos;s matching video evidence.</p>
+        </header>
+        <EventTimeline
+          events={timeline}
+          windowStart={start}
+          windowEnd={end}
+          selectedId={selectedEventId}
+          onSelect={(event) => selectEvent(event.eventId)}
+        />
       </Card>
     </>
   )

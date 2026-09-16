@@ -20,6 +20,18 @@ export function padClock(value) {
   return `${h.padStart(2, '0')}:${m.padStart(2, '0')}:${(s || '00').padStart(2, '0')}`
 }
 
+/** Keep event clock times, but align them to the selected service date so filters stay responsive. */
+export function alignIsoToDate(iso, date) {
+  if (!iso || !date) return iso
+  const tIndex = String(iso).indexOf('T')
+  if (tIndex === -1) return at('00:00:00', date)
+  return `${date}${String(iso).slice(tIndex)}`
+}
+
+function windowDay(windowStart) {
+  return String(windowStart || DAY).slice(0, 10)
+}
+
 export function windowBounds(date, windowId, customStart, customEnd) {
   if (windowId === 'custom') {
     return {
@@ -37,14 +49,16 @@ export function windowBounds(date, windowId, customStart, customEnd) {
 }
 
 export function overlapMs(startAt, endAt, windowStart, windowEnd) {
-  const start = Math.max(new Date(startAt).getTime(), new Date(windowStart).getTime())
-  const end = Math.min(new Date(endAt).getTime(), new Date(windowEnd).getTime())
+  const day = windowDay(windowStart)
+  const start = Math.max(new Date(alignIsoToDate(startAt, day)).getTime(), new Date(windowStart).getTime())
+  const end = Math.min(new Date(alignIsoToDate(endAt, day)).getTime(), new Date(windowEnd).getTime())
   return Math.max(0, end - start)
 }
 
 export function overlapsWindow(record, windowStart, windowEnd) {
-  const start = new Date(record.startAt).getTime()
-  const end = new Date(record.endAt || record.startAt).getTime()
+  const day = windowDay(windowStart)
+  const start = new Date(alignIsoToDate(record.startAt, day)).getTime()
+  const end = new Date(alignIsoToDate(record.endAt || record.startAt, day)).getTime()
   return start <= new Date(windowEnd).getTime() && end >= new Date(windowStart).getTime()
 }
 
@@ -53,10 +67,13 @@ export function eventsInWindow(windowStart, windowEnd, predicate = () => true) {
 }
 
 function clipped(event, windowStart, windowEnd) {
+  const day = windowDay(windowStart)
+  const startAt = alignIsoToDate(event.startAt, day)
+  const endAt = alignIsoToDate(event.endAt || event.startAt, day)
   const durationMs = event.durationMs > 0
     ? overlapMs(event.startAt, event.endAt, windowStart, windowEnd)
     : 0
-  return { ...event, durationMs }
+  return { ...event, startAt, endAt, durationMs }
 }
 
 export function occupancyInWindow(windowStart, windowEnd, tableId) {
@@ -199,17 +216,18 @@ export function kpis(windowStart, windowEnd) {
   const waiterRows = waiterSummaries(windowStart, windowEnd)
   const kitchenRows = kitchenEmployeeSummaries(windowStart, windowEnd)
   const counterRows = counterSummaries(windowStart, windowEnd)
-  const occupancyMs = tableRows.reduce((sum, row) => sum + row.occupancyMs, 0)
-  const occupied = tableRows.filter((row) => row.status === 'occupied').length
+  const sessions = occupancyInWindow(windowStart, windowEnd)
+  const occupancyMs = sessions.reduce((sum, session) => sum + session.durationMs, 0)
+  const occupiedWithTime = tableRows.filter((row) => row.occupancyMs > 0)
   const waiterVisits = waiterRows.reduce((sum, row) => sum + row.visitCount, 0)
   const waiterDwell = waiterRows.reduce((sum, row) => sum + row.dwellMs, 0)
   const kitchenActive = kitchenRows.filter((row) => row.visitCount > 0).length
-  const occupiedWithTime = tableRows.filter((row) => row.occupancyMs > 0)
   return {
     totalTables: tableRows.length,
-    occupiedTables: occupied,
-    occupancySessions: occupancyInWindow(windowStart, windowEnd).length,
-    averageTableDwell: occupiedWithTime.length ? Math.round(occupancyMs / occupiedWithTime.length) : 0,
+    occupiedTables: occupiedWithTime.length,
+    currentlyOccupied: tableRows.filter((row) => row.status === 'occupied').length,
+    occupancySessions: sessions.length,
+    averageTableDwell: sessions.length ? Math.round(occupancyMs / sessions.length) : 0,
     waiterVisits,
     waiterDwell,
     kitchenStaffActive: kitchenActive,
@@ -376,11 +394,14 @@ export function cookbookStatus(windowStart, windowEnd) {
   })
 }
 
-export function resolveEvent(eventId) {
+export function resolveEvent(eventId, date = DAY) {
   const event = lookup.event[eventId]
   if (!event) return null
+  const day = date || DAY
   return {
     ...event,
+    startAt: alignIsoToDate(event.startAt, day),
+    endAt: alignIsoToDate(event.endAt || event.startAt, day),
     person: event.personId ? lookup.person[event.personId] : null,
     table: event.tableId ? lookup.table[event.tableId] : null,
     counter: event.counterId ? lookup.counter[event.counterId] : null,

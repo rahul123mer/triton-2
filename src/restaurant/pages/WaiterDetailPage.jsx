@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { Card, SectionLabel } from '../../components/ui'
-import { Crumbs, EventTimeline, EmptyFilter, LiveCamera, useRestaurantWindow } from '../components'
+import { Crumbs, EventTimeline, EmptyFilter, CameraDesk, useRestaurantWindow } from '../components'
 import { visitsInWindow, waiterSummaries } from '../analytics'
-import { lookup, videos } from '../data'
+import { lookup, videoForWaiter, videos } from '../data'
 import { formatClock, formatDwell } from '../format'
 import { useRestaurantStore } from '../store'
 
@@ -12,13 +12,13 @@ export function WaiterDetailPage() {
   const [params] = useSearchParams()
   const tableFilter = params.get('table') || ''
   const selectEvent = useRestaurantStore((s) => s.selectEvent)
+  const selectedEventId = useRestaurantStore((s) => s.selectedEventId)
   const { start, end } = useRestaurantWindow()
   const waiter = waiterSummaries(start, end).find((row) => row.personId === personId)
   const visits = visitsInWindow(start, end, { personId, tableId: tableFilter || undefined })
-  const timeline = useMemo(() => visits.flatMap((visit) => [
-    lookup.event[`evt-${visit.visitId}-enter`],
-    lookup.event[`evt-${visit.visitId}-exit`],
-  ].filter(Boolean)), [visits])
+  const timeline = useMemo(() => visits, [visits])
+  const videoId = videoForWaiter(personId, tableFilter)
+  const video = videos.find((item) => item.videoId === videoId)
   if (!waiter) return <EmptyFilter title="Waiter not found" detail="Return to service activity and select a recognised waiter." />
   return (
     <>
@@ -36,10 +36,13 @@ export function WaiterDetailPage() {
         <Card className="rdi-kpi"><span>Average visit</span><strong>{formatDwell(waiter.averageMs)}</strong></Card>
         <Card className="rdi-kpi"><span>Tables</span><strong>{waiter.tableCount}</strong></Card>
       </div>
-      <Card className="rdi-live-card">
-        <SectionLabel>SERVICE CAMERA</SectionLabel>
-        <LiveCamera video={videos.find((item) => item.videoId === (tableFilter && lookup.table[tableFilter]?.cameraId === 'cam-df-02' ? 'vid-multi-table-service' : 'vid-waiter-visit'))} label="Dining floor · waiter activity" />
-      </Card>
+      <CameraDesk
+        video={video}
+        label={`${lookup.camera[video?.cameraId]?.name || 'Dining floor'} · ${waiter.name}`}
+        title={`${waiter.name} · live`}
+        detail="Mapped areas update as recognised staff pass through the frame. Guest and table boxes stay fixed."
+        focusPersonId={personId}
+      />
       <div className="rdi-split" style={{ marginTop: 14 }}>
         <Card>
           <SectionLabel>TABLES VISITED</SectionLabel>
@@ -62,9 +65,19 @@ export function WaiterDetailPage() {
           ))}
         </Card>
       </div>
-      <Card style={{ marginTop: 14 }}>
-        <SectionLabel>ENTRY / EXIT TIMELINE</SectionLabel>
-        <EventTimeline events={timeline} onSelect={(event) => selectEvent(event.eventId)} />
+      <Card className="ss-panel-card" style={{ marginTop: 14 }}>
+        <header className="ss-section-head">
+          <SectionLabel>PARTICIPANT TIMELINE</SectionLabel>
+          <h3>Who was on camera at service tables</h3>
+          <p>Click a segment to open {waiter.name}&apos;s matching video evidence.</p>
+        </header>
+        <EventTimeline
+          events={timeline}
+          windowStart={start}
+          windowEnd={end}
+          selectedId={selectedEventId}
+          onSelect={(event) => selectEvent(event.eventId)}
+        />
       </Card>
     </>
   )

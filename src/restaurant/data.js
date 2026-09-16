@@ -32,9 +32,97 @@ export const videos = [
   { videoId: 'vid-table-occupancy', cameraId: 'cam-df-01', title: 'Table T04 occupancy', src: '/restaurant-media/table-occupancy.mp4', durationMs: 15000, recordedOn: DAY },
   { videoId: 'vid-waiter-visit', cameraId: 'cam-df-01', title: 'Waiter visit at T04', src: '/restaurant-media/waiter-visit.mp4', durationMs: 15000, recordedOn: DAY },
   { videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', title: 'Multi-table service', src: '/restaurant-media/multi-table-service.mp4', durationMs: 15000, recordedOn: DAY },
-  { videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', title: 'Plating counter activity', src: '/restaurant-media/kitchen-activity.mp4', durationMs: 15000, recordedOn: DAY },
+  { videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', title: 'Kitchen line activity', src: '/restaurant-media/kitchen-activity.mp4', durationMs: 15000, recordedOn: DAY },
   { videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', title: 'Kitchen station movement', src: '/restaurant-media/kitchen-movement.mp4', durationMs: 15000, recordedOn: DAY },
 ]
+
+export const videoPersonZones = {
+  'vid-kitchen-activity': [
+    { zoneId: 'kit-area-plating', kind: 'area', role: 'station', label: 'Plating', badge: 'plating zone', color: '#22c55e', points: [[4, 48], [48, 42], [50, 96], [2, 98]] },
+    { zoneId: 'kit-area-pass', kind: 'area', role: 'station', label: 'Pass', badge: 'pass zone', color: '#3b82f6', points: [[52, 44], [98, 40], [98, 96], [54, 98]] },
+    { zoneId: 'kit-act-daniel', kind: 'person', personId: 'kit-daniel', role: 'staff', label: 'Daniel Carter', detail: 'Plating', color: '#22c55e', x: 28, y: 62, rx: 5.5, ry: 3.2 },
+    { zoneId: 'kit-act-james', kind: 'person', personId: 'kit-james', role: 'staff', label: 'James Wilson', detail: 'Pass', color: '#60a5fa', x: 78, y: 70, rx: 5.5, ry: 3.2 },
+  ],
+  'vid-kitchen-movement': [
+    { zoneId: 'kit-area-pastry', kind: 'area', role: 'station', label: 'Pastry', badge: 'pastry zone', color: '#a855f7', points: [[4, 40], [36, 36], [38, 92], [2, 96]] },
+    { zoneId: 'kit-area-cold', kind: 'area', role: 'station', label: 'Cold', badge: 'cold zone', color: '#f59e0b', points: [[38, 34], [68, 32], [70, 90], [36, 94]] },
+    { zoneId: 'kit-area-pass2', kind: 'area', role: 'station', label: 'Pass', badge: 'pass zone', color: '#22c55e', points: [[68, 30], [98, 28], [98, 88], [70, 92]] },
+    { zoneId: 'kit-mov-olivia', kind: 'person', personId: 'kit-olivia', role: 'staff', label: 'Olivia Bennett', detail: 'Pastry', color: '#c084fc', x: 48, y: 38, rx: 4.5, ry: 2.6 },
+    { zoneId: 'kit-mov-daniel', kind: 'person', personId: 'kit-daniel', role: 'staff', label: 'Daniel Carter', detail: 'Pass', color: '#4ade80', x: 74, y: 54, rx: 5, ry: 2.8 },
+  ],
+  'vid-dining-floor': [
+    { zoneId: 'df-t01', kind: 'area', role: 'table', label: 'T01', badge: '2 seated', color: '#22c55e', points: [[4, 62], [28, 58], [30, 92], [2, 96]] },
+    { zoneId: 'df-t02', kind: 'area', role: 'table', label: 'T02', badge: '4 seated', color: '#3b82f6', points: [[38, 34], [68, 30], [72, 64], [36, 68]] },
+    { zoneId: 'df-t04', kind: 'area', role: 'table', label: 'T04', badge: '2 seated', color: '#f59e0b', points: [[64, 56], [96, 52], [98, 92], [62, 96]] },
+    {
+      zoneId: 'df-sofia',
+      kind: 'person',
+      personId: 'wtr-sofia',
+      role: 'waiter',
+      label: 'Sofia Bennett',
+      detail: 'Floor service',
+      color: '#ec4899',
+      track: [
+        { t: 0, x: 58, y: 46, rx: 4.2, ry: 2.4 },
+        { t: 4, x: 62, y: 42, rx: 4.2, ry: 2.4 },
+        { t: 8, x: 66, y: 38, rx: 4, ry: 2.2 },
+        { t: 12, x: 70, y: 36, rx: 4, ry: 2.2 },
+      ],
+    },
+    {
+      zoneId: 'df-passer',
+      kind: 'person',
+      role: 'waiter',
+      detail: 'Floor service',
+      color: '#06b6d4',
+      track: [
+        { t: 0, personId: 'wtr-alex', label: 'Alex Morgan', x: 34, y: 42, rx: 4.5, ry: 2.6 },
+        { t: 5, personId: 'wtr-danielb', label: 'Daniel Brooks', x: 30, y: 48, rx: 4.5, ry: 2.6 },
+        { t: 10, personId: 'wtr-ethan', label: 'Ethan Carter', x: 38, y: 44, rx: 4.5, ry: 2.6 },
+      ],
+    },
+  ],
+  'vid-table-occupancy': [
+    { zoneId: 't04-area', kind: 'area', role: 'table', label: 'T04', badge: '3 seated', color: '#94a3b8', points: [[18, 28], [82, 22], [88, 88], [12, 92]] },
+    { zoneId: 't04-g1', kind: 'person', role: 'guest', label: 'Guest 1', detail: 'Left seat', color: '#22c55e', x: 24, y: 64, rx: 5, ry: 3 },
+    { zoneId: 't04-g2', kind: 'person', role: 'guest', label: 'Guest 2', detail: 'Far seat', color: '#3b82f6', x: 49, y: 40, rx: 5, ry: 3 },
+    { zoneId: 't04-g3', kind: 'person', role: 'guest', label: 'Guest 3', detail: 'Right seat', color: '#f59e0b', x: 74, y: 58, rx: 5, ry: 3 },
+  ],
+  'vid-waiter-visit': [
+    { zoneId: 'wtr-table', kind: 'area', role: 'table', label: 'Service table', badge: '2 seated', color: '#94a3b8', points: [[52, 42], [96, 38], [98, 92], [48, 96]] },
+    {
+      zoneId: 'wtr-passer',
+      kind: 'person',
+      role: 'waiter',
+      detail: 'Waiter',
+      color: '#06b6d4',
+      track: [
+        { t: 0, personId: 'wtr-alex', label: 'Alex Morgan', x: 37, y: 58, rx: 4.8, ry: 2.8 },
+        { t: 5, personId: 'wtr-danielb', label: 'Daniel Brooks', x: 42, y: 56, rx: 4.8, ry: 2.8 },
+        { t: 10, personId: 'wtr-alex', label: 'Alex Morgan', x: 39, y: 60, rx: 4.8, ry: 2.8 },
+      ],
+    },
+    { zoneId: 'wtr-g1', kind: 'person', role: 'guest', label: 'Guest 1', detail: 'Right booth', color: '#22c55e', x: 70, y: 62, rx: 5, ry: 3 },
+    { zoneId: 'wtr-g2', kind: 'person', role: 'guest', label: 'Guest 2', detail: 'Right booth', color: '#f59e0b', x: 84, y: 68, rx: 4.8, ry: 2.8 },
+  ],
+  'vid-multi-table-service': [
+    { zoneId: 'mt-t05', kind: 'area', role: 'table', label: 'T05', badge: '2 seated', color: '#22c55e', points: [[2, 62], [38, 58], [40, 96], [1, 98]] },
+    { zoneId: 'mt-t06', kind: 'area', role: 'table', label: 'T06', badge: '1 seated', color: '#3b82f6', points: [[66, 62], [98, 58], [98, 96], [64, 98]] },
+    { zoneId: 'mt-t07', kind: 'area', role: 'table', label: 'T07', badge: '4 seated', color: '#f59e0b', points: [[52, 12], [92, 10], [94, 48], [50, 52]] },
+    {
+      zoneId: 'mt-passer',
+      kind: 'person',
+      role: 'waiter',
+      detail: 'Aisle service',
+      color: '#06b6d4',
+      track: [
+        { t: 0, personId: 'wtr-ethan', label: 'Ethan Carter', x: 54, y: 72, rx: 4.5, ry: 2.6 },
+        { t: 5, personId: 'wtr-danielb', label: 'Daniel Brooks', x: 48, y: 68, rx: 4.5, ry: 2.6 },
+        { t: 10, personId: 'wtr-ethan', label: 'Ethan Carter', x: 56, y: 76, rx: 4.5, ry: 2.6 },
+      ],
+    },
+  ],
+}
 
 export const tables = [
   { tableId: 'tbl-01', code: 'T01', seats: 2, x: 8, y: 12, w: 16, h: 16, cameraId: 'cam-df-01', reservedDinner: false },
@@ -65,6 +153,80 @@ export const kitchenStaff = [
 
 export const people = [...waiters, ...kitchenStaff]
 
+export function videoForWaiter(personId, tableFilter) {
+  if (tableFilter) {
+    const table = tables.find((row) => row.tableId === tableFilter)
+    if (table?.cameraId === 'cam-df-02') return 'vid-multi-table-service'
+  }
+  if (personId === 'wtr-sofia') return 'vid-dining-floor'
+  if (personId === 'wtr-ethan' || personId === 'wtr-danielb') return 'vid-multi-table-service'
+  return 'vid-waiter-visit'
+}
+
+export function resolveVideoZones(videoId, timeSec = 0, focusPersonId = null) {
+  const zones = videoPersonZones[videoId] || []
+  const resolved = []
+
+  for (const zone of zones) {
+    if (zone.kind === 'area') {
+      resolved.push(zone)
+      continue
+    }
+
+    if (zone.track?.length) {
+      const matching = focusPersonId
+        ? zone.track.filter((frame) => (frame.personId ?? zone.personId) === focusPersonId)
+        : zone.track
+
+      if (focusPersonId && !matching.length && zone.personId !== focusPersonId) {
+        continue
+      }
+
+      const frames = matching.length ? matching : zone.track
+      let active = frames[0]
+      const trail = []
+      for (const frame of frames) {
+        if (timeSec >= frame.t) {
+          active = frame
+          trail.push([frame.x, frame.y])
+        }
+      }
+      if (!trail.length) trail.push([active.x, active.y])
+
+      const personId = focusPersonId || active.personId || zone.personId
+      const person = personId ? people.find((row) => row.personId === personId) : null
+      resolved.push({
+        ...zone,
+        personId,
+        label: focusPersonId
+          ? (person?.name || active.label || zone.label)
+          : (active.label ?? zone.label ?? person?.name),
+        x: active.x,
+        y: active.y,
+        rx: active.rx ?? zone.rx ?? 4.5,
+        ry: active.ry ?? zone.ry ?? 2.6,
+        detail: zone.detail || active.detail || 'In frame',
+        trail,
+        focused: Boolean(focusPersonId && personId === focusPersonId),
+      })
+      continue
+    }
+
+    if (focusPersonId && zone.personId && zone.personId !== focusPersonId) {
+      // Keep seated guests visible for table context; hide other recognised staff/waiters.
+      if (zone.role !== 'guest') continue
+    }
+
+    resolved.push({
+      ...zone,
+      trail: zone.kind === 'person' ? [[zone.x, zone.y]] : undefined,
+      focused: Boolean(focusPersonId && zone.personId === focusPersonId),
+    })
+  }
+
+  return resolved
+}
+
 export const counters = [
   { counterId: 'ctr-grill', name: 'Grill', cameraId: 'cam-kit-01', x: 6, y: 14, w: 28, h: 30 },
   { counterId: 'ctr-prep', name: 'Prep', cameraId: 'cam-kit-01', x: 38, y: 14, w: 28, h: 30 },
@@ -72,6 +234,78 @@ export const counters = [
   { counterId: 'ctr-pastry', name: 'Pastry', cameraId: 'cam-kit-02', x: 6, y: 56, w: 28, h: 30 },
   { counterId: 'ctr-cold', name: 'Cold Station', cameraId: 'cam-kit-02', x: 38, y: 56, w: 28, h: 30 },
   { counterId: 'ctr-pass', name: 'Pass', cameraId: 'cam-kit-02', x: 70, y: 56, w: 24, h: 30 },
+]
+
+function clampPct(value) {
+  return Math.max(1.2, Math.min(98.8, value))
+}
+
+function haloPolygon(x, y, w, h, pad = 3.6) {
+  return [
+    [clampPct(x - pad * 0.95), clampPct(y + h * 0.16)],
+    [clampPct(x + w * 0.2), clampPct(y - pad)],
+    [clampPct(x + w * 0.68), clampPct(y - pad * 0.55)],
+    [clampPct(x + w + pad), clampPct(y + h * 0.18)],
+    [clampPct(x + w + pad * 0.72), clampPct(y + h * 0.74)],
+    [clampPct(x + w * 0.58), clampPct(y + h + pad)],
+    [clampPct(x + w * 0.14), clampPct(y + h + pad * 0.5)],
+    [clampPct(x - pad * 0.7), clampPct(y + h * 0.64)],
+  ]
+}
+
+export const kitchenZones = [
+  { zoneId: 'zone-grill', name: 'Grill', kind: 'station', counterId: 'ctr-grill', points: haloPolygon(6, 14, 28, 30, 4.2) },
+  { zoneId: 'zone-prep', name: 'Prep', kind: 'station', counterId: 'ctr-prep', points: haloPolygon(38, 14, 28, 30, 3.8) },
+  { zoneId: 'zone-plating', name: 'Plating', kind: 'station', counterId: 'ctr-plating', points: haloPolygon(70, 14, 24, 30, 4) },
+  { zoneId: 'zone-pastry', name: 'Pastry', kind: 'station', counterId: 'ctr-pastry', points: haloPolygon(6, 56, 28, 30, 4) },
+  { zoneId: 'zone-cold', name: 'Cold Station', kind: 'station', counterId: 'ctr-cold', points: haloPolygon(38, 56, 28, 30, 3.6) },
+  { zoneId: 'zone-pass', name: 'Pass', kind: 'station', counterId: 'ctr-pass', points: haloPolygon(70, 56, 24, 30, 4.4) },
+  {
+    zoneId: 'zone-hot-aisle',
+    name: 'Hot line aisle',
+    kind: 'movement',
+    points: [[8, 41], [34, 39], [64, 40], [94, 38], [96, 48], [66, 50], [34, 49], [7, 51]],
+  },
+  {
+    zoneId: 'zone-cold-aisle',
+    name: 'Pastry aisle',
+    kind: 'movement',
+    points: [[7, 84], [36, 86], [66, 85], [94, 83], [95, 93], [64, 95], [34, 96], [6, 94]],
+  },
+  {
+    zoneId: 'zone-kit-spine',
+    name: 'Kitchen spine',
+    kind: 'movement',
+    points: [[46, 42], [56, 41], [58, 88], [48, 90], [44, 54]],
+  },
+]
+
+export const tableZones = [
+  ...tables.map((table) => ({
+    zoneId: `zone-${table.tableId}`,
+    name: `${table.code} service`,
+    kind: 'service',
+    tableId: table.tableId,
+    points: haloPolygon(table.x, table.y, table.w, table.h, table.seats >= 6 ? 4.8 : 3.8),
+  })),
+  {
+    zoneId: 'zone-aisle-top',
+    name: 'Front aisle',
+    kind: 'movement',
+    points: [[6, 30], [28, 28], [54, 29], [78, 27], [96, 31], [95, 38], [76, 36], [50, 37], [26, 36], [5, 38]],
+  },
+  {
+    zoneId: 'zone-aisle-mid',
+    name: 'Centre aisle',
+    kind: 'movement',
+    points: [[8, 62], [34, 60], [62, 61], [92, 59], [94, 68], [60, 70], [32, 69], [7, 70]],
+  },
+  {
+    zoneId: 'zone-aisle-service',
+    name: 'Service run',
+    kind: 'movement',
+    points: [[2, 18], [8, 16], [10, 78], [4, 86], [1, 48]],
+  },
 ]
 
 export const timeWindows = [
@@ -83,13 +317,24 @@ export const timeWindows = [
 ]
 
 export const occupancySessions = [
+  // Morning — breakfast and early covers
+  { occupancyId: 'occ-t01-m1', tableId: 'tbl-01', start: '09:22:18', end: '10:05:40', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t02-m1', tableId: 'tbl-02', start: '09:35:08', end: '10:48:22', guestCount: 3, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t04-m1', tableId: 'tbl-04', start: '10:12:40', end: '11:06:15', guestCount: 2, videoId: 'vid-table-occupancy', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t05-m1', tableId: 'tbl-05', start: '09:48:11', end: '11:12:33', guestCount: 4, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
+  { occupancyId: 'occ-t08-m1', tableId: 'tbl-08', start: '10:05:20', end: '10:52:08', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
+  { occupancyId: 'occ-t10-m1', tableId: 'tbl-10', start: '10:18:44', end: '11:40:12', guestCount: 6, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
   // Lunch
   { occupancyId: 'occ-t01-l1', tableId: 'tbl-01', start: '12:18:40', end: '13:11:22', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
   { occupancyId: 'occ-t02-l1', tableId: 'tbl-02', start: '12:24:05', end: '13:46:18', guestCount: 4, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t03-l1', tableId: 'tbl-03', start: '12:28:16', end: '13:18:40', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t04-l1', tableId: 'tbl-04', start: '13:12:08', end: '14:08:51', guestCount: 2, videoId: 'vid-table-occupancy', cameraId: 'cam-df-01' },
   { occupancyId: 'occ-t05-l1', tableId: 'tbl-05', start: '12:31:10', end: '14:02:44', guestCount: 5, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
   { occupancyId: 'occ-t06-l1', tableId: 'tbl-06', start: '12:40:22', end: '13:28:09', guestCount: 3, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
+  { occupancyId: 'occ-t07-l1', tableId: 'tbl-07', start: '12:52:40', end: '14:10:18', guestCount: 4, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
+  { occupancyId: 'occ-t08-l1', tableId: 'tbl-08', start: '13:18:05', end: '14:02:33', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
   { occupancyId: 'occ-t09-l1', tableId: 'tbl-09', start: '13:05:33', end: '14:21:16', guestCount: 4, videoId: 'vid-multi-table-service', cameraId: 'cam-df-03' },
-  { occupancyId: 'occ-t04-l1', tableId: 'tbl-04', start: '13:12:08', end: '14:08:51', guestCount: 2, videoId: 'vid-table-occupancy', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t10-l1', tableId: 'tbl-10', start: '12:15:22', end: '13:40:08', guestCount: 6, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
   // Dinner — T04 is the longest combined occupancy
   { occupancyId: 'occ-t02-d1', tableId: 'tbl-02', start: '18:41:20', end: '20:12:07', guestCount: 4, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
   { occupancyId: 'occ-t01-d1', tableId: 'tbl-01', start: '18:48:11', end: '20:06:40', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
@@ -102,6 +347,12 @@ export const occupancySessions = [
   { occupancyId: 'occ-t10-d1', tableId: 'tbl-10', start: '19:36:40', end: '20:22:08', guestCount: 7, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
   { occupancyId: 'occ-t04-d2', tableId: 'tbl-04', start: '20:04:12', end: '21:17:44', guestCount: 4, videoId: 'vid-table-occupancy', cameraId: 'cam-df-01' },
   { occupancyId: 'occ-t07-d2', tableId: 'tbl-07', start: '21:08:16', end: '22:11:03', guestCount: 2, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
+  // Evening — late covers after 21:00
+  { occupancyId: 'occ-t02-e1', tableId: 'tbl-02', start: '21:12:08', end: '22:05:40', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t01-e1', tableId: 'tbl-01', start: '21:35:22', end: '22:18:11', guestCount: 2, videoId: 'vid-dining-floor', cameraId: 'cam-df-01' },
+  { occupancyId: 'occ-t05-e1', tableId: 'tbl-05', start: '21:18:40', end: '22:28:16', guestCount: 4, videoId: 'vid-multi-table-service', cameraId: 'cam-df-02' },
+  { occupancyId: 'occ-t09-e1', tableId: 'tbl-09', start: '21:22:14', end: '22:15:08', guestCount: 2, videoId: 'vid-multi-table-service', cameraId: 'cam-df-03' },
+  { occupancyId: 'occ-t10-e1', tableId: 'tbl-10', start: '21:08:05', end: '21:55:33', guestCount: 5, videoId: 'vid-dining-floor', cameraId: 'cam-df-03' },
 ]
 
 export const waiterVisits = [
@@ -151,6 +402,37 @@ export const waiterVisits = [
   { visitId: 'wtr-db-t06-l1', personId: 'wtr-danielb', tableId: 'tbl-06', start: '12:44:18', end: '12:46:02', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.87, occupancyId: 'occ-t06-l1' },
   { visitId: 'wtr-db-t09-l1', personId: 'wtr-danielb', tableId: 'tbl-09', start: '13:11:40', end: '13:13:55', videoId: 'vid-multi-table-service', cameraId: 'cam-df-03', confidence: 0.86, occupancyId: 'occ-t09-l1' },
   { visitId: 'wtr-db-t01-l1', personId: 'wtr-danielb', tableId: 'tbl-01', start: '12:22:08', end: '12:23:41', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.85, occupancyId: 'occ-t01-l1' },
+  { visitId: 'wtr-sofia-t03-l1', personId: 'wtr-sofia', tableId: 'tbl-03', start: '12:32:18', end: '12:34:02', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.88, occupancyId: 'occ-t03-l1' },
+  { visitId: 'wtr-sofia-t03-l2', personId: 'wtr-sofia', tableId: 'tbl-03', start: '13:02:40', end: '13:04:11', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.87, occupancyId: 'occ-t03-l1' },
+  { visitId: 'wtr-ethan-t07-l1', personId: 'wtr-ethan', tableId: 'tbl-07', start: '12:58:14', end: '13:00:40', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.9, occupancyId: 'occ-t07-l1' },
+  { visitId: 'wtr-ethan-t07-l2', personId: 'wtr-ethan', tableId: 'tbl-07', start: '13:36:08', end: '13:38:22', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.89, occupancyId: 'occ-t07-l1' },
+  { visitId: 'wtr-danielb-t08-l1', personId: 'wtr-danielb', tableId: 'tbl-08', start: '13:22:40', end: '13:24:16', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.86, occupancyId: 'occ-t08-l1' },
+  { visitId: 'wtr-ethan-t10-l1', personId: 'wtr-ethan', tableId: 'tbl-10', start: '12:22:05', end: '12:24:40', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.88, occupancyId: 'occ-t10-l1' },
+  { visitId: 'wtr-ethan-t10-l2', personId: 'wtr-ethan', tableId: 'tbl-10', start: '13:08:18', end: '13:10:02', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.87, occupancyId: 'occ-t10-l1' },
+
+  // Morning
+  { visitId: 'wtr-sofia-t01-m1', personId: 'wtr-sofia', tableId: 'tbl-01', start: '09:26:12', end: '09:28:01', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.91, occupancyId: 'occ-t01-m1' },
+  { visitId: 'wtr-sofia-t01-m2', personId: 'wtr-sofia', tableId: 'tbl-01', start: '09:48:40', end: '09:50:18', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.9, occupancyId: 'occ-t01-m1' },
+  { visitId: 'wtr-sofia-t02-m1', personId: 'wtr-sofia', tableId: 'tbl-02', start: '09:40:08', end: '09:42:22', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.92, occupancyId: 'occ-t02-m1' },
+  { visitId: 'wtr-sofia-t02-m2', personId: 'wtr-sofia', tableId: 'tbl-02', start: '10:18:14', end: '10:20:02', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.89, occupancyId: 'occ-t02-m1' },
+  { visitId: 'wtr-sofia-t08-m1', personId: 'wtr-sofia', tableId: 'tbl-08', start: '10:12:40', end: '10:14:16', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.88, occupancyId: 'occ-t08-m1' },
+  { visitId: 'wtr-ethan-t05-m1', personId: 'wtr-ethan', tableId: 'tbl-05', start: '09:54:10', end: '09:56:44', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.9, occupancyId: 'occ-t05-m1' },
+  { visitId: 'wtr-ethan-t05-m2', personId: 'wtr-ethan', tableId: 'tbl-05', start: '10:36:22', end: '10:38:08', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.91, occupancyId: 'occ-t05-m1' },
+  { visitId: 'wtr-ethan-t10-m1', personId: 'wtr-ethan', tableId: 'tbl-10', start: '10:24:18', end: '10:26:40', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.89, occupancyId: 'occ-t10-m1' },
+  { visitId: 'wtr-ethan-t10-m2', personId: 'wtr-ethan', tableId: 'tbl-10', start: '11:08:05', end: '11:10:22', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.88, occupancyId: 'occ-t10-m1' },
+  { visitId: 'wtr-danielb-t04-m1', personId: 'wtr-danielb', tableId: 'tbl-04', start: '10:18:40', end: '10:20:28', videoId: 'vid-waiter-visit', cameraId: 'cam-df-01', confidence: 0.87, occupancyId: 'occ-t04-m1' },
+  { visitId: 'wtr-danielb-t04-m2', personId: 'wtr-danielb', tableId: 'tbl-04', start: '10:48:12', end: '10:50:01', videoId: 'vid-waiter-visit', cameraId: 'cam-df-01', confidence: 0.86, occupancyId: 'occ-t04-m1' },
+
+  // Evening
+  { visitId: 'wtr-alex-t07-e1', personId: 'wtr-alex', tableId: 'tbl-07', start: '21:14:22', end: '21:16:40', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.93, occupancyId: 'occ-t07-d2' },
+  { visitId: 'wtr-alex-t02-e1', personId: 'wtr-alex', tableId: 'tbl-02', start: '21:18:08', end: '21:20:16', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.91, occupancyId: 'occ-t02-e1' },
+  { visitId: 'wtr-sofia-t01-e1', personId: 'wtr-sofia', tableId: 'tbl-01', start: '21:38:40', end: '21:40:22', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.9, occupancyId: 'occ-t01-e1' },
+  { visitId: 'wtr-sofia-t05-e1', personId: 'wtr-sofia', tableId: 'tbl-05', start: '21:24:12', end: '21:26:48', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.92, occupancyId: 'occ-t05-e1' },
+  { visitId: 'wtr-sofia-t05-e2', personId: 'wtr-sofia', tableId: 'tbl-05', start: '21:58:05', end: '22:00:18', videoId: 'vid-multi-table-service', cameraId: 'cam-df-02', confidence: 0.89, occupancyId: 'occ-t05-e1' },
+  { visitId: 'wtr-ethan-t10-e1', personId: 'wtr-ethan', tableId: 'tbl-10', start: '21:12:40', end: '21:15:02', videoId: 'vid-dining-floor', cameraId: 'cam-df-03', confidence: 0.88, occupancyId: 'occ-t10-e1' },
+  { visitId: 'wtr-ethan-t09-e1', personId: 'wtr-ethan', tableId: 'tbl-09', start: '21:28:16', end: '21:30:08', videoId: 'vid-multi-table-service', cameraId: 'cam-df-03', confidence: 0.87, occupancyId: 'occ-t09-e1' },
+  { visitId: 'wtr-danielb-t02-e1', personId: 'wtr-danielb', tableId: 'tbl-02', start: '21:42:14', end: '21:43:50', videoId: 'vid-dining-floor', cameraId: 'cam-df-01', confidence: 0.86, occupancyId: 'occ-t02-e1' },
+  { visitId: 'wtr-danielb-t09-e1', personId: 'wtr-danielb', tableId: 'tbl-09', start: '21:52:22', end: '21:54:01', videoId: 'vid-multi-table-service', cameraId: 'cam-df-03', confidence: 0.85, occupancyId: 'occ-t09-e1' },
 ]
 
 export const kitchenDwells = [
@@ -193,6 +475,34 @@ export const kitchenDwells = [
   { dwellId: 'kit-olivia-cold-2', personId: 'kit-olivia', counterId: 'ctr-cold', start: '19:28:12', end: '19:36:50', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.89 },
   { dwellId: 'kit-olivia-prep-1', personId: 'kit-olivia', counterId: 'ctr-prep', start: '18:26:00', end: '18:36:00', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.87 },
   { dwellId: 'kit-olivia-plating-1', personId: 'kit-olivia', counterId: 'ctr-plating', start: '19:38:00', end: '19:41:20', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.86 },
+
+  // Lunch kitchen
+  { dwellId: 'kit-james-grill-l2', personId: 'kit-james', counterId: 'ctr-grill', start: '12:40:00', end: '13:18:20', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.92 },
+  { dwellId: 'kit-james-plating-l1', personId: 'kit-james', counterId: 'ctr-plating', start: '13:20:00', end: '13:38:40', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.9 },
+  { dwellId: 'kit-maria-prep-l1', personId: 'kit-maria', counterId: 'ctr-prep', start: '12:08:00', end: '12:48:22', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.93 },
+  { dwellId: 'kit-maria-cold-l1', personId: 'kit-maria', counterId: 'ctr-cold', start: '12:52:00', end: '13:16:40', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.89 },
+  { dwellId: 'kit-daniel-plating-l1', personId: 'kit-daniel', counterId: 'ctr-plating', start: '12:30:00', end: '13:05:18', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.91 },
+  { dwellId: 'kit-daniel-pass-l1', personId: 'kit-daniel', counterId: 'ctr-pass', start: '13:06:00', end: '13:22:40', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.9 },
+  { dwellId: 'kit-olivia-pastry-l1', personId: 'kit-olivia', counterId: 'ctr-pastry', start: '12:10:00', end: '12:55:30', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.94 },
+  { dwellId: 'kit-olivia-cold-l1', personId: 'kit-olivia', counterId: 'ctr-cold', start: '13:00:00', end: '13:24:16', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.88 },
+
+  // Morning kitchen — mise en place and pastry
+  { dwellId: 'kit-olivia-pastry-m1', personId: 'kit-olivia', counterId: 'ctr-pastry', start: '09:10:00', end: '09:55:20', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.94 },
+  { dwellId: 'kit-olivia-pastry-m2', personId: 'kit-olivia', counterId: 'ctr-pastry', start: '10:20:00', end: '11:05:40', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.93 },
+  { dwellId: 'kit-maria-prep-m1', personId: 'kit-maria', counterId: 'ctr-prep', start: '09:15:00', end: '10:05:18', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.92 },
+  { dwellId: 'kit-maria-prep-m2', personId: 'kit-maria', counterId: 'ctr-prep', start: '10:30:00', end: '11:20:12', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.91 },
+  { dwellId: 'kit-james-grill-m1', personId: 'kit-james', counterId: 'ctr-grill', start: '09:40:00', end: '10:15:40', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.9 },
+  { dwellId: 'kit-daniel-plating-m1', personId: 'kit-daniel', counterId: 'ctr-plating', start: '10:50:00', end: '11:25:20', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.89 },
+  { dwellId: 'kit-daniel-pass-m1', personId: 'kit-daniel', counterId: 'ctr-pass', start: '11:25:40', end: '11:45:08', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.88 },
+
+  // Evening kitchen — close-down
+  { dwellId: 'kit-daniel-plating-e1', personId: 'kit-daniel', counterId: 'ctr-plating', start: '21:05:00', end: '21:28:40', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.93 },
+  { dwellId: 'kit-daniel-pass-e1', personId: 'kit-daniel', counterId: 'ctr-pass', start: '21:28:50', end: '21:42:16', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.91 },
+  { dwellId: 'kit-maria-prep-e1', personId: 'kit-maria', counterId: 'ctr-prep', start: '21:00:10', end: '21:18:22', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.9 },
+  { dwellId: 'kit-maria-cold-e1', personId: 'kit-maria', counterId: 'ctr-cold', start: '21:20:00', end: '21:35:40', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.88 },
+  { dwellId: 'kit-james-grill-e1', personId: 'kit-james', counterId: 'ctr-grill', start: '21:02:00', end: '21:22:18', videoId: 'vid-kitchen-activity', cameraId: 'cam-kit-01', confidence: 0.92 },
+  { dwellId: 'kit-olivia-pastry-e1', personId: 'kit-olivia', counterId: 'ctr-pastry', start: '21:10:00', end: '21:40:12', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.9 },
+  { dwellId: 'kit-olivia-cold-e1', personId: 'kit-olivia', counterId: 'ctr-cold', start: '21:42:00', end: '21:55:30', videoId: 'vid-kitchen-movement', cameraId: 'cam-kit-02', confidence: 0.87 },
 ]
 
 export const cookbooks = [

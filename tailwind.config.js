@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         navy: { 900: 'var(--navy-900)', 800: 'var(--navy-800)', 700: 'var(--navy-700)' },
         brand: { 800: 'var(--blue-800)', 700: 'var(--blue-700)', 600: 'var(--blue-600)', 50: 'var(--blue-50)' },

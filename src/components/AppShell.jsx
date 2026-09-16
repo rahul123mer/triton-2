@@ -1,80 +1,116 @@
 import { useEffect, useMemo, useState } from 'react'
-import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { BookOpen, ChefHat, ChevronRight, ClipboardList, ConciergeBell, LayoutGrid, LineChart, Menu, Search, UtensilsCrossed, X } from 'lucide-react'
-import { kitchenStaff, tables, waiters } from '../restaurant/data'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import {
+  Bell,
+  BookOpen,
+  ChefHat,
+  ChevronLeft,
+  ChevronRight,
+  ClipboardList,
+  ConciergeBell,
+  LayoutDashboard,
+  LayoutGrid,
+  LineChart,
+  Menu,
+  MoreHorizontal,
+  X,
+} from 'lucide-react'
 
-const restaurantNav = [
-  ['Overview', '/restaurant', UtensilsCrossed],
-  ['Tables', '/restaurant/tables', LayoutGrid],
-  ['Service', '/restaurant/service', ConciergeBell],
-  ['Kitchen', '/restaurant/kitchen', ChefHat],
-  ['Cookbook', '/restaurant/cookbooks', BookOpen],
-  ['Analysis', '/restaurant/analysis', LineChart],
-  ['Reports', '/restaurant/reports', ClipboardList],
+const navItems = [
+  { id: 'overview', label: 'Overview', to: '/restaurant', icon: LayoutDashboard, end: true },
+  { id: 'tables', label: 'Tables', to: '/restaurant/tables', icon: LayoutGrid },
+  { id: 'service', label: 'Service', to: '/restaurant/service', icon: ConciergeBell },
+  { id: 'kitchen', label: 'Kitchen', to: '/restaurant/kitchen', icon: ChefHat },
+  { id: 'cookbook', label: 'Cookbook', to: '/restaurant/cookbooks', icon: BookOpen },
+  { id: 'analysis', label: 'Analysis', to: '/restaurant/analysis', icon: LineChart },
+  { id: 'reports', label: 'Reports', to: '/restaurant/reports', icon: ClipboardList },
 ]
 
-function navTitle(pathname) {
-  const match = restaurantNav
-    .filter(([, href]) => pathname === href || pathname.startsWith(`${href}/`))
-    .sort((a, b) => b[1].length - a[1].length)[0]
-  return match?.[0] || 'Fine Dining'
+const pages = [
+  ['/restaurant/tables', 'Tables', 'Floor occupancy, guest load, and waiter visits by table.'],
+  ['/restaurant/service', 'Service', 'Face-recognised waiter visits and dwell across the dining room.'],
+  ['/restaurant/kitchen', 'Kitchen', 'Station utilisation and identified kitchen staff dwell.'],
+  ['/restaurant/cookbooks', 'Cookbook', 'Recipes that evaluate occupancy, service, and kitchen events.'],
+  ['/restaurant/analysis', 'Analysis', 'Run a cookbook recipe over the captured event stream and inspect supporting evidence.'],
+  ['/restaurant/reports', 'Reports', 'Period findings derived from the same occupancy and dwell events.'],
+  ['/restaurant', 'Overview', 'Occupancy, service, and kitchen activity for The Ember Room.'],
+]
+
+function pageMeta(pathname) {
+  const match = pages.find(([href]) => pathname === href || pathname.startsWith(`${href}/`))
+  return { title: match?.[1] || 'Overview', lead: match?.[2] || '' }
 }
 
 export function AppShell() {
   const location = useLocation()
-  const navigate = useNavigate()
-  const [search, setSearch] = useState('')
   const [navOpen, setNavOpen] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
   useEffect(() => setNavOpen(false), [location.pathname])
-  const needle = search.trim().toLowerCase()
-  const hits = useMemo(() => {
-    if (needle.length < 1) return []
-    return [
-      ...tables.filter((row) => row.code.toLowerCase().includes(needle)).map((row) => ({ id: row.tableId, label: row.code, detail: `${row.seats}-top`, to: `/restaurant/tables/${row.tableId}` })),
-      ...waiters.filter((row) => row.name.toLowerCase().includes(needle)).map((row) => ({ id: row.personId, label: row.name, detail: 'Waiter', to: `/restaurant/service/${row.personId}` })),
-      ...kitchenStaff.filter((row) => row.name.toLowerCase().includes(needle)).map((row) => ({ id: row.personId, label: row.name, detail: row.station, to: `/restaurant/kitchen/${row.personId}` })),
-    ].slice(0, 8)
-  }, [needle])
-  return <div className="app-shell">
-    <button className="mobile-nav-button" onClick={() => setNavOpen(value => !value)} aria-label={navOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={navOpen}>{navOpen ? <X /> : <Menu />}</button>
-    {navOpen && <button className="sidebar-scrim" aria-label="Close navigation" onClick={() => setNavOpen(false)} />}
-    <aside className={navOpen ? 'sidebar open' : 'sidebar'}>
-      <div className="brand">
-        <img className="brand-logo" src="/brand/safespace.webp" alt="SafeSpace" width="1161" height="219" />
-        <div><strong>Triton</strong><span>Fine Dining Intelligence</span></div>
-      </div>
-      <nav aria-label="Primary navigation">
-        <div className="nav-group-label">The Ember Room</div>
-        {restaurantNav.map(([label, href, Icon]) => (
-          <NavLink key={href} to={href} end={href === '/restaurant'} className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
-            <Icon size={17} /><span>{label}</span><ChevronRight className="nav-chevron" size={14} />
-          </NavLink>
-        ))}
-      </nav>
-      <div className="user-card">
-        <div className="avatar">SK</div>
-        <div><strong>Sourav K.</strong><span>operations lead</span></div>
-      </div>
-    </aside>
-    <div className="main-column">
-      <header className="topbar">
-        <div><span className="eyebrow">THE EMBER ROOM</span><h1>{navTitle(location.pathname)}</h1></div>
-        <div className="global-search-wrap">
-          <div className="global-search"><Search size={16} /><input aria-label="Search restaurant activity" placeholder="Search tables, waiters or kitchen staff" value={search} onChange={e => setSearch(e.target.value)} /></div>
-          {needle.length > 0 && (
-            <div className="search-popover">
-              {hits.map((hit) => (
-                <button key={hit.id} onClick={() => { navigate(hit.to); setSearch('') }}>
-                  <strong>{hit.label}</strong>
-                  <span>{hit.detail}</span>
-                </button>
-              ))}
-              {hits.length === 0 && <span className="searching">No matching people or tables.</span>}
-            </div>
-          )}
+  const { title, lead } = useMemo(() => pageMeta(location.pathname), [location.pathname])
+
+  return (
+    <div className={`app-shell ss-shell${collapsed ? ' collapsed' : ''}${navOpen ? ' nav-open' : ''}`}>
+      <button className="mobile-nav-button" onClick={() => setNavOpen((value) => !value)} aria-label={navOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={navOpen}>
+        {navOpen ? <X /> : <Menu />}
+      </button>
+      {navOpen && <button className="sidebar-scrim" aria-label="Close navigation" onClick={() => setNavOpen(false)} />}
+      <aside className={navOpen ? 'sidebar open' : 'sidebar'}>
+        <div className="ss-brand">
+          <img className="ss-brand-logo" src="/brand/safespace.webp" alt="SafeSpace" />
+          <span className="ss-brand-tag">Triton</span>
         </div>
-      </header>
-      <main><Outlet /></main>
+        <button
+          type="button"
+          className="ss-collapse"
+          onClick={() => setCollapsed((value) => !value)}
+          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        >
+          {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+        </button>
+        <nav aria-label="Primary navigation">
+          {navItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <NavLink
+                key={item.id}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+              >
+                <Icon size={18} strokeWidth={1.75} />
+                <span>{item.label}</span>
+              </NavLink>
+            )
+          })}
+        </nav>
+        <div className="ss-sidebar-foot">
+          <button type="button" className="ss-notifications">
+            <span className="ss-bell-wrap">
+              <Bell size={16} strokeWidth={1.75} />
+              <i className="ss-notify-dot" />
+            </span>
+            <span>Notifications</span>
+            <span className="ss-notify-avatar">R</span>
+          </button>
+          <div className="ss-user">
+            <div className="ss-user-photo" aria-hidden="true">R</div>
+            <div className="ss-user-copy">
+              <strong>Rahul</strong>
+              <span>rahul123mer@gmail.com</span>
+            </div>
+            <button type="button" className="ss-user-more" aria-label="Account menu"><MoreHorizontal size={16} /></button>
+          </div>
+        </div>
+      </aside>
+      <div className="main-column">
+        <main className="ss-main">
+          <div className="ss-page-heading">
+            <h1 className="ss-page-title">{title}</h1>
+            {lead ? <p className="ss-page-lead">{lead}</p> : null}
+          </div>
+          <Outlet />
+        </main>
+      </div>
     </div>
-  </div>
+  )
 }
