@@ -1,0 +1,35 @@
+{
+  "video_id": "vid_pending_001",
+  "mode": "multipart",
+  "upload_id": "mpu_8f21c0",
+  "part_size_bytes": 67108864,
+  "parts": [
+    {
+      "part_number": 1,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/1?sig=stub"
+    },
+    {
+      "part_number": 2,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/2?sig=stub"
+    },
+    {
+      "part_number": 3,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/3?sig=stub"
+    },
+    {
+      "part_number": 4,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/4?sig=stub"
+    },
+    {
+      "part_number": 5,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/5?sig=stub"
+    },
+    {
+      "part_number": 6,
+      "url": "https://storage.local/upload/mpu_8f21c0/part/6?sig=stub"
+    }
+  ],
+  "complete_url": "/api/v1/videos/vid_pending_001/complete",
+  "abort_url": "/api/v1/videos/vid_pending_001/abort",
+  "expires_at": "2026-08-29T06:00:00Z"
+}

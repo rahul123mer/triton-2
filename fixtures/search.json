@@ -1,0 +1,42 @@
+[
+  {
+    "hit_id": "sh_001",
+    "scope": "evidence",
+    "meeting_id": "mtg_002",
+    "meeting_label": "2 Meeting",
+    "video_id": "vid_20250509_boardroom",
+    "start_ms": 10281481,
+    "end_ms": 10285408,
+    "category": "intent_commitment",
+    "participant_id": "p_rajesh",
+    "display_name": "Rajesh N.",
+    "snippet": "Let's talk commercials. What does this look like for three regions?",
+    "score": 0.91,
+    "ref": {
+      "kind": "semantic_event",
+      "id": "ev_0005",
+      "start_ms": 10281481,
+      "end_ms": 10285408
+    }
+  },
+  {
+    "hit_id": "sh_002",
+    "scope": "transcript",
+    "meeting_id": "mtg_002",
+    "meeting_label": "2 Meeting",
+    "video_id": "vid_20250509_boardroom",
+    "start_ms": 10281481,
+    "end_ms": 10285408,
+    "category": null,
+    "participant_id": "p_anand",
+    "display_name": "Anand P.",
+    "snippet": "Expansion is priced per region, and we can pre-agree the rate so there's no renegotiation.",
+    "score": 0.84,
+    "ref": {
+      "kind": "transcript_segment",
+      "id": "ts_0517",
+      "start_ms": 10281481,
+      "end_ms": 10285408
+    }
+  }
+]

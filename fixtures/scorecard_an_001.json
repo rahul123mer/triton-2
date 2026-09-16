@@ -1,0 +1,117 @@
+{
+  "analysis_id": "an_001",
+  "overall_score": 71.8,
+  "overall_band": "Good",
+  "confidence": 0.87,
+  "evidence_coverage": 74.1,
+  "recipe_count": 7,
+  "contributions": [
+    {
+      "recipe_id": "R-S01",
+      "recipe_name": "Requirements Discovery",
+      "weight": 20,
+      "score": 68,
+      "share_pct": 20.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-S02",
+      "recipe_name": "Buyer / Commercial Intent",
+      "weight": 20,
+      "score": 82,
+      "share_pct": 20.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-S03",
+      "recipe_name": "Value Articulation",
+      "weight": 15,
+      "score": 74,
+      "share_pct": 15.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-S04",
+      "recipe_name": "Objections and Handling",
+      "weight": 15,
+      "score": 64,
+      "share_pct": 15.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-S05",
+      "recipe_name": "Commercial Closure",
+      "weight": 15,
+      "score": 55,
+      "share_pct": 15.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-S06",
+      "recipe_name": "Actionability / Next Steps",
+      "weight": 10,
+      "score": 88,
+      "share_pct": 10.0,
+      "status": "SCORABLE"
+    },
+    {
+      "recipe_id": "R-C02",
+      "recipe_name": "Compliance / Policy Circumvention Risk",
+      "weight": 5,
+      "score": 18,
+      "share_pct": 5.0,
+      "status": "SCORABLE"
+    }
+  ],
+  "drivers": [
+    {
+      "recipe_id": "R-S02",
+      "label": "Buyer / Commercial Intent",
+      "impact": 16.4,
+      "impact_label": "16.4",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-S01",
+      "label": "Requirements Discovery",
+      "impact": 13.6,
+      "impact_label": "13.6",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-S03",
+      "label": "Value Articulation",
+      "impact": 11.1,
+      "impact_label": "11.1",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-S04",
+      "label": "Objections and Handling",
+      "impact": 9.6,
+      "impact_label": "9.6",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-S06",
+      "label": "Actionability / Next Steps",
+      "impact": 8.8,
+      "impact_label": "8.8",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-S05",
+      "label": "Commercial Closure",
+      "impact": 8.25,
+      "impact_label": "8.2",
+      "direction": "positive"
+    },
+    {
+      "recipe_id": "R-C02",
+      "label": "Compliance / Policy Circumvention Risk",
+      "impact": 4.1,
+      "impact_label": "4.1",
+      "direction": "risk"
+    }
+  ]
+}

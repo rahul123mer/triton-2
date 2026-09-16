@@ -1,0 +1,4346 @@
+[
+  {
+    "event_id": "ev_0176",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8319218,
+    "end_ms": 8325308,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0010",
+        "start_ms": 8320203,
+        "end_ms": 8323159
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0159",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8320049,
+    "end_ms": 8327461,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8320049",
+        "start_ms": 8320049,
+        "end_ms": 8320089
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8320049.jpg",
+    "summary": "Attention toward screen \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0039",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8331812,
+    "end_ms": 8338847,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0014",
+        "start_ms": 8332463,
+        "end_ms": 8335937
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0121",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8332271,
+    "end_ms": 8340848,
+    "event_type": "text.sentiment",
+    "category": "other",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0014",
+        "start_ms": 8332463,
+        "end_ms": 8335937
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Sentiment \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0018",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8337740,
+    "end_ms": 8345041,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8337740",
+        "start_ms": 8337740,
+        "end_ms": 8337780
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8337740.jpg",
+    "summary": "Attention away \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0109",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8340920,
+    "end_ms": 8343006,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8340920",
+        "start_ms": 8340920,
+        "end_ms": 8340960
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8340920.jpg",
+    "summary": "Laptop use \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0019",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8345022,
+    "end_ms": 8348835,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.8,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0018",
+        "start_ms": 8344692,
+        "end_ms": 8346195
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0156",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 8363425,
+    "end_ms": 8366415,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.76,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8363425",
+        "start_ms": 8363425,
+        "end_ms": 8363465
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8363425.jpg",
+    "summary": "Attention toward speaker \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0054",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8363514,
+    "end_ms": 8366029,
+    "event_type": "audio.long_pause",
+    "category": "other",
+    "value": {},
+    "confidence": 0.9,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0023",
+        "start_ms": 8363523,
+        "end_ms": 8365647
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Long pause \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0017",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8392389,
+    "end_ms": 8398938,
+    "event_type": "visual.person_entered",
+    "category": "other",
+    "value": {},
+    "confidence": 0.65,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8392389",
+        "start_ms": 8392389,
+        "end_ms": 8392429
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8392389.jpg",
+    "summary": "Person entered \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0027",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 8408435,
+    "end_ms": 8410399,
+    "event_type": "visual.presenting_at_screen",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8408435",
+        "start_ms": 8408435,
+        "end_ms": 8408475
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8408435.jpg",
+    "summary": "Presenting at screen \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0081",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8419368,
+    "end_ms": 8420881,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0040",
+        "start_ms": 8420306,
+        "end_ms": 8423108
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0131",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8440152,
+    "end_ms": 8444860,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.65,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0045",
+        "start_ms": 8442170,
+        "end_ms": 8445552
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0060",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8485031,
+    "end_ms": 8487443,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.77,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0056",
+        "start_ms": 8483393,
+        "end_ms": 8488104
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0103",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8511508,
+    "end_ms": 8513770,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.84,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0064",
+        "start_ms": 8510472,
+        "end_ms": 8513921
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0167",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8513214,
+    "end_ms": 8522153,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.9,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0065",
+        "start_ms": 8514808,
+        "end_ms": 8518237
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0127",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8515483,
+    "end_ms": 8522228,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8515483",
+        "start_ms": 8515483,
+        "end_ms": 8515523
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8515483.jpg",
+    "summary": "Screen share active \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0136",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 8541264,
+    "end_ms": 8548697,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8541264",
+        "start_ms": 8541264,
+        "end_ms": 8541304
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8541264.jpg",
+    "summary": "Attention away \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0128",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8558926,
+    "end_ms": 8561966,
+    "event_type": "visual.screen_content_changed",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.55,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8558926",
+        "start_ms": 8558926,
+        "end_ms": 8558966
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8558926.jpg",
+    "summary": "Screen content changed \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0046",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 8562540,
+    "end_ms": 8564595,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0077",
+        "start_ms": 8562301,
+        "end_ms": 8565740
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Decision language \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0107",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8573393,
+    "end_ms": 8581330,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.9,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8573393",
+        "start_ms": 8573393,
+        "end_ms": 8573433
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8573393.jpg",
+    "summary": "Laptop use \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0079",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8574897,
+    "end_ms": 8576537,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0080",
+        "start_ms": 8572304,
+        "end_ms": 8577125
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0062",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8593647,
+    "end_ms": 8599385,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8593647",
+        "start_ms": 8593647,
+        "end_ms": 8593687
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8593647.jpg",
+    "summary": "Screen share active \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0056",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8671434,
+    "end_ms": 8672863,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.66,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0105",
+        "start_ms": 8671384,
+        "end_ms": 8675782
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0067",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8671952,
+    "end_ms": 8675305,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8671952",
+        "start_ms": 8671952,
+        "end_ms": 8671992
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8671952.jpg",
+    "summary": "Attention away \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0170",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 8702799,
+    "end_ms": 8709211,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0113",
+        "start_ms": 8701433,
+        "end_ms": 8704392
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0065",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8709539,
+    "end_ms": 8711611,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.66,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0116",
+        "start_ms": 8710334,
+        "end_ms": 8714799
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0145",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8744132,
+    "end_ms": 8751217,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0124",
+        "start_ms": 8745706,
+        "end_ms": 8749763
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0114",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8775983,
+    "end_ms": 8783629,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8775983",
+        "start_ms": 8775983,
+        "end_ms": 8776023
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8775983.jpg",
+    "summary": "Gesture pointing \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0090",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8792549,
+    "end_ms": 8798499,
+    "event_type": "visual.person_exited",
+    "category": "other",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8792549",
+        "start_ms": 8792549,
+        "end_ms": 8792589
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8792549.jpg",
+    "summary": "Person exited \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0122",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8803024,
+    "end_ms": 8809004,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.82,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0138",
+        "start_ms": 8802991,
+        "end_ms": 8804521
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0154",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8807170,
+    "end_ms": 8812543,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.72,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0140",
+        "start_ms": 8807914,
+        "end_ms": 8809699
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0073",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8807604,
+    "end_ms": 8812311,
+    "event_type": "visual.screen_content_changed",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.89,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8807604",
+        "start_ms": 8807604,
+        "end_ms": 8807644
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8807604.jpg",
+    "summary": "Screen content changed \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0096",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 8812525,
+    "end_ms": 8821203,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.72,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0141",
+        "start_ms": 8810038,
+        "end_ms": 8814837
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0091",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 8848105,
+    "end_ms": 8850343,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.81,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8848105",
+        "start_ms": 8848105,
+        "end_ms": 8848145
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8848105.jpg",
+    "summary": "Laptop use \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0155",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8859186,
+    "end_ms": 8861253,
+    "event_type": "audio.long_pause",
+    "category": "other",
+    "value": {},
+    "confidence": 0.61,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0153",
+        "start_ms": 8861490,
+        "end_ms": 8865436
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Long pause \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0169",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8873801,
+    "end_ms": 8880967,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.79,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8873801",
+        "start_ms": 8873801,
+        "end_ms": 8873841
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8873801.jpg",
+    "summary": "Attention toward screen \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0087",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8942673,
+    "end_ms": 8946175,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.55,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8942673",
+        "start_ms": 8942673,
+        "end_ms": 8942713
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8942673.jpg",
+    "summary": "Laptop use \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0102",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 8961323,
+    "end_ms": 8965569,
+    "event_type": "visual.standing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.78,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8961323",
+        "start_ms": 8961323,
+        "end_ms": 8961363
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8961323.jpg",
+    "summary": "Standing \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0116",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 8988539,
+    "end_ms": 8997002,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.59,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0189",
+        "start_ms": 8987866,
+        "end_ms": 8992449
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0055",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 8992772,
+    "end_ms": 8995348,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.74,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8992772",
+        "start_ms": 8992772,
+        "end_ms": 8992812
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8992772.jpg",
+    "summary": "Gesture pointing \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0021",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 8998020,
+    "end_ms": 9005287,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_8998020",
+        "start_ms": 8998020,
+        "end_ms": 8998060
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/8998020.jpg",
+    "summary": "Attention away \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0057",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9026027,
+    "end_ms": 9029526,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.61,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9026027",
+        "start_ms": 9026027,
+        "end_ms": 9026067
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9026027.jpg",
+    "summary": "Laptop use \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0076",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9026261,
+    "end_ms": 9034870,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.93,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0198",
+        "start_ms": 9025350,
+        "end_ms": 9027192
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0134",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9054177,
+    "end_ms": 9062808,
+    "event_type": "visual.person_entered",
+    "category": "other",
+    "value": {},
+    "confidence": 0.89,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9054177",
+        "start_ms": 9054177,
+        "end_ms": 9054217
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9054177.jpg",
+    "summary": "Person entered \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0074",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 9055334,
+    "end_ms": 9060113,
+    "event_type": "visual.person_entered",
+    "category": "other",
+    "value": {},
+    "confidence": 0.72,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9055334",
+        "start_ms": 9055334,
+        "end_ms": 9055374
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9055334.jpg",
+    "summary": "Person entered \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0106",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9083419,
+    "end_ms": 9087702,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.74,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0213",
+        "start_ms": 9082050,
+        "end_ms": 9086070
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0105",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9094857,
+    "end_ms": 9103065,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9094857",
+        "start_ms": 9094857,
+        "end_ms": 9094897
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9094857.jpg",
+    "summary": "Attention toward screen \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0174",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9102427,
+    "end_ms": 9105973,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9102427",
+        "start_ms": 9102427,
+        "end_ms": 9102467
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9102427.jpg",
+    "summary": "Attention toward screen \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0022",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9104733,
+    "end_ms": 9112229,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.89,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0219",
+        "start_ms": 9104154,
+        "end_ms": 9108051
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0126",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9120425,
+    "end_ms": 9128495,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0223",
+        "start_ms": 9118756,
+        "end_ms": 9121977
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0011",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9130961,
+    "end_ms": 9138703,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.9,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0226",
+        "start_ms": 9130151,
+        "end_ms": 9134617
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0037",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 9138939,
+    "end_ms": 9145465,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.76,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9138939",
+        "start_ms": 9138939,
+        "end_ms": 9138979
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9138939.jpg",
+    "summary": "Gesture pointing \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0038",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9155888,
+    "end_ms": 9162972,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.9,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0232",
+        "start_ms": 9156131,
+        "end_ms": 9160379
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0168",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9174157,
+    "end_ms": 9178128,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.78,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0238",
+        "start_ms": 9174855,
+        "end_ms": 9178021
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0001",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9199842,
+    "end_ms": 9202194,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {
+      "quote": "Our current process takes too long and we're losing visibility across teams."
+    },
+    "confidence": 0.86,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0244",
+        "start_ms": 9199842,
+        "end_ms": 9202194
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Our current process takes too long and we're losing visibility across teams."
+  },
+  {
+    "event_id": "ev_0035",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9238631,
+    "end_ms": 9241011,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.85,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0254",
+        "start_ms": 9236539,
+        "end_ms": 9240611
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0063",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9255002,
+    "end_ms": 9256368,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.62,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0258",
+        "start_ms": 9255096,
+        "end_ms": 9259450
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0118",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9278026,
+    "end_ms": 9285943,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.89,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0264",
+        "start_ms": 9276731,
+        "end_ms": 9281478
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0051",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9294354,
+    "end_ms": 9297118,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0269",
+        "start_ms": 9295427,
+        "end_ms": 9297020
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0045",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9294589,
+    "end_ms": 9298460,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0269",
+        "start_ms": 9295427,
+        "end_ms": 9297020
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0104",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9295578,
+    "end_ms": 9302557,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.71,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0269",
+        "start_ms": 9295427,
+        "end_ms": 9297020
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0124",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9303922,
+    "end_ms": 9307679,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.73,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0271",
+        "start_ms": 9303342,
+        "end_ms": 9306376
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0010",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9321276,
+    "end_ms": 9323162,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9321276",
+        "start_ms": 9321276,
+        "end_ms": 9321316
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9321276.jpg",
+    "summary": "Attention toward screen \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0148",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9332535,
+    "end_ms": 9341442,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0279",
+        "start_ms": 9334922,
+        "end_ms": 9337649
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0151",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9340304,
+    "end_ms": 9347844,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.81,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9340304",
+        "start_ms": 9340304,
+        "end_ms": 9340344
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9340304.jpg",
+    "summary": "Attention away \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0061",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9342539,
+    "end_ms": 9351285,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9342539",
+        "start_ms": 9342539,
+        "end_ms": 9342579
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9342539.jpg",
+    "summary": "Laptop use \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0146",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 9361925,
+    "end_ms": 9367449,
+    "event_type": "visual.screen_content_changed",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.63,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9361925",
+        "start_ms": 9361925,
+        "end_ms": 9361965
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9361925.jpg",
+    "summary": "Screen content changed \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0002",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9363180,
+    "end_ms": 9364708,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {
+      "quote": "What integration challenges should we be aware of with our existing systems?"
+    },
+    "confidence": 0.9,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0286",
+        "start_ms": 9363180,
+        "end_ms": 9364708
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "What integration challenges should we be aware of with our existing systems?"
+  },
+  {
+    "event_id": "ev_0144",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9382320,
+    "end_ms": 9389034,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0291",
+        "start_ms": 9381303,
+        "end_ms": 9383260
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0052",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9398255,
+    "end_ms": 9406365,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0297",
+        "start_ms": 9398899,
+        "end_ms": 9403711
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0068",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9433725,
+    "end_ms": 9442393,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.87,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0307",
+        "start_ms": 9434811,
+        "end_ms": 9438880
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0032",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9451253,
+    "end_ms": 9459195,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.82,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9451253",
+        "start_ms": 9451253,
+        "end_ms": 9451293
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9451253.jpg",
+    "summary": "Attention toward screen \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0100",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9454146,
+    "end_ms": 9459678,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9454146",
+        "start_ms": 9454146,
+        "end_ms": 9454186
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9454146.jpg",
+    "summary": "Gesture pointing \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0141",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9458358,
+    "end_ms": 9462111,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.83,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0313",
+        "start_ms": 9458508,
+        "end_ms": 9461918
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0003",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9471769,
+    "end_ms": 9476074,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {
+      "quote": "I can provide a sandbox this week and align on your security requirements."
+    },
+    "confidence": 0.89,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0317",
+        "start_ms": 9471769,
+        "end_ms": 9476074
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "I can provide a sandbox this week and align on your security requirements."
+  },
+  {
+    "event_id": "ev_0140",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9474382,
+    "end_ms": 9481498,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9474382",
+        "start_ms": 9474382,
+        "end_ms": 9474422
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9474382.jpg",
+    "summary": "Laptop use \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0080",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 9476425,
+    "end_ms": 9480760,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.59,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0318",
+        "start_ms": 9476623,
+        "end_ms": 9480752
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0024",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9485039,
+    "end_ms": 9493644,
+    "event_type": "audio.long_pause",
+    "category": "other",
+    "value": {},
+    "confidence": 0.89,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0320",
+        "start_ms": 9486175,
+        "end_ms": 9491049
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Long pause \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0113",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9494143,
+    "end_ms": 9500279,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0322",
+        "start_ms": 9496335,
+        "end_ms": 9498448
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0059",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9494385,
+    "end_ms": 9498281,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0322",
+        "start_ms": 9496335,
+        "end_ms": 9498448
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0033",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9516480,
+    "end_ms": 9521731,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.56,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0327",
+        "start_ms": 9514297,
+        "end_ms": 9518793
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0135",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9525137,
+    "end_ms": 9527388,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.71,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0330",
+        "start_ms": 9525943,
+        "end_ms": 9529997
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0004",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9551330,
+    "end_ms": 9555814,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {
+      "quote": "Just to confirm \u2014 customer data residency is in-region only, correct?"
+    },
+    "confidence": 0.81,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0336",
+        "start_ms": 9551330,
+        "end_ms": 9555814
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Just to confirm \u2014 customer data residency is in-region only, correct?"
+  },
+  {
+    "event_id": "ev_0013",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9572385,
+    "end_ms": 9576189,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.77,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0342",
+        "start_ms": 9571947,
+        "end_ms": 9574598
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0088",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9584012,
+    "end_ms": 9589740,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0346",
+        "start_ms": 9583906,
+        "end_ms": 9587598
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0094",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9586018,
+    "end_ms": 9590153,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.76,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0346",
+        "start_ms": 9583906,
+        "end_ms": 9587598
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0014",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9601865,
+    "end_ms": 9604524,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.84,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9601865",
+        "start_ms": 9601865,
+        "end_ms": 9601905
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9601865.jpg",
+    "summary": "Screen share active \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0179",
+    "meeting_id": "mtg_002",
+    "participant_id": null,
+    "start_ms": 9603000,
+    "end_ms": 9663000,
+    "event_type": "meta.missing_modality",
+    "category": "other",
+    "value": {
+      "modality": "audio",
+      "reason": "mic_dropout"
+    },
+    "confidence": 1.0,
+    "modality": "fusion",
+    "model_id": "pipeline",
+    "model_version": "1.0.0",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9603000",
+        "start_ms": 9603000,
+        "end_ms": 9603040
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Audio unavailable \u2014 room mic dropout for 60s. Transcript and diarization absent for this span."
+  },
+  {
+    "event_id": "ev_0075",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9675362,
+    "end_ms": 9679276,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.63,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0355",
+        "start_ms": 9675424,
+        "end_ms": 9678365
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0053",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9737777,
+    "end_ms": 9743688,
+    "event_type": "visual.screen_content_changed",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.82,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9737777",
+        "start_ms": 9737777,
+        "end_ms": 9737817
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9737777.jpg",
+    "summary": "Screen content changed \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0147",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9755161,
+    "end_ms": 9756531,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.74,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9755161",
+        "start_ms": 9755161,
+        "end_ms": 9755201
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9755161.jpg",
+    "summary": "Attention away \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0044",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9808212,
+    "end_ms": 9811052,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9808212",
+        "start_ms": 9808212,
+        "end_ms": 9808252
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9808212.jpg",
+    "summary": "Attention toward speaker \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0161",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9854077,
+    "end_ms": 9858572,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0402",
+        "start_ms": 9854537,
+        "end_ms": 9858733
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0178",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 9865903,
+    "end_ms": 9874295,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0405",
+        "start_ms": 9865104,
+        "end_ms": 9869845
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Decision language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0098",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9878162,
+    "end_ms": 9882429,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9878162",
+        "start_ms": 9878162,
+        "end_ms": 9878202
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9878162.jpg",
+    "summary": "Attention away \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0095",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9917919,
+    "end_ms": 9922303,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.84,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0418",
+        "start_ms": 9918865,
+        "end_ms": 9920969
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0034",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9918521,
+    "end_ms": 9921793,
+    "event_type": "visual.screen_content_changed",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.92,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_9918521",
+        "start_ms": 9918521,
+        "end_ms": 9918561
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/9918521.jpg",
+    "summary": "Screen content changed \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0072",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 9973523,
+    "end_ms": 9975178,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0433",
+        "start_ms": 9973306,
+        "end_ms": 9975388
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0020",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 9979978,
+    "end_ms": 9984641,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.59,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0435",
+        "start_ms": 9978963,
+        "end_ms": 9983640
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0108",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 9991711,
+    "end_ms": 9997802,
+    "event_type": "text.sentiment",
+    "category": "other",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0439",
+        "start_ms": 9992825,
+        "end_ms": 9997649
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Sentiment \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0101",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10021106,
+    "end_ms": 10022712,
+    "event_type": "audio.long_pause",
+    "category": "other",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0447",
+        "start_ms": 10020486,
+        "end_ms": 10023890
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Long pause \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0041",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10026687,
+    "end_ms": 10029795,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.82,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10026687",
+        "start_ms": 10026687,
+        "end_ms": 10026727
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10026687.jpg",
+    "summary": "Screen share active \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0016",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10036832,
+    "end_ms": 10038968,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.76,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0451",
+        "start_ms": 10036040,
+        "end_ms": 10038591
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0152",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 10046976,
+    "end_ms": 10051003,
+    "event_type": "visual.person_entered",
+    "category": "other",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10046976",
+        "start_ms": 10046976,
+        "end_ms": 10047016
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10046976.jpg",
+    "summary": "Person entered \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0099",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10074635,
+    "end_ms": 10077193,
+    "event_type": "visual.person_exited",
+    "category": "other",
+    "value": {},
+    "confidence": 0.56,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10074635",
+        "start_ms": 10074635,
+        "end_ms": 10074675
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10074635.jpg",
+    "summary": "Person exited \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0086",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 10079569,
+    "end_ms": 10082469,
+    "event_type": "visual.attention_toward_screen",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.92,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10079569",
+        "start_ms": 10079569,
+        "end_ms": 10079609
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10079569.jpg",
+    "summary": "Attention toward screen \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0158",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10081845,
+    "end_ms": 10090052,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10081845",
+        "start_ms": 10081845,
+        "end_ms": 10081885
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10081845.jpg",
+    "summary": "Gesture pointing \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0036",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10100207,
+    "end_ms": 10103112,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.59,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10100207",
+        "start_ms": 10100207,
+        "end_ms": 10100247
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10100207.jpg",
+    "summary": "Attention toward speaker \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0028",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10104948,
+    "end_ms": 10108781,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10104948",
+        "start_ms": 10104948,
+        "end_ms": 10104988
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10104948.jpg",
+    "summary": "Gesture pointing \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0160",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10108285,
+    "end_ms": 10112695,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.66,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0471",
+        "start_ms": 10108008,
+        "end_ms": 10112169
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0120",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10109327,
+    "end_ms": 10113850,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.59,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0471",
+        "start_ms": 10108008,
+        "end_ms": 10112169
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0162",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10110128,
+    "end_ms": 10117182,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0471",
+        "start_ms": 10108008,
+        "end_ms": 10112169
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0177",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10117493,
+    "end_ms": 10123978,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.93,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0473",
+        "start_ms": 10116913,
+        "end_ms": 10120229
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0064",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10133494,
+    "end_ms": 10136168,
+    "event_type": "visual.presenting_at_screen",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.74,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10133494",
+        "start_ms": 10133494,
+        "end_ms": 10133534
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10133494.jpg",
+    "summary": "Presenting at screen \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0078",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10138123,
+    "end_ms": 10141549,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.62,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10138123",
+        "start_ms": 10138123,
+        "end_ms": 10138163
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10138123.jpg",
+    "summary": "Attention away \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0130",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10155482,
+    "end_ms": 10158270,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.56,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0484",
+        "start_ms": 10154635,
+        "end_ms": 10159423
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Decision language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0077",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10157436,
+    "end_ms": 10165890,
+    "event_type": "text.sentiment",
+    "category": "other",
+    "value": {},
+    "confidence": 0.86,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0485",
+        "start_ms": 10159704,
+        "end_ms": 10162501
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Sentiment \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0125",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10161917,
+    "end_ms": 10170161,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.72,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0486",
+        "start_ms": 10163206,
+        "end_ms": 10167400
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0133",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10165185,
+    "end_ms": 10166682,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.71,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0486",
+        "start_ms": 10163206,
+        "end_ms": 10167400
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Decision language \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0092",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10180157,
+    "end_ms": 10188692,
+    "event_type": "text.sentiment",
+    "category": "other",
+    "value": {},
+    "confidence": 0.66,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0489",
+        "start_ms": 10177851,
+        "end_ms": 10182165
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Sentiment \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0157",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10180700,
+    "end_ms": 10184489,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.83,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0490",
+        "start_ms": 10182580,
+        "end_ms": 10184422
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Decision language \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0015",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10185843,
+    "end_ms": 10188161,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0491",
+        "start_ms": 10184854,
+        "end_ms": 10187642
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0175",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10195164,
+    "end_ms": 10201452,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10195164",
+        "start_ms": 10195164,
+        "end_ms": 10195204
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10195164.jpg",
+    "summary": "Attention toward speaker \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0180",
+    "meeting_id": "mtg_002",
+    "participant_id": null,
+    "start_ms": 10203000,
+    "end_ms": 10323000,
+    "event_type": "meta.low_confidence_region",
+    "category": "other",
+    "value": {
+      "reason": "overlapping_speech",
+      "mean_confidence": 0.66
+    },
+    "confidence": 0.9,
+    "modality": "fusion",
+    "model_id": "pipeline",
+    "model_version": "1.0.0",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10203000",
+        "start_ms": 10203000,
+        "end_ms": 10203040
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlapping speech reduced diarization confidence across this span."
+  },
+  {
+    "event_id": "ev_0026",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10220960,
+    "end_ms": 10229763,
+    "event_type": "audio.emotion",
+    "category": "other",
+    "value": {},
+    "confidence": 0.8,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0501",
+        "start_ms": 10220277,
+        "end_ms": 10224017
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Emotion \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0043",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10231318,
+    "end_ms": 10238554,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.84,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0504",
+        "start_ms": 10232118,
+        "end_ms": 10235189
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0050",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10250794,
+    "end_ms": 10258253,
+    "event_type": "text.timeline_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.55,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0509",
+        "start_ms": 10249943,
+        "end_ms": 10251902
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Timeline mention \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0143",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10254182,
+    "end_ms": 10261466,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0511",
+        "start_ms": 10254717,
+        "end_ms": 10259257
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Commitment language \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0110",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10256505,
+    "end_ms": 10264014,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0511",
+        "start_ms": 10254717,
+        "end_ms": 10259257
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0085",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10259241,
+    "end_ms": 10261473,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.62,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10259241",
+        "start_ms": 10259241,
+        "end_ms": 10259281
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10259241.jpg",
+    "summary": "Attention toward speaker \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0139",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10263333,
+    "end_ms": 10270788,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10263333",
+        "start_ms": 10263333,
+        "end_ms": 10263373
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10263333.jpg",
+    "summary": "Screen share active \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0047",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10272899,
+    "end_ms": 10278102,
+    "event_type": "visual.person_exited",
+    "category": "other",
+    "value": {},
+    "confidence": 0.81,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10272899",
+        "start_ms": 10272899,
+        "end_ms": 10272939
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10272899.jpg",
+    "summary": "Person exited \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0097",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10273981,
+    "end_ms": 10279952,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.63,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10273981",
+        "start_ms": 10273981,
+        "end_ms": 10274021
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10273981.jpg",
+    "summary": "Laptop use \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0005",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10281481,
+    "end_ms": 10285408,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {
+      "quote": "Let's talk commercials. What does this look like for three regions?"
+    },
+    "confidence": 0.85,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0517",
+        "start_ms": 10281481,
+        "end_ms": 10285408
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Let's talk commercials. What does this look like for three regions?"
+  },
+  {
+    "event_id": "ev_0173",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10319311,
+    "end_ms": 10324731,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.7,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10319311",
+        "start_ms": 10319311,
+        "end_ms": 10319351
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10319311.jpg",
+    "summary": "Attention away \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0153",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10320130,
+    "end_ms": 10323917,
+    "event_type": "visual.standing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.56,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10320130",
+        "start_ms": 10320130,
+        "end_ms": 10320170
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10320130.jpg",
+    "summary": "Standing \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0012",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10338915,
+    "end_ms": 10345601,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.79,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0531",
+        "start_ms": 10337964,
+        "end_ms": 10341148
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0129",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10340030,
+    "end_ms": 10346437,
+    "event_type": "visual.person_exited",
+    "category": "other",
+    "value": {},
+    "confidence": 0.72,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10340030",
+        "start_ms": 10340030,
+        "end_ms": 10340070
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10340030.jpg",
+    "summary": "Person exited \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0137",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10354938,
+    "end_ms": 10356955,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.56,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0535",
+        "start_ms": 10354719,
+        "end_ms": 10357210
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0119",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10362466,
+    "end_ms": 10364256,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.79,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0537",
+        "start_ms": 10361909,
+        "end_ms": 10365410
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0171",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10375786,
+    "end_ms": 10379429,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0541",
+        "start_ms": 10374914,
+        "end_ms": 10376443
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0071",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10380451,
+    "end_ms": 10386703,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.76,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10380451",
+        "start_ms": 10380451,
+        "end_ms": 10380491
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10380451.jpg",
+    "summary": "Screen share active \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0042",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 10397884,
+    "end_ms": 10400053,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10397884",
+        "start_ms": 10397884,
+        "end_ms": 10397924
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10397884.jpg",
+    "summary": "Screen share active \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0089",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10440286,
+    "end_ms": 10449193,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.6,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0559",
+        "start_ms": 10440545,
+        "end_ms": 10444499
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0123",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10500062,
+    "end_ms": 10505926,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.66,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10500062",
+        "start_ms": 10500062,
+        "end_ms": 10500102
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10500062.jpg",
+    "summary": "Attention toward speaker \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0115",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10516099,
+    "end_ms": 10520229,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {},
+    "confidence": 0.92,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0578",
+        "start_ms": 10516230,
+        "end_ms": 10518643
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Action assignment \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0150",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10520358,
+    "end_ms": 10525530,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.57,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0579",
+        "start_ms": 10519295,
+        "end_ms": 10523744
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0172",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10542254,
+    "end_ms": 10545114,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.85,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0585",
+        "start_ms": 10544103,
+        "end_ms": 10545951
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0006",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10548906,
+    "end_ms": 10552654,
+    "event_type": "text.commitment_language",
+    "category": "intent_commitment",
+    "value": {
+      "quote": "I can't commit to a number today, but the direction is right."
+    },
+    "confidence": 0.83,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0587",
+        "start_ms": 10548906,
+        "end_ms": 10552654
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "I can't commit to a number today, but the direction is right."
+  },
+  {
+    "event_id": "ev_0138",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10559404,
+    "end_ms": 10565321,
+    "event_type": "visual.standing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10559404",
+        "start_ms": 10559404,
+        "end_ms": 10559444
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10559404.jpg",
+    "summary": "Standing \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0048",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10559472,
+    "end_ms": 10562117,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.69,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10559472",
+        "start_ms": 10559472,
+        "end_ms": 10559512
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10559472.jpg",
+    "summary": "Attention toward speaker \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0082",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10561903,
+    "end_ms": 10569154,
+    "event_type": "text.question_asked",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.85,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0590",
+        "start_ms": 10561559,
+        "end_ms": 10565747
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Question asked \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0163",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10563022,
+    "end_ms": 10566527,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.61,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10563022",
+        "start_ms": 10563022,
+        "end_ms": 10563062
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10563022.jpg",
+    "summary": "Attention away \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0132",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10575289,
+    "end_ms": 10576970,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.63,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10575289",
+        "start_ms": 10575289,
+        "end_ms": 10575329
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10575289.jpg",
+    "summary": "Screen share active \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0093",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10590494,
+    "end_ms": 10597168,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10590494",
+        "start_ms": 10590494,
+        "end_ms": 10590534
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10590494.jpg",
+    "summary": "Gesture pointing \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0165",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10595112,
+    "end_ms": 10597763,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.67,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10595112",
+        "start_ms": 10595112,
+        "end_ms": 10595152
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10595112.jpg",
+    "summary": "Gesture pointing \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0069",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 10598251,
+    "end_ms": 10601396,
+    "event_type": "visual.person_entered",
+    "category": "other",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10598251",
+        "start_ms": 10598251,
+        "end_ms": 10598291
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10598251.jpg",
+    "summary": "Person entered \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0164",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10609031,
+    "end_ms": 10611483,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.93,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10609031",
+        "start_ms": 10609031,
+        "end_ms": 10609071
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10609031.jpg",
+    "summary": "Attention away \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0142",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10644803,
+    "end_ms": 10652829,
+    "event_type": "audio.overlap",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.8,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0614",
+        "start_ms": 10643350,
+        "end_ms": 10648187
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Overlap \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0030",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10649149,
+    "end_ms": 10651674,
+    "event_type": "text.pricing_mention",
+    "category": "intent_commitment",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0615",
+        "start_ms": 10648953,
+        "end_ms": 10653443
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Pricing mention \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0049",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10671885,
+    "end_ms": 10678978,
+    "event_type": "text.sentiment",
+    "category": "other",
+    "value": {},
+    "confidence": 0.93,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0622",
+        "start_ms": 10672336,
+        "end_ms": 10676990
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Sentiment \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0029",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10674596,
+    "end_ms": 10680468,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0622",
+        "start_ms": 10672336,
+        "end_ms": 10676990
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0070",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10676469,
+    "end_ms": 10680751,
+    "event_type": "visual.presenting_at_screen",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.85,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10676469",
+        "start_ms": 10676469,
+        "end_ms": 10676509
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10676469.jpg",
+    "summary": "Presenting at screen \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0149",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10684178,
+    "end_ms": 10693114,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.62,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10684178",
+        "start_ms": 10684178,
+        "end_ms": 10684218
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10684178.jpg",
+    "summary": "Screen share active \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0031",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10709205,
+    "end_ms": 10716748,
+    "event_type": "text.objection_language",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.88,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0633",
+        "start_ms": 10710747,
+        "end_ms": 10712867
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Objection language \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0066",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_offcam",
+    "start_ms": 10729785,
+    "end_ms": 10732818,
+    "event_type": "visual.person_exited",
+    "category": "other",
+    "value": {},
+    "confidence": 0.78,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10729785",
+        "start_ms": 10729785,
+        "end_ms": 10729825
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10729785.jpg",
+    "summary": "Person exited \u2014 Off-camera Speaker"
+  },
+  {
+    "event_id": "ev_0007",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10764510,
+    "end_ms": 10769114,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {
+      "quote": "I'll send the sandbox access and the residency attestation by Wednesday."
+    },
+    "confidence": 0.81,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0649",
+        "start_ms": 10764510,
+        "end_ms": 10769114
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "I'll send the sandbox access and the residency attestation by Wednesday."
+  },
+  {
+    "event_id": "ev_0025",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10771663,
+    "end_ms": 10773312,
+    "event_type": "visual.attention_away",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10771663",
+        "start_ms": 10771663,
+        "end_ms": 10771703
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10771663.jpg",
+    "summary": "Attention away \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0058",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10789731,
+    "end_ms": 10792974,
+    "event_type": "text.topic_shift",
+    "category": "other",
+    "value": {},
+    "confidence": 0.68,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0656",
+        "start_ms": 10792054,
+        "end_ms": 10794923
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Topic shift \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0111",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10813457,
+    "end_ms": 10819919,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.55,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10813457",
+        "start_ms": 10813457,
+        "end_ms": 10813497
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10813457.jpg",
+    "summary": "Screen share active \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0166",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_michael",
+    "start_ms": 10846531,
+    "end_ms": 10848791,
+    "event_type": "visual.gesture_pointing",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10846531",
+        "start_ms": 10846531,
+        "end_ms": 10846571
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10846531.jpg",
+    "summary": "Gesture pointing \u2014 Michael T."
+  },
+  {
+    "event_id": "ev_0008",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10849266,
+    "end_ms": 10850848,
+    "event_type": "text.action_assignment",
+    "category": "action_decision",
+    "value": {
+      "quote": "I'll take the broken-out pricing to the steering committee next Thursday."
+    },
+    "confidence": 0.94,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0672",
+        "start_ms": 10849266,
+        "end_ms": 10850848
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "I'll take the broken-out pricing to the steering committee next Thursday."
+  },
+  {
+    "event_id": "ev_0023",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10860986,
+    "end_ms": 10868796,
+    "event_type": "visual.attention_toward_speaker",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.81,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10860986",
+        "start_ms": 10860986,
+        "end_ms": 10861026
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10860986.jpg",
+    "summary": "Attention toward speaker \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0117",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10866111,
+    "end_ms": 10874054,
+    "event_type": "visual.screen_share_active",
+    "category": "value_proof",
+    "value": {},
+    "confidence": 0.64,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10866111",
+        "start_ms": 10866111,
+        "end_ms": 10866151
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10866111.jpg",
+    "summary": "Screen share active \u2014 Rajesh N."
+  },
+  {
+    "event_id": "ev_0083",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_anand",
+    "start_ms": 10889522,
+    "end_ms": 10896143,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.75,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0684",
+        "start_ms": 10890714,
+        "end_ms": 10895247
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Anand P."
+  },
+  {
+    "event_id": "ev_0040",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_emily",
+    "start_ms": 10920744,
+    "end_ms": 10923909,
+    "event_type": "visual.laptop_use",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.81,
+    "modality": "visual",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "frame",
+        "id": "fr_10920744",
+        "start_ms": 10920744,
+        "end_ms": 10920784
+      }
+    ],
+    "thumbnail_url": "/media/mtg_002/frames/10920744.jpg",
+    "summary": "Laptop use \u2014 Emily R."
+  },
+  {
+    "event_id": "ev_0009",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10928246,
+    "end_ms": 10929963,
+    "event_type": "text.decision_language",
+    "category": "action_decision",
+    "value": {
+      "quote": "I'll circulate the summary and we reconvene after the committee."
+    },
+    "confidence": 0.91,
+    "modality": "text",
+    "model_id": "qwen3-vl-8b-fp8",
+    "model_version": "2025.10",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0693",
+        "start_ms": 10928246,
+        "end_ms": 10929963
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "I'll circulate the summary and we reconvene after the committee."
+  },
+  {
+    "event_id": "ev_0084",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_unk1",
+    "start_ms": 10963283,
+    "end_ms": 10971794,
+    "event_type": "audio.interruption",
+    "category": "objection_concern",
+    "value": {},
+    "confidence": 0.91,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0703",
+        "start_ms": 10962804,
+        "end_ms": 10964752
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Interruption \u2014 Unknown 1"
+  },
+  {
+    "event_id": "ev_0112",
+    "meeting_id": "mtg_002",
+    "participant_id": "p_rajesh",
+    "start_ms": 10971154,
+    "end_ms": 10980121,
+    "event_type": "audio.speech_turn",
+    "category": "engagement_attention",
+    "value": {},
+    "confidence": 0.58,
+    "modality": "audio",
+    "model_id": "pyannote-diarization",
+    "model_version": "3.1.1",
+    "source_refs": [
+      {
+        "kind": "transcript_segment",
+        "id": "ts_0705",
+        "start_ms": 10970266,
+        "end_ms": 10974625
+      }
+    ],
+    "thumbnail_url": null,
+    "summary": "Speech turn \u2014 Rajesh N."
+  }
+]

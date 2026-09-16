@@ -1,0 +1,32 @@
+[
+  {
+    "job_id": "jb_001",
+    "kind": "analysis",
+    "status": "succeeded",
+    "stage": "score",
+    "stage_index": 4,
+    "stage_count": 4,
+    "pct": 100.0,
+    "message": "Scored 7 recipes, reused stored evidence",
+    "target_type": "analysis",
+    "target_id": "an_002",
+    "error": null,
+    "created_at": "2025-05-22T09:09:19Z",
+    "finished_at": "2025-05-22T09:10:00Z"
+  },
+  {
+    "job_id": "jb_002",
+    "kind": "ingest",
+    "status": "running",
+    "stage": "normalize",
+    "stage_index": 7,
+    "stage_count": 10,
+    "pct": 68.0,
+    "message": "Qwen3-VL keyframe semantics \u2014 1,640 / 2,410 frames",
+    "target_type": "video",
+    "target_id": "vid_20250519_client",
+    "error": null,
+    "created_at": "2026-08-29T02:40:00Z",
+    "finished_at": null
+  }
+]

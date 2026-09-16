@@ -1,0 +1,200 @@
+{
+  "meeting_id": "mtg_002",
+  "anchor": {
+    "kind": "event",
+    "id": "ev_0005",
+    "at_ms": 10281481
+  },
+  "columns": [
+    {
+      "layer": "raw",
+      "title": "Raw Detections",
+      "nodes": [
+        {
+          "id": "ln_r1",
+          "label": "Face track F01 visible",
+          "detail": "SCRFD + ArcFace, quality 0.81",
+          "start_ms": 10281481,
+          "end_ms": 10285408,
+          "participant_id": "p_rajesh",
+          "confidence": 0.93,
+          "model_id": "insightface-arcface",
+          "model_version": "w600k_r50",
+          "ref": {
+            "kind": "face_track",
+            "id": "F01",
+            "start_ms": 10281481,
+            "end_ms": 10285408
+          },
+          "parents": [],
+          "children": [
+            "ln_n1"
+          ]
+        },
+        {
+          "id": "ln_r2",
+          "label": "Speech detected, speaker S02",
+          "detail": "pyannote turn, conf 0.89",
+          "start_ms": 10281481,
+          "end_ms": 10285408,
+          "participant_id": "p_rajesh",
+          "confidence": 0.89,
+          "model_id": "pyannote-diarization",
+          "model_version": "3.1.1",
+          "ref": {
+            "kind": "speaker_segment",
+            "id": "S02",
+            "start_ms": 10281481,
+            "end_ms": 10285408
+          },
+          "parents": [],
+          "children": [
+            "ln_n1",
+            "ln_n2"
+          ]
+        },
+        {
+          "id": "ln_r3",
+          "label": "ASD speaking prob 0.94 on F01",
+          "detail": "Light-ASD, 12.5 fps",
+          "start_ms": 10281481,
+          "end_ms": 10285408,
+          "participant_id": "p_rajesh",
+          "confidence": 0.94,
+          "model_id": "light-asd",
+          "model_version": "1.0.0",
+          "ref": null,
+          "parents": [],
+          "children": [
+            "ln_n1"
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "normalized",
+      "title": "Normalized Observations",
+      "nodes": [
+        {
+          "id": "ln_n1",
+          "label": "F01 \u2194 S02 associated (0.91, auto)",
+          "detail": "Hungarian assignment over ASD\u00d7diarization overlap",
+          "start_ms": 8283000,
+          "end_ms": 10983000,
+          "participant_id": "p_rajesh",
+          "confidence": 0.91,
+          "model_id": "association-engine",
+          "model_version": "1.0.0",
+          "ref": null,
+          "parents": [
+            "ln_r1",
+            "ln_r2",
+            "ln_r3"
+          ],
+          "children": [
+            "ln_s1"
+          ]
+        },
+        {
+          "id": "ln_n2",
+          "label": "Rajesh N. speaking; asks a question",
+          "detail": "Turn transcribed, sentence type interrogative",
+          "start_ms": 10281481,
+          "end_ms": 10285408,
+          "participant_id": "p_rajesh",
+          "confidence": 0.91,
+          "model_id": "faster-whisper",
+          "model_version": "large-v3",
+          "ref": {
+            "kind": "transcript_segment",
+            "id": "ts_0517",
+            "start_ms": 10281481,
+            "end_ms": 10285408
+          },
+          "parents": [
+            "ln_r2"
+          ],
+          "children": [
+            "ln_s1"
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "semantic",
+      "title": "Semantic Evidence",
+      "nodes": [
+        {
+          "id": "ln_s1",
+          "label": "text.pricing_mention",
+          "detail": "Let's talk commercials. What does this look like for three regions?",
+          "start_ms": 10281481,
+          "end_ms": 10285408,
+          "participant_id": "p_rajesh",
+          "confidence": 0.85,
+          "model_id": "qwen3-vl-8b-fp8",
+          "model_version": "2025.10",
+          "ref": {
+            "kind": "semantic_event",
+            "id": "ev_0005",
+            "start_ms": 10281481,
+            "end_ms": 10285408
+          },
+          "parents": [
+            "ln_n1",
+            "ln_n2"
+          ],
+          "children": [
+            "ln_p1"
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "recipe",
+      "title": "Recipe Inference",
+      "nodes": [
+        {
+          "id": "ln_p1",
+          "label": "Commercial Closure \u2014 55/100",
+          "detail": "Weighted at 15%; evidence drawn from 1 cited items.",
+          "start_ms": null,
+          "end_ms": null,
+          "participant_id": null,
+          "confidence": 0.83,
+          "model_id": "qwen3-vl-8b-fp8",
+          "model_version": "2025.10",
+          "ref": null,
+          "parents": [
+            "ln_s1"
+          ],
+          "children": [
+            "ln_c1"
+          ]
+        }
+      ]
+    },
+    {
+      "layer": "score",
+      "title": "Score Contribution",
+      "nodes": [
+        {
+          "id": "ln_c1",
+          "label": "8.2 of 100",
+          "detail": "Weight 15% under Sales Meeting \u2014 Standard 1.0.0",
+          "start_ms": null,
+          "end_ms": null,
+          "participant_id": null,
+          "confidence": 0.87,
+          "model_id": "scoring-engine",
+          "model_version": "1.0.0",
+          "ref": null,
+          "parents": [
+            "ln_p1"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

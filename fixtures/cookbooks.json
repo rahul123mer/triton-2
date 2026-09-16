@@ -1,0 +1,563 @@
+[
+  {
+    "cookbook_id": "cb_sales_std",
+    "name": "Sales Meeting \u2014 Standard",
+    "version": "1.1.0",
+    "status": "prebuilt",
+    "editable": true,
+    "cloned_from": null,
+    "created_by": null,
+    "created_at": "2025-04-02T10:00:00Z",
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "name": "Requirements Discovery",
+        "version": "1.0.0",
+        "description": "Did the seller elicit concrete requirements?",
+        "weight": 18,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.question_asked",
+          "text.topic_shift"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S02",
+        "name": "Buyer / Commercial Intent",
+        "version": "1.0.0",
+        "description": "Did the buyer show concrete signals of moving forward?",
+        "weight": 18,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.commitment_language",
+          "text.pricing_mention",
+          "text.timeline_mention"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S03",
+        "name": "Value Articulation",
+        "version": "1.0.0",
+        "description": "Did the seller connect problem to capability and value?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "visual.presenting_at_screen",
+          "visual.screen_share_active"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S04",
+        "name": "Objections and Handling",
+        "version": "1.0.0",
+        "description": "What objections were raised and were they addressed?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.objection_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S05",
+        "name": "Commercial Closure",
+        "version": "1.0.0",
+        "description": "Was a commercial next move established?",
+        "weight": 13,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.pricing_mention",
+          "text.commitment_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S06",
+        "name": "Actionability / Next Steps",
+        "version": "1.0.0",
+        "description": "Were next actions explicit with owners?",
+        "weight": 9,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.action_assignment",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C02",
+        "name": "Compliance / Policy Circumvention Risk",
+        "version": "1.0.0",
+        "description": "Did anyone propose bypassing policy or controls?",
+        "weight": 4,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "text.objection_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G07",
+        "name": "Meeting Moderation / Orchestration",
+        "version": "1.0.0",
+        "description": "Was the meeting actively steered -- turn-taking managed, topics opened and closed deliberately, quieter participants brought in, and digressions returned from?",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.speech_turn",
+          "audio.interruption",
+          "audio.long_pause",
+          "text.question_asked",
+          "text.topic_shift",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      }
+    ],
+    "total_weight": 100
+  },
+  {
+    "cookbook_id": "cb_internal_std",
+    "name": "Internal Discussion \u2014 Standard",
+    "version": "1.1.0",
+    "status": "prebuilt",
+    "editable": true,
+    "cloned_from": null,
+    "created_by": null,
+    "created_at": "2025-04-02T10:00:00Z",
+    "recipes": [
+      {
+        "recipe_id": "R-G01",
+        "name": "Productivity / Focus",
+        "version": "1.0.0",
+        "description": "Was the meeting directed toward the task?",
+        "weight": 23,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.topic_shift",
+          "audio.speech_turn"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G03",
+        "name": "Participation Balance",
+        "version": "1.0.0",
+        "description": "How was speaking opportunity distributed?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.speech_turn",
+          "audio.interruption"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G02",
+        "name": "Message Clarity",
+        "version": "1.0.0",
+        "description": "Were the main points stated clearly?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G04",
+        "name": "Decision Clarity",
+        "version": "1.0.0",
+        "description": "Were decisions explicitly stated and confirmed?",
+        "weight": 13,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G05",
+        "name": "Action Ownership",
+        "version": "1.0.0",
+        "description": "Were actions assigned to identifiable owners?",
+        "weight": 13,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.action_assignment"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G06",
+        "name": "Engagement / Responsiveness",
+        "version": "1.0.0",
+        "description": "Did participants respond and stay involved?",
+        "weight": 9,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.question_asked",
+          "visual.attention_toward_speaker"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C01",
+        "name": "Adversarial Behaviour",
+        "version": "1.0.0",
+        "description": "Repeated interruption, dismissive or hostile interaction?",
+        "weight": 4,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.interruption",
+          "audio.overlap"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G07",
+        "name": "Meeting Moderation / Orchestration",
+        "version": "1.0.0",
+        "description": "Was the meeting actively steered -- turn-taking managed, topics opened and closed deliberately, quieter participants brought in, and digressions returned from?",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.speech_turn",
+          "audio.interruption",
+          "audio.long_pause",
+          "text.question_asked",
+          "text.topic_shift",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      }
+    ],
+    "total_weight": 100
+  },
+  {
+    "cookbook_id": "cb_compliance",
+    "name": "Compliance / Conduct Review",
+    "version": "1.1.0",
+    "status": "prebuilt",
+    "editable": true,
+    "cloned_from": null,
+    "created_by": null,
+    "created_at": "2025-04-02T10:00:00Z",
+    "recipes": [
+      {
+        "recipe_id": "R-C02",
+        "name": "Compliance / Policy Circumvention Risk",
+        "version": "1.0.0",
+        "description": "Did anyone propose bypassing policy or controls?",
+        "weight": 27,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "text.objection_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C03",
+        "name": "Improper Promise / Overclaim Risk",
+        "version": "1.0.0",
+        "description": "Absolute guarantees or unsupported promises?",
+        "weight": 18,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "text.commitment_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C04",
+        "name": "Improper Inducement / Ethics Signal",
+        "version": "1.0.0",
+        "description": "Language suggesting improper exchange?",
+        "weight": 18,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "text.commitment_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C01",
+        "name": "Adversarial Behaviour",
+        "version": "1.0.0",
+        "description": "Repeated interruption, dismissive or hostile interaction?",
+        "weight": 14,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.interruption",
+          "audio.overlap"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C05",
+        "name": "Suppression / Exclusion Signal",
+        "version": "1.0.0",
+        "description": "Was a participant repeatedly cut off?",
+        "weight": 13,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.interruption"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-G07",
+        "name": "Meeting Moderation / Orchestration",
+        "version": "1.0.0",
+        "description": "Was the meeting actively steered -- turn-taking managed, topics opened and closed deliberately, quieter participants brought in, and digressions returned from?",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.speech_turn",
+          "audio.interruption",
+          "audio.long_pause",
+          "text.question_asked",
+          "text.topic_shift",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      }
+    ],
+    "total_weight": 100
+  },
+  {
+    "cookbook_id": "cb_sales_myvar",
+    "name": "Sales Meeting \u2014 My Variant",
+    "version": "1.0.2",
+    "status": "custom",
+    "editable": true,
+    "cloned_from": "cb_sales_std",
+    "created_by": "Sourav S",
+    "created_at": "2025-05-21T14:02:00Z",
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "name": "Requirements Discovery",
+        "version": "1.0.0",
+        "description": "Did the seller elicit concrete requirements?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.question_asked",
+          "text.topic_shift"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S02",
+        "name": "Buyer / Commercial Intent",
+        "version": "1.0.0",
+        "description": "Did the buyer show concrete signals of moving forward?",
+        "weight": 18,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.commitment_language",
+          "text.pricing_mention",
+          "text.timeline_mention"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S03",
+        "name": "Value Articulation",
+        "version": "1.0.0",
+        "description": "Did the seller connect problem to capability and value?",
+        "weight": 9,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "visual.presenting_at_screen",
+          "visual.screen_share_active"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S04",
+        "name": "Objections and Handling",
+        "version": "1.0.0",
+        "description": "What objections were raised and were they addressed?",
+        "weight": 14,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.objection_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S05",
+        "name": "Commercial Closure",
+        "version": "1.0.0",
+        "description": "Was a commercial next move established?",
+        "weight": 9,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.pricing_mention",
+          "text.commitment_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-S06",
+        "name": "Actionability / Next Steps",
+        "version": "1.0.0",
+        "description": "Were next actions explicit with owners?",
+        "weight": 4,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "text.action_assignment",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "R-C02",
+        "name": "Compliance / Policy Circumvention Risk",
+        "version": "1.0.0",
+        "description": "Did anyone propose bypassing policy or controls?",
+        "weight": 4,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [
+          "text.objection_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      },
+      {
+        "recipe_id": "H01",
+        "name": "Professional Presence",
+        "version": "1.0.0",
+        "description": "Predefined human-scored parameter (1-10 slider).",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [],
+        "evaluation_prompt": null,
+        "thresholds": null,
+        "kind": "human"
+      },
+      {
+        "recipe_id": "H03",
+        "name": "Meeting Preparedness",
+        "version": "1.0.0",
+        "description": "Predefined human-scored parameter (1-10 slider).",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [],
+        "evaluation_prompt": null,
+        "thresholds": null,
+        "kind": "human"
+      },
+      {
+        "recipe_id": "H09",
+        "name": "Meeting Felt Unnecessarily Combative",
+        "version": "1.0.0",
+        "description": "Predefined human-scored parameter (1-10 slider).",
+        "weight": 4,
+        "polarity": "-",
+        "enabled": true,
+        "required_ingredients": [],
+        "evaluation_prompt": null,
+        "thresholds": null,
+        "kind": "human"
+      },
+      {
+        "recipe_id": "H10",
+        "name": "Overall Reviewer Impression",
+        "version": "1.0.0",
+        "description": "Predefined human-scored parameter (1-10 slider).",
+        "weight": 4,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [],
+        "evaluation_prompt": null,
+        "thresholds": null,
+        "kind": "human"
+      },
+      {
+        "recipe_id": "R-G07",
+        "name": "Meeting Moderation / Orchestration",
+        "version": "1.0.0",
+        "description": "Was the meeting actively steered -- turn-taking managed, topics opened and closed deliberately, quieter participants brought in, and digressions returned from?",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "required_ingredients": [
+          "audio.speech_turn",
+          "audio.interruption",
+          "audio.long_pause",
+          "text.question_asked",
+          "text.topic_shift",
+          "text.decision_language"
+        ],
+        "evaluation_prompt": null,
+        "thresholds": null
+      }
+    ],
+    "total_weight": 100
+  }
+]

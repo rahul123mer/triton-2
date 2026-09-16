@@ -1,0 +1,41 @@
+[
+  {
+    "video_id": "vid_20250509_boardroom",
+    "filename": "Boardroom_Day_2025_05_09.mp4",
+    "room_id": "room_bd12",
+    "room_name": "Board Room \u2014 12th Floor",
+    "recorded_on": "2025-05-09",
+    "duration_ms": 29567000,
+    "status": "processed",
+    "thumbnail_url": "/media/vid_20250509_boardroom/poster.jpg",
+    "meeting_count": 4,
+    "analyzed_meeting_count": 3,
+    "dead_footage_pct": 51.4
+  },
+  {
+    "video_id": "vid_20250519_client",
+    "filename": "Client_Day_Box_0519.mp4",
+    "room_id": null,
+    "room_name": "Client Room 3",
+    "recorded_on": "2025-05-19",
+    "duration_ms": 41229000,
+    "meeting_count": 4,
+    "analyzed_meeting_count": 4,
+    "dead_footage_pct": 69.6,
+    "status": "processed",
+    "thumbnail_url": null
+  },
+  {
+    "video_id": "vid_20250516_exec",
+    "filename": "Exec_Review_May18.mp4",
+    "room_id": null,
+    "room_name": "Exec Suite",
+    "recorded_on": "2025-05-16",
+    "duration_ms": 22533000,
+    "meeting_count": 2,
+    "analyzed_meeting_count": 2,
+    "dead_footage_pct": 71.3,
+    "status": "processed",
+    "thumbnail_url": null
+  }
+]

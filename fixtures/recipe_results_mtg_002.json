@@ -1,0 +1,750 @@
+[
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S01",
+    "recipe_name": "Requirements Discovery",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 68,
+    "confidence": 0.82,
+    "status": "SCORABLE",
+    "summary": "Requirements Discovery evaluated from stored evidence.",
+    "evidence_coverage": 88.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S01_1",
+        "text": "Buyer asks integration questions unprompted.",
+        "confidence": 0.88,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S02",
+    "recipe_name": "Buyer / Commercial Intent",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 82,
+    "confidence": 0.82,
+    "status": "SCORABLE",
+    "summary": "Buyer / Commercial Intent evaluated from stored evidence.",
+    "evidence_coverage": 88.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S02_1",
+        "text": "Buyer asks about pricing options directly.",
+        "confidence": 0.76,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0005",
+            "start_ms": 10281481,
+            "end_ms": 10285408
+          }
+        ]
+      },
+      {
+        "finding_id": "fd_R-S02_2",
+        "text": "Directional commitment without a number.",
+        "confidence": 0.89,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0006",
+            "start_ms": 10548906,
+            "end_ms": 10552654
+          }
+        ]
+      },
+      {
+        "finding_id": "fd_R-S02_3",
+        "text": "Asks for a sandbox this week.",
+        "confidence": 0.87,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0003",
+            "start_ms": 9471769,
+            "end_ms": 9476074
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S03",
+    "recipe_name": "Value Articulation",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 74,
+    "confidence": 0.77,
+    "status": "SCORABLE",
+    "summary": "Value Articulation evaluated from stored evidence.",
+    "evidence_coverage": 71.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S03_1",
+        "text": "Consolidated view demonstrated against the stated pain.",
+        "confidence": 0.73,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S04",
+    "recipe_name": "Objections and Handling",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 64,
+    "confidence": 0.82,
+    "status": "SCORABLE",
+    "summary": "Objections and Handling evaluated from stored evidence.",
+    "evidence_coverage": 79.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S04_1",
+        "text": "Prior vendor attempt stalled on schema standardisation.",
+        "confidence": 0.76,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0001",
+            "start_ms": 9199842,
+            "end_ms": 9202194
+          }
+        ]
+      },
+      {
+        "finding_id": "fd_R-S04_2",
+        "text": "Data residency raised and answered in-region.",
+        "confidence": 0.77,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0004",
+            "start_ms": 9551330,
+            "end_ms": 9555814
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S05",
+    "recipe_name": "Commercial Closure",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": null,
+    "confidence": 0.0,
+    "status": "NOT_SCORABLE",
+    "summary": "Not scorable \u2014 required evidence was unavailable.",
+    "evidence_coverage": 0.0,
+    "findings": [],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S06",
+    "recipe_name": "Actionability / Next Steps",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 88,
+    "confidence": 0.83,
+    "status": "SCORABLE",
+    "summary": "Actionability / Next Steps evaluated from stored evidence.",
+    "evidence_coverage": 85.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S06_1",
+        "text": "Sandbox access + attestation owned, due Wednesday.",
+        "confidence": 0.77,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0007",
+            "start_ms": 10764510,
+            "end_ms": 10769114
+          }
+        ]
+      },
+      {
+        "finding_id": "fd_R-S06_2",
+        "text": "Pricing to steering committee, due Thursday.",
+        "confidence": 0.9,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0008",
+            "start_ms": 10849266,
+            "end_ms": 10850848
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-S07",
+    "recipe_name": "Seller Monologue / Talk Imbalance",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 41,
+    "confidence": 0.8,
+    "status": "SCORABLE",
+    "summary": "Seller Monologue / Talk Imbalance evaluated from stored evidence.",
+    "evidence_coverage": 90.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-S07_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.89,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G01",
+    "recipe_name": "Productivity / Focus",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 71,
+    "confidence": 0.77,
+    "status": "SCORABLE",
+    "summary": "Productivity / Focus evaluated from stored evidence.",
+    "evidence_coverage": 82.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G01_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.84,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G02",
+    "recipe_name": "Message Clarity",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 66,
+    "confidence": 0.89,
+    "status": "SCORABLE",
+    "summary": "Message Clarity evaluated from stored evidence.",
+    "evidence_coverage": 77.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G02_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.77,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G03",
+    "recipe_name": "Participation Balance",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 58,
+    "confidence": 0.77,
+    "status": "SCORABLE",
+    "summary": "Participation Balance evaluated from stored evidence.",
+    "evidence_coverage": 90.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G03_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.88,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G04",
+    "recipe_name": "Decision Clarity",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 62,
+    "confidence": 0.75,
+    "status": "SCORABLE",
+    "summary": "Decision Clarity evaluated from stored evidence.",
+    "evidence_coverage": 74.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G04_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.82,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G05",
+    "recipe_name": "Action Ownership",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 85,
+    "confidence": 0.77,
+    "status": "SCORABLE",
+    "summary": "Action Ownership evaluated from stored evidence.",
+    "evidence_coverage": 85.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G05_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.92,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G06",
+    "recipe_name": "Engagement / Responsiveness",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 76,
+    "confidence": 0.75,
+    "status": "SCORABLE",
+    "summary": "Engagement / Responsiveness evaluated from stored evidence.",
+    "evidence_coverage": 86.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-G06_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.78,
+        "polarity": "+",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-C01",
+    "recipe_name": "Adversarial Behaviour",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 12,
+    "confidence": 0.76,
+    "status": "SCORABLE",
+    "summary": "Adversarial Behaviour evaluated from stored evidence.",
+    "evidence_coverage": 68.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-C01_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.88,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-C02",
+    "recipe_name": "Compliance / Policy Circumvention Risk",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 18,
+    "confidence": 0.82,
+    "status": "SCORABLE",
+    "summary": "Compliance / Policy Circumvention Risk evaluated from stored evidence.",
+    "evidence_coverage": 64.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-C02_1",
+        "text": "Residency question resolved in-region; no circumvention proposed.",
+        "confidence": 0.93,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0004",
+            "start_ms": 9551330,
+            "end_ms": 9555814
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-C03",
+    "recipe_name": "Improper Promise / Overclaim Risk",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 24,
+    "confidence": 0.88,
+    "status": "SCORABLE",
+    "summary": "Improper Promise / Overclaim Risk evaluated from stored evidence.",
+    "evidence_coverage": 59.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-C03_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.9,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-C04",
+    "recipe_name": "Improper Inducement / Ethics Signal",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 4,
+    "confidence": 0.82,
+    "status": "SCORABLE",
+    "summary": "Improper Inducement / Ethics Signal evaluated from stored evidence.",
+    "evidence_coverage": 55.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-C04_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.77,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-C05",
+    "recipe_name": "Suppression / Exclusion Signal",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "-",
+    "score": 9,
+    "confidence": 0.8,
+    "status": "SCORABLE",
+    "summary": "Suppression / Exclusion Signal evaluated from stored evidence.",
+    "evidence_coverage": 61.0,
+    "findings": [
+      {
+        "finding_id": "fd_R-C05_1",
+        "text": "Derived from aggregated evidence.",
+        "confidence": 0.78,
+        "polarity": "-",
+        "evidence_refs": [
+          {
+            "kind": "semantic_event",
+            "id": "ev_0002",
+            "start_ms": 9363180,
+            "end_ms": 9364708
+          }
+        ]
+      }
+    ],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  },
+  {
+    "meeting_id": "mtg_002",
+    "recipe_id": "R-G07",
+    "recipe_name": "Meeting Moderation / Orchestration",
+    "recipe_version": "1.0.0",
+    "kind": "ai",
+    "polarity_default": "+",
+    "score": 58,
+    "confidence": 0.77,
+    "status": "SCORABLE",
+    "summary": "Meeting Moderation / Orchestration evaluated from stored evidence.",
+    "evidence_coverage": 90.0,
+    "findings": [],
+    "counter_evidence_refs": [],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    }
+  }
+]

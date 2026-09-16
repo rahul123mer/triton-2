@@ -1,0 +1,115 @@
+{
+  "meeting_id": "mtg_002",
+  "activity": [
+    {
+      "entry_id": "ac_001",
+      "at": "2025-05-10T09:32:00Z",
+      "actor": "Sourav S",
+      "actor_kind": "user",
+      "action": "video.uploaded",
+      "summary": "Uploaded source video Boardroom_Day_2025_05_09.mp4",
+      "entity_type": "video",
+      "entity_id": "vid_20250509_boardroom",
+      "original_value": null,
+      "corrected_value": null
+    },
+    {
+      "entry_id": "ac_002",
+      "at": "2025-05-10T11:04:00Z",
+      "actor": "system",
+      "actor_kind": "system",
+      "action": "extraction.completed",
+      "summary": "Extracted 4 meetings (74.7% meeting footage)",
+      "entity_type": "video",
+      "entity_id": "vid_20250509_boardroom",
+      "original_value": null,
+      "corrected_value": null
+    },
+    {
+      "entry_id": "ac_003",
+      "at": "2025-05-21T13:40:00Z",
+      "actor": "Priya Nair",
+      "actor_kind": "user",
+      "action": "association.overridden",
+      "summary": "Linked face track F05 to speaker S04",
+      "entity_type": "association",
+      "entity_id": "as_005",
+      "original_value": "unresolved",
+      "corrected_value": "manually_linked"
+    },
+    {
+      "entry_id": "ac_004",
+      "at": "2025-05-21T16:04:00Z",
+      "actor": "Sourav S",
+      "actor_kind": "user",
+      "action": "analysis.created",
+      "summary": "Ran Sales Meeting \u2014 Standard v1.4.0",
+      "entity_type": "analysis",
+      "entity_id": "an_001",
+      "original_value": null,
+      "corrected_value": null
+    },
+    {
+      "entry_id": "ac_005",
+      "at": "2025-05-21T16:22:00Z",
+      "actor": "Sourav S",
+      "actor_kind": "user",
+      "action": "analysis.published",
+      "summary": "Published analysis an_001 (score 72.1)",
+      "entity_type": "analysis",
+      "entity_id": "an_001",
+      "original_value": null,
+      "corrected_value": null
+    },
+    {
+      "entry_id": "ac_006",
+      "at": "2025-05-22T09:10:00Z",
+      "actor": "Sourav S",
+      "actor_kind": "user",
+      "action": "analysis.created",
+      "summary": "Cloned cookbook and re-scored in 41.2s (no re-inference)",
+      "entity_type": "analysis",
+      "entity_id": "an_002",
+      "original_value": null,
+      "corrected_value": null
+    }
+  ],
+  "versions": [
+    {
+      "analysis_id": "an_001",
+      "name": "Board Room \u2014 May 09 \u2014 Sales Standard",
+      "status": "published",
+      "cookbook_name": "Sales Meeting \u2014 Standard",
+      "cookbook_version": "1.0.0",
+      "created_at": "2025-05-21T16:04:00Z",
+      "published_at": "2025-05-21T16:22:00Z",
+      "overall_score": 71.8,
+      "model_versions": {
+        "pixtral-visual": "2025.10",
+        "faster-whisper": "large-v3",
+        "pyannote-diarization": "3.1.1",
+        "insightface-arcface": "w600k_r50",
+        "recipe-evaluator": "v1",
+        "recipe_catalog": "triton-poc-1.0"
+      }
+    },
+    {
+      "analysis_id": "an_002",
+      "name": "Sales Meeting \u2014 My Variant",
+      "status": "draft",
+      "cookbook_name": "Sales Meeting \u2014 My Variant",
+      "cookbook_version": "1.0.2",
+      "created_at": "2025-05-22T09:10:00Z",
+      "published_at": null,
+      "overall_score": 66.5,
+      "model_versions": {
+        "pixtral-visual": "2025.10",
+        "faster-whisper": "large-v3",
+        "pyannote-diarization": "3.1.1",
+        "insightface-arcface": "w600k_r50",
+        "recipe-evaluator": "v1",
+        "recipe_catalog": "triton-poc-1.0"
+      }
+    }
+  ]
+}

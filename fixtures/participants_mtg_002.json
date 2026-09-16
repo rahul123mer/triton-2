@@ -1,0 +1,1369 @@
+[
+  {
+    "participant_id": "p_rajesh",
+    "meeting_id": "mtg_002",
+    "identity_id": "id_rajesh",
+    "display_name": "Rajesh N.",
+    "role": "Buyer",
+    "identity_status": "known",
+    "face_track_ids": [
+      "F01"
+    ],
+    "speaker_ids": [
+      "S02"
+    ],
+    "speaking_ms": 867840,
+    "talk_time_pct": 38.3,
+    "turn_count": 266,
+    "interruptions_made": 3,
+    "questions_asked": 70,
+    "engagement_score": 75.5,
+    "presence_intervals": [
+      {
+        "start_ms": 8291762,
+        "end_ms": 9595732
+      },
+      {
+        "start_ms": 9668301,
+        "end_ms": 10974625
+      }
+    ],
+    "speaking_intervals": [
+      {
+        "start_ms": 8291762,
+        "end_ms": 9595732
+      },
+      {
+        "start_ms": 9668301,
+        "end_ms": 10974625
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "as_001",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_rajesh",
+        "face_track_id": "F01",
+        "speaker_id": "S02",
+        "association_score": 0.91,
+        "band": "auto",
+        "evidence_method": "asd_diarization_overlap",
+        "status": "auto_linked",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "auto",
+      "best_score": 0.91,
+      "unresolved_count": 0,
+      "manual_override": false
+    },
+    "avatar_url": "/media/faces/p_rajesh.jpg",
+    "face_crop_url": null
+  },
+  {
+    "participant_id": "p_anand",
+    "meeting_id": "mtg_002",
+    "identity_id": "id_anand",
+    "display_name": "Anand P.",
+    "role": "Seller",
+    "identity_status": "known",
+    "face_track_ids": [
+      "F02"
+    ],
+    "speaker_ids": [
+      "S01"
+    ],
+    "speaking_ms": 576297,
+    "talk_time_pct": 25.4,
+    "turn_count": 184,
+    "interruptions_made": 2,
+    "questions_asked": 35,
+    "engagement_score": 72.5,
+    "presence_intervals": [
+      {
+        "start_ms": 8287000,
+        "end_ms": 9140163
+      },
+      {
+        "start_ms": 9174855,
+        "end_ms": 9194158
+      },
+      {
+        "start_ms": 9227238,
+        "end_ms": 9245402
+      },
+      {
+        "start_ms": 9276731,
+        "end_ms": 9295239
+      },
+      {
+        "start_ms": 9325478,
+        "end_ms": 9345972
+      },
+      {
+        "start_ms": 9376524,
+        "end_ms": 9392967
+      },
+      {
+        "start_ms": 9421884,
+        "end_ms": 9438880
+      },
+      {
+        "start_ms": 9466824,
+        "end_ms": 9491049
+      },
+      {
+        "start_ms": 9523292,
+        "end_ms": 9541098
+      },
+      {
+        "start_ms": 9571947,
+        "end_ms": 9587598
+      },
+      {
+        "start_ms": 9686574,
+        "end_ms": 9701672
+      },
+      {
+        "start_ms": 9724084,
+        "end_ms": 9739396
+      },
+      {
+        "start_ms": 9759826,
+        "end_ms": 9776370
+      },
+      {
+        "start_ms": 9802433,
+        "end_ms": 9818495
+      },
+      {
+        "start_ms": 9841681,
+        "end_ms": 9853899
+      },
+      {
+        "start_ms": 9879497,
+        "end_ms": 9892780
+      },
+      {
+        "start_ms": 9918865,
+        "end_ms": 9934023
+      },
+      {
+        "start_ms": 9955333,
+        "end_ms": 9969603
+      },
+      {
+        "start_ms": 9989929,
+        "end_ms": 10038591
+      },
+      {
+        "start_ms": 10063942,
+        "end_ms": 10077255
+      },
+      {
+        "start_ms": 10098435,
+        "end_ms": 10112169
+      },
+      {
+        "start_ms": 10134326,
+        "end_ms": 10146218
+      },
+      {
+        "start_ms": 10173062,
+        "end_ms": 10187642
+      },
+      {
+        "start_ms": 10209448,
+        "end_ms": 10964752
+      }
+    ],
+    "speaking_intervals": [
+      {
+        "start_ms": 8287000,
+        "end_ms": 9140163
+      },
+      {
+        "start_ms": 9174855,
+        "end_ms": 9194158
+      },
+      {
+        "start_ms": 9227238,
+        "end_ms": 9245402
+      },
+      {
+        "start_ms": 9276731,
+        "end_ms": 9295239
+      },
+      {
+        "start_ms": 9325478,
+        "end_ms": 9345972
+      },
+      {
+        "start_ms": 9376524,
+        "end_ms": 9392967
+      },
+      {
+        "start_ms": 9421884,
+        "end_ms": 9438880
+      },
+      {
+        "start_ms": 9466824,
+        "end_ms": 9491049
+      },
+      {
+        "start_ms": 9523292,
+        "end_ms": 9541098
+      },
+      {
+        "start_ms": 9571947,
+        "end_ms": 9587598
+      },
+      {
+        "start_ms": 9686574,
+        "end_ms": 9701672
+      },
+      {
+        "start_ms": 9724084,
+        "end_ms": 9739396
+      },
+      {
+        "start_ms": 9759826,
+        "end_ms": 9776370
+      },
+      {
+        "start_ms": 9802433,
+        "end_ms": 9818495
+      },
+      {
+        "start_ms": 9841681,
+        "end_ms": 9853899
+      },
+      {
+        "start_ms": 9879497,
+        "end_ms": 9892780
+      },
+      {
+        "start_ms": 9918865,
+        "end_ms": 9934023
+      },
+      {
+        "start_ms": 9955333,
+        "end_ms": 9969603
+      },
+      {
+        "start_ms": 9989929,
+        "end_ms": 10038591
+      },
+      {
+        "start_ms": 10063942,
+        "end_ms": 10077255
+      },
+      {
+        "start_ms": 10098435,
+        "end_ms": 10112169
+      },
+      {
+        "start_ms": 10134326,
+        "end_ms": 10146218
+      },
+      {
+        "start_ms": 10173062,
+        "end_ms": 10187642
+      },
+      {
+        "start_ms": 10209448,
+        "end_ms": 10964752
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "as_002",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_anand",
+        "face_track_id": "F02",
+        "speaker_id": "S01",
+        "association_score": 0.88,
+        "band": "auto",
+        "evidence_method": "asd_diarization_overlap",
+        "status": "auto_linked",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "auto",
+      "best_score": 0.88,
+      "unresolved_count": 0,
+      "manual_override": false
+    },
+    "avatar_url": "/media/faces/p_anand.jpg",
+    "face_crop_url": null
+  },
+  {
+    "participant_id": "p_emily",
+    "meeting_id": "mtg_002",
+    "identity_id": "id_emily",
+    "display_name": "Emily R.",
+    "role": "Seller",
+    "identity_status": "known",
+    "face_track_ids": [
+      "F03"
+    ],
+    "speaker_ids": [
+      "S03"
+    ],
+    "speaking_ms": 499524,
+    "talk_time_pct": 22.0,
+    "turn_count": 155,
+    "interruptions_made": 2,
+    "questions_asked": 13,
+    "engagement_score": 74.7,
+    "presence_intervals": [
+      {
+        "start_ms": 8298389,
+        "end_ms": 8577125
+      },
+      {
+        "start_ms": 8617093,
+        "end_ms": 8620459
+      },
+      {
+        "start_ms": 8668735,
+        "end_ms": 8671230
+      },
+      {
+        "start_ms": 8710334,
+        "end_ms": 8714799
+      },
+      {
+        "start_ms": 8763041,
+        "end_ms": 8767241
+      },
+      {
+        "start_ms": 8807914,
+        "end_ms": 8809699
+      },
+      {
+        "start_ms": 8856741,
+        "end_ms": 8861316
+      },
+      {
+        "start_ms": 8899073,
+        "end_ms": 8903072
+      },
+      {
+        "start_ms": 8943916,
+        "end_ms": 8946527
+      },
+      {
+        "start_ms": 8984769,
+        "end_ms": 8987152
+      },
+      {
+        "start_ms": 9031076,
+        "end_ms": 9034051
+      },
+      {
+        "start_ms": 9077170,
+        "end_ms": 9081479
+      },
+      {
+        "start_ms": 9122311,
+        "end_ms": 9127140
+      },
+      {
+        "start_ms": 9153542,
+        "end_ms": 9601782
+      },
+      {
+        "start_ms": 9663500,
+        "end_ms": 10235189
+      },
+      {
+        "start_ms": 10264170,
+        "end_ms": 10268147
+      },
+      {
+        "start_ms": 10302759,
+        "end_ms": 10306148
+      },
+      {
+        "start_ms": 10337964,
+        "end_ms": 10341148
+      },
+      {
+        "start_ms": 10372436,
+        "end_ms": 10374768
+      },
+      {
+        "start_ms": 10404754,
+        "end_ms": 10407027
+      },
+      {
+        "start_ms": 10437276,
+        "end_ms": 10440341
+      },
+      {
+        "start_ms": 10471148,
+        "end_ms": 10475942
+      },
+      {
+        "start_ms": 10506450,
+        "end_ms": 10510035
+      },
+      {
+        "start_ms": 10544103,
+        "end_ms": 10545951
+      },
+      {
+        "start_ms": 10574720,
+        "end_ms": 10577648
+      },
+      {
+        "start_ms": 10605474,
+        "end_ms": 10608737
+      },
+      {
+        "start_ms": 10635060,
+        "end_ms": 10638777
+      },
+      {
+        "start_ms": 10666944,
+        "end_ms": 10748504
+      },
+      {
+        "start_ms": 10769691,
+        "end_ms": 10771494
+      },
+      {
+        "start_ms": 10792054,
+        "end_ms": 10876775
+      },
+      {
+        "start_ms": 10900096,
+        "end_ms": 10969518
+      }
+    ],
+    "speaking_intervals": [
+      {
+        "start_ms": 8298389,
+        "end_ms": 8577125
+      },
+      {
+        "start_ms": 8617093,
+        "end_ms": 8620459
+      },
+      {
+        "start_ms": 8668735,
+        "end_ms": 8671230
+      },
+      {
+        "start_ms": 8710334,
+        "end_ms": 8714799
+      },
+      {
+        "start_ms": 8763041,
+        "end_ms": 8767241
+      },
+      {
+        "start_ms": 8807914,
+        "end_ms": 8809699
+      },
+      {
+        "start_ms": 8856741,
+        "end_ms": 8861316
+      },
+      {
+        "start_ms": 8899073,
+        "end_ms": 8903072
+      },
+      {
+        "start_ms": 8943916,
+        "end_ms": 8946527
+      },
+      {
+        "start_ms": 8984769,
+        "end_ms": 8987152
+      },
+      {
+        "start_ms": 9031076,
+        "end_ms": 9034051
+      },
+      {
+        "start_ms": 9077170,
+        "end_ms": 9081479
+      },
+      {
+        "start_ms": 9122311,
+        "end_ms": 9127140
+      },
+      {
+        "start_ms": 9153542,
+        "end_ms": 9601782
+      },
+      {
+        "start_ms": 9663500,
+        "end_ms": 10235189
+      },
+      {
+        "start_ms": 10264170,
+        "end_ms": 10268147
+      },
+      {
+        "start_ms": 10302759,
+        "end_ms": 10306148
+      },
+      {
+        "start_ms": 10337964,
+        "end_ms": 10341148
+      },
+      {
+        "start_ms": 10372436,
+        "end_ms": 10374768
+      },
+      {
+        "start_ms": 10404754,
+        "end_ms": 10407027
+      },
+      {
+        "start_ms": 10437276,
+        "end_ms": 10440341
+      },
+      {
+        "start_ms": 10471148,
+        "end_ms": 10475942
+      },
+      {
+        "start_ms": 10506450,
+        "end_ms": 10510035
+      },
+      {
+        "start_ms": 10544103,
+        "end_ms": 10545951
+      },
+      {
+        "start_ms": 10574720,
+        "end_ms": 10577648
+      },
+      {
+        "start_ms": 10605474,
+        "end_ms": 10608737
+      },
+      {
+        "start_ms": 10635060,
+        "end_ms": 10638777
+      },
+      {
+        "start_ms": 10666944,
+        "end_ms": 10748504
+      },
+      {
+        "start_ms": 10769691,
+        "end_ms": 10771494
+      },
+      {
+        "start_ms": 10792054,
+        "end_ms": 10876775
+      },
+      {
+        "start_ms": 10900096,
+        "end_ms": 10969518
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "as_003",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_emily",
+        "face_track_id": "F03",
+        "speaker_id": "S03",
+        "association_score": 0.74,
+        "band": "auto",
+        "evidence_method": "asd_diarization_overlap",
+        "status": "auto_linked",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "auto",
+      "best_score": 0.74,
+      "unresolved_count": 0,
+      "manual_override": false
+    },
+    "avatar_url": "/media/faces/p_emily.jpg",
+    "face_crop_url": null
+  },
+  {
+    "participant_id": "p_michael",
+    "meeting_id": "mtg_002",
+    "identity_id": "id_michael",
+    "display_name": "Michael T.",
+    "role": "Buyer",
+    "identity_status": "known",
+    "face_track_ids": [
+      "F04"
+    ],
+    "speaker_ids": [],
+    "speaking_ms": 0,
+    "talk_time_pct": 0.0,
+    "turn_count": 0,
+    "interruptions_made": 0,
+    "questions_asked": 0,
+    "engagement_score": 85.4,
+    "presence_intervals": [
+      {
+        "start_ms": 8343000,
+        "end_ms": 10863000
+      }
+    ],
+    "speaking_intervals": [],
+    "associations": [
+      {
+        "association_id": "as_004",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_michael",
+        "face_track_id": "F04",
+        "speaker_id": null,
+        "association_score": null,
+        "band": "unresolved",
+        "evidence_method": "none",
+        "status": "unresolved",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "unresolved",
+      "best_score": null,
+      "unresolved_count": 1,
+      "manual_override": false
+    },
+    "avatar_url": "/media/faces/p_michael.jpg",
+    "face_crop_url": null
+  },
+  {
+    "participant_id": "p_unk1",
+    "meeting_id": "mtg_002",
+    "identity_id": null,
+    "display_name": "Unknown 1",
+    "role": null,
+    "identity_status": "unknown",
+    "face_track_ids": [
+      "F05"
+    ],
+    "speaker_ids": [
+      "S04"
+    ],
+    "speaking_ms": 239259,
+    "talk_time_pct": 10.6,
+    "turn_count": 78,
+    "interruptions_made": 1,
+    "questions_asked": 28,
+    "engagement_score": 65.7,
+    "presence_intervals": [
+      {
+        "start_ms": 8562301,
+        "end_ms": 8571929
+      },
+      {
+        "start_ms": 8608534,
+        "end_ms": 8616348
+      },
+      {
+        "start_ms": 8657914,
+        "end_ms": 8667992
+      },
+      {
+        "start_ms": 8701433,
+        "end_ms": 8709909
+      },
+      {
+        "start_ms": 8750208,
+        "end_ms": 8762689
+      },
+      {
+        "start_ms": 8799453,
+        "end_ms": 8807113
+      },
+      {
+        "start_ms": 8844223,
+        "end_ms": 8855988
+      },
+      {
+        "start_ms": 8887306,
+        "end_ms": 8898844
+      },
+      {
+        "start_ms": 8933701,
+        "end_ms": 8943277
+      },
+      {
+        "start_ms": 8975111,
+        "end_ms": 8984161
+      },
+      {
+        "start_ms": 9021127,
+        "end_ms": 9030433
+      },
+      {
+        "start_ms": 9067025,
+        "end_ms": 9076665
+      },
+      {
+        "start_ms": 9113777,
+        "end_ms": 9121977
+      },
+      {
+        "start_ms": 9186940,
+        "end_ms": 9191580
+      },
+      {
+        "start_ms": 9236539,
+        "end_ms": 9240611
+      },
+      {
+        "start_ms": 9287108,
+        "end_ms": 9291422
+      },
+      {
+        "start_ms": 9338157,
+        "end_ms": 9342101
+      },
+      {
+        "start_ms": 9388608,
+        "end_ms": 9390528
+      },
+      {
+        "start_ms": 9432453,
+        "end_ms": 9434163
+      },
+      {
+        "start_ms": 9481324,
+        "end_ms": 9485396
+      },
+      {
+        "start_ms": 9533808,
+        "end_ms": 9537263
+      },
+      {
+        "start_ms": 9580039,
+        "end_ms": 9583582
+      },
+      {
+        "start_ms": 9675424,
+        "end_ms": 9678365
+      },
+      {
+        "start_ms": 9711874,
+        "end_ms": 9714898
+      },
+      {
+        "start_ms": 9749257,
+        "end_ms": 9751123
+      },
+      {
+        "start_ms": 9790223,
+        "end_ms": 9794021
+      },
+      {
+        "start_ms": 9832039,
+        "end_ms": 9836348
+      },
+      {
+        "start_ms": 9865104,
+        "end_ms": 9869845
+      },
+      {
+        "start_ms": 9904675,
+        "end_ms": 9909434
+      },
+      {
+        "start_ms": 9943706,
+        "end_ms": 9947486
+      },
+      {
+        "start_ms": 9978963,
+        "end_ms": 9983640
+      },
+      {
+        "start_ms": 10013689,
+        "end_ms": 10015294
+      },
+      {
+        "start_ms": 10049495,
+        "end_ms": 10054211
+      },
+      {
+        "start_ms": 10087755,
+        "end_ms": 10089499
+      },
+      {
+        "start_ms": 10123868,
+        "end_ms": 10125661
+      },
+      {
+        "start_ms": 10159704,
+        "end_ms": 10162501
+      },
+      {
+        "start_ms": 10198631,
+        "end_ms": 10200720
+      },
+      {
+        "start_ms": 10249943,
+        "end_ms": 10251902
+      },
+      {
+        "start_ms": 10286136,
+        "end_ms": 10290206
+      },
+      {
+        "start_ms": 10322175,
+        "end_ms": 10326188
+      },
+      {
+        "start_ms": 10357790,
+        "end_ms": 10361408
+      },
+      {
+        "start_ms": 10389620,
+        "end_ms": 10392302
+      },
+      {
+        "start_ms": 10422799,
+        "end_ms": 10425325
+      },
+      {
+        "start_ms": 10456512,
+        "end_ms": 10458211
+      },
+      {
+        "start_ms": 10492384,
+        "end_ms": 10494374
+      },
+      {
+        "start_ms": 10528572,
+        "end_ms": 10533154
+      },
+      {
+        "start_ms": 10561559,
+        "end_ms": 10565747
+      },
+      {
+        "start_ms": 10591407,
+        "end_ms": 10595486
+      },
+      {
+        "start_ms": 10623535,
+        "end_ms": 10625231
+      },
+      {
+        "start_ms": 10656669,
+        "end_ms": 10755359
+      },
+      {
+        "start_ms": 10776797,
+        "end_ms": 10818673
+      },
+      {
+        "start_ms": 10840246,
+        "end_ms": 10886944
+      },
+      {
+        "start_ms": 10907518,
+        "end_ms": 10909557
+      },
+      {
+        "start_ms": 10930222,
+        "end_ms": 10932629
+      },
+      {
+        "start_ms": 10954196,
+        "end_ms": 10977268
+      }
+    ],
+    "speaking_intervals": [
+      {
+        "start_ms": 8562301,
+        "end_ms": 8571929
+      },
+      {
+        "start_ms": 8608534,
+        "end_ms": 8616348
+      },
+      {
+        "start_ms": 8657914,
+        "end_ms": 8667992
+      },
+      {
+        "start_ms": 8701433,
+        "end_ms": 8709909
+      },
+      {
+        "start_ms": 8750208,
+        "end_ms": 8762689
+      },
+      {
+        "start_ms": 8799453,
+        "end_ms": 8807113
+      },
+      {
+        "start_ms": 8844223,
+        "end_ms": 8855988
+      },
+      {
+        "start_ms": 8887306,
+        "end_ms": 8898844
+      },
+      {
+        "start_ms": 8933701,
+        "end_ms": 8943277
+      },
+      {
+        "start_ms": 8975111,
+        "end_ms": 8984161
+      },
+      {
+        "start_ms": 9021127,
+        "end_ms": 9030433
+      },
+      {
+        "start_ms": 9067025,
+        "end_ms": 9076665
+      },
+      {
+        "start_ms": 9113777,
+        "end_ms": 9121977
+      },
+      {
+        "start_ms": 9186940,
+        "end_ms": 9191580
+      },
+      {
+        "start_ms": 9236539,
+        "end_ms": 9240611
+      },
+      {
+        "start_ms": 9287108,
+        "end_ms": 9291422
+      },
+      {
+        "start_ms": 9338157,
+        "end_ms": 9342101
+      },
+      {
+        "start_ms": 9388608,
+        "end_ms": 9390528
+      },
+      {
+        "start_ms": 9432453,
+        "end_ms": 9434163
+      },
+      {
+        "start_ms": 9481324,
+        "end_ms": 9485396
+      },
+      {
+        "start_ms": 9533808,
+        "end_ms": 9537263
+      },
+      {
+        "start_ms": 9580039,
+        "end_ms": 9583582
+      },
+      {
+        "start_ms": 9675424,
+        "end_ms": 9678365
+      },
+      {
+        "start_ms": 9711874,
+        "end_ms": 9714898
+      },
+      {
+        "start_ms": 9749257,
+        "end_ms": 9751123
+      },
+      {
+        "start_ms": 9790223,
+        "end_ms": 9794021
+      },
+      {
+        "start_ms": 9832039,
+        "end_ms": 9836348
+      },
+      {
+        "start_ms": 9865104,
+        "end_ms": 9869845
+      },
+      {
+        "start_ms": 9904675,
+        "end_ms": 9909434
+      },
+      {
+        "start_ms": 9943706,
+        "end_ms": 9947486
+      },
+      {
+        "start_ms": 9978963,
+        "end_ms": 9983640
+      },
+      {
+        "start_ms": 10013689,
+        "end_ms": 10015294
+      },
+      {
+        "start_ms": 10049495,
+        "end_ms": 10054211
+      },
+      {
+        "start_ms": 10087755,
+        "end_ms": 10089499
+      },
+      {
+        "start_ms": 10123868,
+        "end_ms": 10125661
+      },
+      {
+        "start_ms": 10159704,
+        "end_ms": 10162501
+      },
+      {
+        "start_ms": 10198631,
+        "end_ms": 10200720
+      },
+      {
+        "start_ms": 10249943,
+        "end_ms": 10251902
+      },
+      {
+        "start_ms": 10286136,
+        "end_ms": 10290206
+      },
+      {
+        "start_ms": 10322175,
+        "end_ms": 10326188
+      },
+      {
+        "start_ms": 10357790,
+        "end_ms": 10361408
+      },
+      {
+        "start_ms": 10389620,
+        "end_ms": 10392302
+      },
+      {
+        "start_ms": 10422799,
+        "end_ms": 10425325
+      },
+      {
+        "start_ms": 10456512,
+        "end_ms": 10458211
+      },
+      {
+        "start_ms": 10492384,
+        "end_ms": 10494374
+      },
+      {
+        "start_ms": 10528572,
+        "end_ms": 10533154
+      },
+      {
+        "start_ms": 10561559,
+        "end_ms": 10565747
+      },
+      {
+        "start_ms": 10591407,
+        "end_ms": 10595486
+      },
+      {
+        "start_ms": 10623535,
+        "end_ms": 10625231
+      },
+      {
+        "start_ms": 10656669,
+        "end_ms": 10755359
+      },
+      {
+        "start_ms": 10776797,
+        "end_ms": 10818673
+      },
+      {
+        "start_ms": 10840246,
+        "end_ms": 10886944
+      },
+      {
+        "start_ms": 10907518,
+        "end_ms": 10909557
+      },
+      {
+        "start_ms": 10930222,
+        "end_ms": 10932629
+      },
+      {
+        "start_ms": 10954196,
+        "end_ms": 10977268
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "as_005",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_unk1",
+        "face_track_id": "F05",
+        "speaker_id": "S04",
+        "association_score": 0.61,
+        "band": "review",
+        "evidence_method": "asd_diarization_overlap",
+        "status": "review",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "review",
+      "best_score": 0.61,
+      "unresolved_count": 0,
+      "manual_override": false
+    },
+    "avatar_url": "/media/faces/p_unk1.jpg",
+    "face_crop_url": null
+  },
+  {
+    "participant_id": "p_offcam",
+    "meeting_id": "mtg_002",
+    "identity_id": null,
+    "display_name": "Off-camera Speaker",
+    "role": null,
+    "identity_status": "unresolved",
+    "face_track_ids": [],
+    "speaker_ids": [
+      "S05"
+    ],
+    "speaking_ms": 82763,
+    "talk_time_pct": 3.7,
+    "turn_count": 23,
+    "interruptions_made": 2,
+    "questions_asked": 10,
+    "engagement_score": null,
+    "presence_intervals": [
+      {
+        "start_ms": 8581056,
+        "end_ms": 8585725
+      },
+      {
+        "start_ms": 8625572,
+        "end_ms": 8629006
+      },
+      {
+        "start_ms": 8676400,
+        "end_ms": 8681250
+      },
+      {
+        "start_ms": 8719936,
+        "end_ms": 8724184
+      },
+      {
+        "start_ms": 8771778,
+        "end_ms": 8774975
+      },
+      {
+        "start_ms": 8815189,
+        "end_ms": 8817531
+      },
+      {
+        "start_ms": 8866255,
+        "end_ms": 8868089
+      },
+      {
+        "start_ms": 8907185,
+        "end_ms": 8911087
+      },
+      {
+        "start_ms": 8952234,
+        "end_ms": 8957053
+      },
+      {
+        "start_ms": 8993343,
+        "end_ms": 8998021
+      },
+      {
+        "start_ms": 9039717,
+        "end_ms": 9043945
+      },
+      {
+        "start_ms": 9086399,
+        "end_ms": 9088548
+      },
+      {
+        "start_ms": 9130151,
+        "end_ms": 9134617
+      },
+      {
+        "start_ms": 9161277,
+        "end_ms": 9163983
+      },
+      {
+        "start_ms": 9206101,
+        "end_ms": 9210590
+      },
+      {
+        "start_ms": 9260010,
+        "end_ms": 9263647
+      },
+      {
+        "start_ms": 9306998,
+        "end_ms": 9310470
+      },
+      {
+        "start_ms": 9359488,
+        "end_ms": 9362886
+      },
+      {
+        "start_ms": 9404252,
+        "end_ms": 9408216
+      },
+      {
+        "start_ms": 9450219,
+        "end_ms": 9453767
+      },
+      {
+        "start_ms": 9501690,
+        "end_ms": 9504927
+      },
+      {
+        "start_ms": 9556392,
+        "end_ms": 9559217
+      },
+      {
+        "start_ms": 9596117,
+        "end_ms": 9598788
+      }
+    ],
+    "speaking_intervals": [
+      {
+        "start_ms": 8581056,
+        "end_ms": 8585725
+      },
+      {
+        "start_ms": 8625572,
+        "end_ms": 8629006
+      },
+      {
+        "start_ms": 8676400,
+        "end_ms": 8681250
+      },
+      {
+        "start_ms": 8719936,
+        "end_ms": 8724184
+      },
+      {
+        "start_ms": 8771778,
+        "end_ms": 8774975
+      },
+      {
+        "start_ms": 8815189,
+        "end_ms": 8817531
+      },
+      {
+        "start_ms": 8866255,
+        "end_ms": 8868089
+      },
+      {
+        "start_ms": 8907185,
+        "end_ms": 8911087
+      },
+      {
+        "start_ms": 8952234,
+        "end_ms": 8957053
+      },
+      {
+        "start_ms": 8993343,
+        "end_ms": 8998021
+      },
+      {
+        "start_ms": 9039717,
+        "end_ms": 9043945
+      },
+      {
+        "start_ms": 9086399,
+        "end_ms": 9088548
+      },
+      {
+        "start_ms": 9130151,
+        "end_ms": 9134617
+      },
+      {
+        "start_ms": 9161277,
+        "end_ms": 9163983
+      },
+      {
+        "start_ms": 9206101,
+        "end_ms": 9210590
+      },
+      {
+        "start_ms": 9260010,
+        "end_ms": 9263647
+      },
+      {
+        "start_ms": 9306998,
+        "end_ms": 9310470
+      },
+      {
+        "start_ms": 9359488,
+        "end_ms": 9362886
+      },
+      {
+        "start_ms": 9404252,
+        "end_ms": 9408216
+      },
+      {
+        "start_ms": 9450219,
+        "end_ms": 9453767
+      },
+      {
+        "start_ms": 9501690,
+        "end_ms": 9504927
+      },
+      {
+        "start_ms": 9556392,
+        "end_ms": 9559217
+      },
+      {
+        "start_ms": 9596117,
+        "end_ms": 9598788
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "as_006",
+        "meeting_id": "mtg_002",
+        "participant_id": "p_offcam",
+        "face_track_id": null,
+        "speaker_id": "S05",
+        "association_score": null,
+        "band": "unresolved",
+        "evidence_method": "none",
+        "status": "unresolved",
+        "manual_override": false,
+        "overridden_by": null,
+        "overridden_at": null
+      }
+    ],
+    "association_summary": {
+      "best_band": "unresolved",
+      "best_score": null,
+      "unresolved_count": 1,
+      "manual_override": false
+    },
+    "avatar_url": null,
+    "face_crop_url": null
+  }
+]

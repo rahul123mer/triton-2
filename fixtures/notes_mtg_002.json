@@ -1,0 +1,55 @@
+[
+  {
+    "note_id": "nt_001",
+    "meeting_id": "mtg_002",
+    "kind": "reviewer",
+    "author": "Jane Smith",
+    "author_role": "Analyst",
+    "created_at": "2025-05-22T10:02:00Z",
+    "text": "Strong buyer intent and solid action planning. Objection on integration noted.",
+    "visibility": "published_with_report",
+    "analysis_id": "an_001",
+    "participant_id": null,
+    "recipe_id": "R-S02",
+    "anchor_ms": 10281481,
+    "evidence_ref": {
+      "kind": "semantic_event",
+      "id": "ev_0005",
+      "start_ms": 10281481,
+      "end_ms": 10285408
+    },
+    "edited_at": null
+  },
+  {
+    "note_id": "nt_002",
+    "meeting_id": "mtg_002",
+    "kind": "participant_response",
+    "author": "Michael T.",
+    "author_role": "Buyer",
+    "created_at": "2025-05-22T09:15:00Z",
+    "text": "Thanks for the insights. A couple of objections are outdated.",
+    "visibility": "team",
+    "analysis_id": "an_001",
+    "participant_id": "p_michael",
+    "recipe_id": null,
+    "anchor_ms": null,
+    "evidence_ref": null,
+    "edited_at": null
+  },
+  {
+    "note_id": "nt_003",
+    "meeting_id": "mtg_002",
+    "kind": "internal",
+    "author": "Sourav S",
+    "author_role": "Admin",
+    "created_at": "2025-05-22T11:00:00Z",
+    "text": "Diarization confidence is low across the middle third; confirm before publishing.",
+    "visibility": "private",
+    "analysis_id": "an_001",
+    "participant_id": null,
+    "recipe_id": null,
+    "anchor_ms": null,
+    "evidence_ref": null,
+    "edited_at": null
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "video_id": "vid_20250509_boardroom",
+  "filename": "Boardroom_Day_2025_05_09.mp4",
+  "room_id": "room_bd12",
+  "room_name": "Board Room \u2014 12th Floor",
+  "camera_id": "cam_bd12_01",
+  "audio_source_id": "mic_bd12_omni",
+  "recorded_on": "2025-05-09",
+  "duration_ms": 29567000,
+  "size_bytes": 5626407322,
+  "resolution": "1920x1080",
+  "fps": 25.0,
+  "status": "processed",
+  "uploaded_by": "Sourav S",
+  "uploaded_at": "2025-05-10T09:32:00Z",
+  "sha256": "9f2c1ab7d4e05583c7a1f6b28d90e4417ccf3a1b5d6e8290f4a7c3b1e5d0928a",
+  "thumbnail_url": "/media/vid_20250509_boardroom/poster.jpg",
+  "extraction_ruleset_version": "extract-v1.0.0",
+  "footage_breakdown": {
+    "total_duration_ms": 29567000,
+    "meeting_duration_ms": 14360000,
+    "dead_duration_ms": 15207000,
+    "meeting_pct": 48.6,
+    "dead_footage_pct": 51.4,
+    "meeting_count": 4,
+    "segments": [
+      {
+        "kind": "dead",
+        "meeting_id": null,
+        "label": null,
+        "start_ms": 0,
+        "end_ms": 502000
+      },
+      {
+        "kind": "meeting",
+        "meeting_id": "mtg_001",
+        "label": "1 Meeting",
+        "start_ms": 502000,
+        "end_ms": 5230000
+      },
+      {
+        "kind": "dead",
+        "meeting_id": null,
+        "label": null,
+        "start_ms": 5230000,
+        "end_ms": 8283000
+      },
+      {
+        "kind": "meeting",
+        "meeting_id": "mtg_002",
+        "label": "2 Meeting",
+        "start_ms": 8283000,
+        "end_ms": 10983000
+      },
+      {
+        "kind": "dead",
+        "meeting_id": null,
+        "label": null,
+        "start_ms": 10983000,
+        "end_ms": 15342000
+      },
+      {
+        "kind": "meeting",
+        "meeting_id": "mtg_003",
+        "label": "3 Meeting",
+        "start_ms": 15342000,
+        "end_ms": 18273000
+      },
+      {
+        "kind": "dead",
+        "meeting_id": null,
+        "label": null,
+        "start_ms": 18273000,
+        "end_ms": 22205000
+      },
+      {
+        "kind": "meeting",
+        "meeting_id": "mtg_004",
+        "label": "4 Meeting",
+        "start_ms": 22205000,
+        "end_ms": 26206000
+      },
+      {
+        "kind": "dead",
+        "meeting_id": null,
+        "label": null,
+        "start_ms": 26206000,
+        "end_ms": 29567000
+      }
+    ]
+  }
+}

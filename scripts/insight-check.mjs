@@ -1,0 +1,10 @@
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const { chromium } = require('C:/SSGC/POS-ScreenDescription/frontend/node_modules/playwright')
+const browser = await chromium.launch({ headless: true })
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
+await page.goto('http://localhost:5173/restaurant', { waitUntil: 'networkidle' })
+const text = await page.locator('body').innerText()
+console.log(text.split('\n').filter(l => /longest|highest|fewest|accumulated|T04|Plating|Alex|Daniel Carter/.test(l)).join('\n'))
+await page.screenshot({ path: 'C:/SSGC/Triton-2/scripts/overview.png' })
+await browser.close()

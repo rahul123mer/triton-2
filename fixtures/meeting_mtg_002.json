@@ -1,0 +1,35 @@
+{
+  "meeting_id": "mtg_002",
+  "video_id": "vid_20250509_boardroom",
+  "label": "2 Meeting",
+  "start_offset_ms": 8283000,
+  "end_offset_ms": 10983000,
+  "duration_ms": 2700000,
+  "status": "analyzed",
+  "participant_count": 6,
+  "current_analysis_id": "an_001",
+  "analysis_ids": [
+    "an_001",
+    "an_002"
+  ],
+  "evidence_count": 180,
+  "transcript_segment_count": 706,
+  "traceability": {
+    "room_id": "room_bd12",
+    "room_name": "Board Room \u2014 12th Floor",
+    "camera_id": "cam_bd12_01",
+    "audio_source_id": "mic_bd12_omni",
+    "source_filename": "Boardroom_Day_2025_05_09.mp4",
+    "source_recorded_on": "2025-05-09",
+    "evidence_coverage": 81.0,
+    "extraction_ruleset_version": "extract-v1.0.0",
+    "model_versions": {
+      "qwen3-vl-8b-fp8": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "light-asd": "1.0.0",
+      "insightface-arcface": "w600k_r50",
+      "yolov8": "8.2.0"
+    }
+  }
+}

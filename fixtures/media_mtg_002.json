@@ -1,0 +1,8 @@
+{
+  "hls_url": "/media/mtg_002/index.m3u8",
+  "poster_url": "/media/mtg_002/poster.jpg",
+  "thumbnails_vtt": "/media/mtg_002/thumbs.vtt",
+  "duration_ms": 2700000,
+  "clip_offset_ms": 8283000,
+  "expires_at": "2026-08-30T00:00:00Z"
+}

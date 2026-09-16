@@ -1,0 +1,9 @@
+{
+  "dry_run": true,
+  "affected_meetings": 4,
+  "affected_analyses_published": 1,
+  "affected_analyses_draft": 1,
+  "affected_overrides": 1,
+  "warning": "Re-extraction supersedes all 4 existing meetings and their analyses. Published analyses are retained read-only for audit; manual overrides do not carry across new meeting boundaries.",
+  "job_id": null
+}

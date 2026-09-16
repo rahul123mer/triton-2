@@ -1,0 +1,56 @@
+[
+  {
+    "identity_id": "id_rajesh",
+    "display_name": "Rajesh N.",
+    "identity_status": "known",
+    "sample_count": 28,
+    "meeting_count": 4,
+    "avatar_url": "/media/faces/p_rajesh.jpg",
+    "sample_urls": []
+  },
+  {
+    "identity_id": "id_anand",
+    "display_name": "Anand P.",
+    "identity_status": "known",
+    "sample_count": 31,
+    "meeting_count": 6,
+    "avatar_url": "/media/faces/p_anand.jpg",
+    "sample_urls": []
+  },
+  {
+    "identity_id": "id_emily",
+    "display_name": "Emily R.",
+    "identity_status": "known",
+    "sample_count": 24,
+    "meeting_count": 5,
+    "avatar_url": "/media/faces/p_emily.jpg",
+    "sample_urls": []
+  },
+  {
+    "identity_id": "id_michael",
+    "display_name": "Michael T.",
+    "identity_status": "known",
+    "sample_count": 19,
+    "meeting_count": 3,
+    "avatar_url": "/media/faces/p_michael.jpg",
+    "sample_urls": []
+  },
+  {
+    "identity_id": "id_unk_1",
+    "display_name": "Unknown 1",
+    "identity_status": "unknown",
+    "sample_count": 7,
+    "meeting_count": 1,
+    "avatar_url": "/media/faces/p_unk1.jpg",
+    "sample_urls": []
+  },
+  {
+    "identity_id": "id_unk_2",
+    "display_name": "Unknown 2",
+    "identity_status": "unknown",
+    "sample_count": 4,
+    "meeting_count": 1,
+    "avatar_url": null,
+    "sample_urls": []
+  }
+]

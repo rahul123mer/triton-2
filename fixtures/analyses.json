@@ -1,0 +1,5235 @@
+[
+  {
+    "analysis_id": "an_001",
+    "meeting_id": "mtg_002",
+    "name": "Board Room \u2014 May 09 \u2014 Sales Standard",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 71.8,
+    "overall_band": "Good",
+    "evidence_coverage": 74.1,
+    "confidence": 0.87,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 68,
+        "human_slider": null,
+        "basis": 68,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 13.6,
+        "contribution_label": "13.6",
+        "band": "Mixed",
+        "finding_text": "Requirements Discovery scored 68/100 from 1 cited evidence items.",
+        "why": "Weighted at 20%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 88.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S01_1",
+            "text": "Buyer asks integration questions unprompted.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0002",
+                "start_ms": 9363180,
+                "end_ms": 9364708
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 82,
+        "human_slider": null,
+        "basis": 82,
+        "status": "SCORABLE",
+        "confidence": 0.88,
+        "contribution": 16.4,
+        "contribution_label": "16.4",
+        "band": "Good",
+        "finding_text": "Buyer / Commercial Intent scored 82/100 from 3 cited evidence items.",
+        "why": "Weighted at 20%; evidence drawn from 3 cited items.",
+        "evidence_coverage": 88.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S02_1",
+            "text": "Buyer asks about pricing options directly.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0005",
+                "start_ms": 10281481,
+                "end_ms": 10285408
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S02_2",
+            "text": "Directional commitment without a number.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0006",
+                "start_ms": 10548906,
+                "end_ms": 10552654
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S02_3",
+            "text": "Asks for a sandbox this week.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0003",
+                "start_ms": 9471769,
+                "end_ms": 9476074
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 74,
+        "human_slider": null,
+        "basis": 74,
+        "status": "SCORABLE",
+        "confidence": 0.82,
+        "contribution": 11.1,
+        "contribution_label": "11.1",
+        "band": "Good",
+        "finding_text": "Value Articulation scored 74/100 from 1 cited evidence items.",
+        "why": "Weighted at 15%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 71.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S03_1",
+            "text": "Consolidated view demonstrated against the stated pain.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0002",
+                "start_ms": 9363180,
+                "end_ms": 9364708
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 64,
+        "human_slider": null,
+        "basis": 64,
+        "status": "SCORABLE",
+        "confidence": 0.79,
+        "contribution": 9.6,
+        "contribution_label": "9.6",
+        "band": "Mixed",
+        "finding_text": "Objections and Handling scored 64/100 from 2 cited evidence items.",
+        "why": "Weighted at 15%; evidence drawn from 2 cited items.",
+        "evidence_coverage": 79.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S04_1",
+            "text": "Prior vendor attempt stalled on schema standardisation.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0001",
+                "start_ms": 9199842,
+                "end_ms": 9202194
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S04_2",
+            "text": "Data residency raised and answered in-region.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0004",
+                "start_ms": 9551330,
+                "end_ms": 9555814
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 55,
+        "human_slider": null,
+        "basis": 55,
+        "status": "SCORABLE",
+        "confidence": 0.83,
+        "contribution": 8.25,
+        "contribution_label": "8.2",
+        "band": "Mixed",
+        "finding_text": "Commercial Closure scored 55/100 from 1 cited evidence items.",
+        "why": "Weighted at 15%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 44.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S05_1",
+            "text": "Commercial direction agreed; no committed number.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0006",
+                "start_ms": 10548906,
+                "end_ms": 10552654
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 88,
+        "human_slider": null,
+        "basis": 88,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 8.8,
+        "contribution_label": "8.8",
+        "band": "Excellent",
+        "finding_text": "Actionability / Next Steps scored 88/100 from 2 cited evidence items.",
+        "why": "Weighted at 10%; evidence drawn from 2 cited items.",
+        "evidence_coverage": 85.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S06_1",
+            "text": "Sandbox access + attestation owned, due Wednesday.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0007",
+                "start_ms": 10764510,
+                "end_ms": 10769114
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S06_2",
+            "text": "Pricing to steering committee, due Thursday.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0008",
+                "start_ms": 10849266,
+                "end_ms": 10850848
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 18,
+        "human_slider": null,
+        "basis": 82.0,
+        "status": "SCORABLE",
+        "confidence": 0.87,
+        "contribution": 4.1,
+        "contribution_label": "4.1",
+        "band": "Poor / High Concern",
+        "finding_text": "Compliance / Policy Circumvention Risk scored 18/100 from 1 cited evidence items.",
+        "why": "Weighted at 5%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 64.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-C02_1",
+            "text": "Residency question resolved in-region; no circumvention proposed.",
+            "confidence": 0.77,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0004",
+                "start_ms": 9551330,
+                "end_ms": 9555814
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:04:00Z",
+    "elapsed_ms": 38400,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.32,
+      "diarization": 0.64,
+      "face_detection": 0.91,
+      "visual_clarity": 0.56,
+      "overall": 0.52
+    }
+  },
+  {
+    "analysis_id": "an_002",
+    "meeting_id": "mtg_002",
+    "name": "Sales Meeting \u2014 My Variant",
+    "status": "draft",
+    "cookbook_id": "cb_sales_myvar",
+    "cookbook_name": "Sales Meeting \u2014 My Variant",
+    "cookbook_version": "1.0.2",
+    "overall_score": 66.5,
+    "overall_band": "Mixed",
+    "evidence_coverage": 79.5,
+    "confidence": 0.79,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 68,
+        "human_slider": null,
+        "basis": 68,
+        "status": "SCORABLE",
+        "confidence": 0.81,
+        "contribution": 10.2,
+        "contribution_label": "10.2",
+        "band": "Mixed",
+        "finding_text": "Requirements Discovery scored 68/100 from 1 cited evidence items.",
+        "why": "Weighted at 15%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 88.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S01_1",
+            "text": "Buyer asks integration questions unprompted.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0002",
+                "start_ms": 9363180,
+                "end_ms": 9364708
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 82,
+        "human_slider": null,
+        "basis": 82,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 16.4,
+        "contribution_label": "16.4",
+        "band": "Good",
+        "finding_text": "Buyer / Commercial Intent scored 82/100 from 3 cited evidence items.",
+        "why": "Weighted at 20%; evidence drawn from 3 cited items.",
+        "evidence_coverage": 88.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S02_1",
+            "text": "Buyer asks about pricing options directly.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0005",
+                "start_ms": 10281481,
+                "end_ms": 10285408
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S02_2",
+            "text": "Directional commitment without a number.",
+            "confidence": 0.86,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0006",
+                "start_ms": 10548906,
+                "end_ms": 10552654
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S02_3",
+            "text": "Asks for a sandbox this week.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0003",
+                "start_ms": 9471769,
+                "end_ms": 9476074
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 74,
+        "human_slider": null,
+        "basis": 74,
+        "status": "SCORABLE",
+        "confidence": 0.77,
+        "contribution": 7.4,
+        "contribution_label": "7.4",
+        "band": "Good",
+        "finding_text": "Value Articulation scored 74/100 from 1 cited evidence items.",
+        "why": "Weighted at 10%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 71.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S03_1",
+            "text": "Consolidated view demonstrated against the stated pain.",
+            "confidence": 0.87,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0002",
+                "start_ms": 9363180,
+                "end_ms": 9364708
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 64,
+        "human_slider": null,
+        "basis": 64,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 9.6,
+        "contribution_label": "9.6",
+        "band": "Mixed",
+        "finding_text": "Objections and Handling scored 64/100 from 2 cited evidence items.",
+        "why": "Weighted at 15%; evidence drawn from 2 cited items.",
+        "evidence_coverage": 79.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S04_1",
+            "text": "Prior vendor attempt stalled on schema standardisation.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0001",
+                "start_ms": 9199842,
+                "end_ms": 9202194
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S04_2",
+            "text": "Data residency raised and answered in-region.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0004",
+                "start_ms": 9551330,
+                "end_ms": 9555814
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": null,
+        "human_slider": null,
+        "basis": null,
+        "status": "NOT_SCORABLE",
+        "confidence": 0.0,
+        "contribution": 0.0,
+        "contribution_label": "0.0",
+        "band": null,
+        "finding_text": "Not scorable \u2014 required evidence was unavailable for this Recipe.",
+        "why": "Required ingredients were absent from the stored evidence for this meeting.",
+        "evidence_coverage": 0.0,
+        "findings": [],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "score": 88,
+        "human_slider": null,
+        "basis": 88,
+        "status": "SCORABLE",
+        "confidence": 0.76,
+        "contribution": 4.4,
+        "contribution_label": "4.4",
+        "band": "Excellent",
+        "finding_text": "Actionability / Next Steps scored 88/100 from 2 cited evidence items.",
+        "why": "Weighted at 5%; evidence drawn from 2 cited items.",
+        "evidence_coverage": 85.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-S06_1",
+            "text": "Sandbox access + attestation owned, due Wednesday.",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0007",
+                "start_ms": 10764510,
+                "end_ms": 10769114
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_R-S06_2",
+            "text": "Pricing to steering committee, due Thursday.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0008",
+                "start_ms": 10849266,
+                "end_ms": 10850848
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 18,
+        "human_slider": null,
+        "basis": 82.0,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 4.1,
+        "contribution_label": "4.1",
+        "band": "Poor / High Concern",
+        "finding_text": "Compliance / Policy Circumvention Risk scored 18/100 from 1 cited evidence items.",
+        "why": "Weighted at 5%; evidence drawn from 1 cited items.",
+        "evidence_coverage": 64.0,
+        "findings": [
+          {
+            "finding_id": "fd_R-C02_1",
+            "text": "Residency question resolved in-region; no circumvention proposed.",
+            "confidence": 0.79,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_0004",
+                "start_ms": 9551330,
+                "end_ms": 9555814
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "H01",
+        "recipe_name": "Professional Presence",
+        "recipe_version": "1.0.0",
+        "kind": "human",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "score": 66.67,
+        "human_slider": 7,
+        "basis": 66.67,
+        "status": "SCORABLE",
+        "confidence": 1.0,
+        "contribution": 3.33,
+        "contribution_label": "3.3",
+        "band": "Mixed",
+        "finding_text": "Reviewer scored 7/10.",
+        "why": "Human parameter, weighted at 5%.",
+        "evidence_coverage": 100.0,
+        "findings": [],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "H03",
+        "recipe_name": "Meeting Preparedness",
+        "recipe_version": "1.0.0",
+        "kind": "human",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "score": 77.78,
+        "human_slider": 8,
+        "basis": 77.78,
+        "status": "SCORABLE",
+        "confidence": 1.0,
+        "contribution": 3.89,
+        "contribution_label": "3.9",
+        "band": "Good",
+        "finding_text": "Reviewer scored 8/10.",
+        "why": "Human parameter, weighted at 5%.",
+        "evidence_coverage": 100.0,
+        "findings": [],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "H09",
+        "recipe_name": "Meeting Felt Unnecessarily Combative",
+        "recipe_version": "1.0.0",
+        "kind": "human",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 22.22,
+        "human_slider": 3,
+        "basis": 77.78,
+        "status": "SCORABLE",
+        "confidence": 1.0,
+        "contribution": 3.89,
+        "contribution_label": "3.9",
+        "band": "Poor / High Concern",
+        "finding_text": "Reviewer scored 3/10.",
+        "why": "Human parameter, weighted at 5%.",
+        "evidence_coverage": 100.0,
+        "findings": [],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "H10",
+        "recipe_name": "Overall Reviewer Impression",
+        "recipe_version": "1.0.0",
+        "kind": "human",
+        "weight": 5,
+        "polarity": "+",
+        "enabled": true,
+        "score": 66.67,
+        "human_slider": 7,
+        "basis": 66.67,
+        "status": "SCORABLE",
+        "confidence": 1.0,
+        "contribution": 3.33,
+        "contribution_label": "3.3",
+        "band": "Mixed",
+        "finding_text": "Reviewer scored 7/10.",
+        "why": "Human parameter, weighted at 5%.",
+        "evidence_coverage": 100.0,
+        "findings": [],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-22T09:10:00Z",
+    "elapsed_ms": 41200,
+    "reused_base_inference": true,
+    "score_integrity": "incomplete",
+    "publishable": false,
+    "blocking_recipes": [
+      "R-S05"
+    ],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.32,
+      "diarization": 0.64,
+      "face_detection": 0.91,
+      "visual_clarity": 0.56,
+      "overall": 0.52
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250519_client_m001",
+    "meeting_id": "vid_20250519_client_m001",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 1",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 57.9,
+    "overall_band": "Mixed",
+    "evidence_coverage": 91.7,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 66,
+        "human_slider": null,
+        "basis": 66,
+        "status": "SCORABLE",
+        "confidence": 0.71,
+        "contribution": 13.2,
+        "contribution_label": "13.2",
+        "band": "Mixed",
+        "finding_text": "Requirements Discovery evaluated from 56 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.77,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0003",
+                "start_ms": 2545830,
+                "end_ms": 2549021
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0011",
+                "start_ms": 2588262,
+                "end_ms": 2593299
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.71,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0017",
+                "start_ms": 2619458,
+                "end_ms": 2624149
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 53,
+        "human_slider": null,
+        "basis": 53,
+        "status": "SCORABLE",
+        "confidence": 0.88,
+        "contribution": 10.6,
+        "contribution_label": "10.6",
+        "band": "Weak",
+        "finding_text": "Buyer / Commercial Intent evaluated from 98 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0004",
+                "start_ms": 2550317,
+                "end_ms": 2554598
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.73,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0006",
+                "start_ms": 2561504,
+                "end_ms": 2566658
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0007",
+                "start_ms": 2567677,
+                "end_ms": 2572622
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 39,
+        "human_slider": null,
+        "basis": 39,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 5.85,
+        "contribution_label": "5.8",
+        "band": "Poor / High Concern",
+        "finding_text": "Value Articulation evaluated from 5 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 41.7,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S03_1",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.67,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0282",
+                "start_ms": 2536000,
+                "end_ms": 2540000
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S03_2",
+            "text": "Screen share active",
+            "confidence": 0.7,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0286",
+                "start_ms": 3499428,
+                "end_ms": 3503428
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S03_3",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.77,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0287",
+                "start_ms": 3740285,
+                "end_ms": 3744285
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 73,
+        "human_slider": null,
+        "basis": 73,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 10.95,
+        "contribution_label": "10.9",
+        "band": "Good",
+        "finding_text": "Objections and Handling evaluated from 42 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0002",
+                "start_ms": 2539076,
+                "end_ms": 2544995
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0008",
+                "start_ms": 2573884,
+                "end_ms": 2577621
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0015",
+                "start_ms": 2608955,
+                "end_ms": 2613863
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 83,
+        "human_slider": null,
+        "basis": 83,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 12.45,
+        "contribution_label": "12.4",
+        "band": "Good",
+        "finding_text": "Commercial Closure evaluated from 70 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.73,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0006",
+                "start_ms": 2561504,
+                "end_ms": 2566658
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0007",
+                "start_ms": 2567677,
+                "end_ms": 2572622
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0012",
+                "start_ms": 2594143,
+                "end_ms": 2599469
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 35,
+        "human_slider": null,
+        "basis": 35,
+        "status": "SCORABLE",
+        "confidence": 0.76,
+        "contribution": 3.5,
+        "contribution_label": "3.5",
+        "band": "Poor / High Concern",
+        "finding_text": "Actionability / Next Steps evaluated from 85 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0001",
+                "start_ms": 2533000,
+                "end_ms": 2538071
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.77,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0005",
+                "start_ms": 2555420,
+                "end_ms": 2560557
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0009",
+                "start_ms": 2578115,
+                "end_ms": 2583958
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 72,
+        "human_slider": null,
+        "basis": 28.0,
+        "status": "SCORABLE",
+        "confidence": 0.76,
+        "contribution": 1.4,
+        "contribution_label": "1.4",
+        "band": "Good",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 42 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.83,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0002",
+                "start_ms": 2539076,
+                "end_ms": 2544995
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.84,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0008",
+                "start_ms": 2573884,
+                "end_ms": 2577621
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m001_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.91,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m001_0015",
+                "start_ms": 2608955,
+                "end_ms": 2613863
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.81,
+      "face_detection": 0.76,
+      "visual_clarity": 0.82,
+      "overall": 0.73
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250519_client_m002",
+    "meeting_id": "vid_20250519_client_m002",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 2",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 63.6,
+    "overall_band": "Mixed",
+    "evidence_coverage": 92.9,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 41,
+        "human_slider": null,
+        "basis": 41,
+        "status": "SCORABLE",
+        "confidence": 0.72,
+        "contribution": 8.2,
+        "contribution_label": "8.2",
+        "band": "Weak",
+        "finding_text": "Requirements Discovery evaluated from 54 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0003",
+                "start_ms": 8114672,
+                "end_ms": 8118845
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.7,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0011",
+                "start_ms": 8157993,
+                "end_ms": 8163034
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0017",
+                "start_ms": 8192939,
+                "end_ms": 8197712
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 81,
+        "human_slider": null,
+        "basis": 81,
+        "status": "SCORABLE",
+        "confidence": 0.88,
+        "contribution": 16.2,
+        "contribution_label": "16.2",
+        "band": "Good",
+        "finding_text": "Buyer / Commercial Intent evaluated from 96 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0004",
+                "start_ms": 8119483,
+                "end_ms": 8123571
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0006",
+                "start_ms": 8129542,
+                "end_ms": 8134893
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0007",
+                "start_ms": 8135606,
+                "end_ms": 8140128
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 46,
+        "human_slider": null,
+        "basis": 46,
+        "status": "SCORABLE",
+        "confidence": 0.82,
+        "contribution": 6.9,
+        "contribution_label": "6.9",
+        "band": "Weak",
+        "finding_text": "Value Articulation evaluated from 6 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 50.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S03_1",
+            "text": "Screen share active",
+            "confidence": 0.65,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0276",
+                "start_ms": 8577714,
+                "end_ms": 8581714
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S03_2",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.77,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0277",
+                "start_ms": 8812071,
+                "end_ms": 8816071
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S03_3",
+            "text": "Screen share active",
+            "confidence": 0.66,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0281",
+                "start_ms": 9749499,
+                "end_ms": 9753499
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 78,
+        "human_slider": null,
+        "basis": 78,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 11.7,
+        "contribution_label": "11.7",
+        "band": "Good",
+        "finding_text": "Objections and Handling evaluated from 41 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0002",
+                "start_ms": 8109336,
+                "end_ms": 8113768
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.86,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0008",
+                "start_ms": 8141688,
+                "end_ms": 8146888
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0015",
+                "start_ms": 8182217,
+                "end_ms": 8185969
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 84,
+        "human_slider": null,
+        "basis": 84,
+        "status": "SCORABLE",
+        "confidence": 0.79,
+        "contribution": 12.6,
+        "contribution_label": "12.6",
+        "band": "Good",
+        "finding_text": "Commercial Closure evaluated from 68 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0006",
+                "start_ms": 8129542,
+                "end_ms": 8134893
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0007",
+                "start_ms": 8135606,
+                "end_ms": 8140128
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.87,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0012",
+                "start_ms": 8163788,
+                "end_ms": 8169191
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 69,
+        "human_slider": null,
+        "basis": 69,
+        "status": "SCORABLE",
+        "confidence": 0.74,
+        "contribution": 6.9,
+        "contribution_label": "6.9",
+        "band": "Mixed",
+        "finding_text": "Actionability / Next Steps evaluated from 82 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0001",
+                "start_ms": 8106000,
+                "end_ms": 8108655
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.85,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0005",
+                "start_ms": 8124352,
+                "end_ms": 8128911
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0009",
+                "start_ms": 8147506,
+                "end_ms": 8153604
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 77,
+        "human_slider": null,
+        "basis": 23.0,
+        "status": "SCORABLE",
+        "confidence": 0.76,
+        "contribution": 1.15,
+        "contribution_label": "1.1",
+        "band": "Good",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 41 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.89,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0002",
+                "start_ms": 8109336,
+                "end_ms": 8113768
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.86,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0008",
+                "start_ms": 8141688,
+                "end_ms": 8146888
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m002_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.75,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m002_0015",
+                "start_ms": 8182217,
+                "end_ms": 8185969
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.82,
+      "face_detection": 0.75,
+      "visual_clarity": 0.81,
+      "overall": 0.73
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250519_client_m003",
+    "meeting_id": "vid_20250519_client_m003",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 3",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 69.8,
+    "overall_band": "Mixed",
+    "evidence_coverage": 91.7,
+    "confidence": 0.84,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 80,
+        "human_slider": null,
+        "basis": 80,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 16.0,
+        "contribution_label": "16.0",
+        "band": "Good",
+        "finding_text": "Requirements Discovery evaluated from 49 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0003",
+                "start_ms": 18151747,
+                "end_ms": 18155460
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0011",
+                "start_ms": 18195252,
+                "end_ms": 18200414
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0017",
+                "start_ms": 18227502,
+                "end_ms": 18231725
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 41,
+        "human_slider": null,
+        "basis": 41,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 8.2,
+        "contribution_label": "8.2",
+        "band": "Weak",
+        "finding_text": "Buyer / Commercial Intent evaluated from 86 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0004",
+                "start_ms": 18156216,
+                "end_ms": 18160197
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0006",
+                "start_ms": 18167277,
+                "end_ms": 18172362
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0007",
+                "start_ms": 18173760,
+                "end_ms": 18179735
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 84,
+        "human_slider": null,
+        "basis": 84,
+        "status": "SCORABLE",
+        "confidence": 0.78,
+        "contribution": 12.6,
+        "contribution_label": "12.6",
+        "band": "Good",
+        "finding_text": "Value Articulation evaluated from 5 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 41.7,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S03_1",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0247",
+                "start_ms": 18144000,
+                "end_ms": 18148000
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S03_2",
+            "text": "Screen share active",
+            "confidence": 0.68,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0251",
+                "start_ms": 18987428,
+                "end_ms": 18991428
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S03_3",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0252",
+                "start_ms": 19198285,
+                "end_ms": 19202285
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 80,
+        "human_slider": null,
+        "basis": 80,
+        "status": "SCORABLE",
+        "confidence": 0.74,
+        "contribution": 12.0,
+        "contribution_label": "12.0",
+        "band": "Good",
+        "finding_text": "Objections and Handling evaluated from 37 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0002",
+                "start_ms": 18144771,
+                "end_ms": 18150688
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.87,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0008",
+                "start_ms": 18180265,
+                "end_ms": 18183423
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.81,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0015",
+                "start_ms": 18216121,
+                "end_ms": 18220566
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 83,
+        "human_slider": null,
+        "basis": 83,
+        "status": "SCORABLE",
+        "confidence": 0.73,
+        "contribution": 12.45,
+        "contribution_label": "12.4",
+        "band": "Good",
+        "finding_text": "Commercial Closure evaluated from 61 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0006",
+                "start_ms": 18167277,
+                "end_ms": 18172362
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0007",
+                "start_ms": 18173760,
+                "end_ms": 18179735
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0012",
+                "start_ms": 18201474,
+                "end_ms": 18205175
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 57,
+        "human_slider": null,
+        "basis": 57,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 5.7,
+        "contribution_label": "5.7",
+        "band": "Mixed",
+        "finding_text": "Actionability / Next Steps evaluated from 74 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0001",
+                "start_ms": 18141000,
+                "end_ms": 18144008
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.81,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0005",
+                "start_ms": 18161157,
+                "end_ms": 18166752
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.71,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0009",
+                "start_ms": 18184958,
+                "end_ms": 18188971
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 44,
+        "human_slider": null,
+        "basis": 56.0,
+        "status": "SCORABLE",
+        "confidence": 0.84,
+        "contribution": 2.8,
+        "contribution_label": "2.8",
+        "band": "Weak",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 37 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.72,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0002",
+                "start_ms": 18144771,
+                "end_ms": 18150688
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.87,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0008",
+                "start_ms": 18180265,
+                "end_ms": 18183423
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m003_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.81,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m003_0015",
+                "start_ms": 18216121,
+                "end_ms": 18220566
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.81,
+      "face_detection": 0.73,
+      "visual_clarity": 0.79,
+      "overall": 0.72
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250519_client_m004",
+    "meeting_id": "vid_20250519_client_m004",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 4",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 50.1,
+    "overall_band": "Weak",
+    "evidence_coverage": 92.9,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 40,
+        "human_slider": null,
+        "basis": 40,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 8.0,
+        "contribution_label": "8.0",
+        "band": "Weak",
+        "finding_text": "Requirements Discovery evaluated from 49 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0003",
+                "start_ms": 29656287,
+                "end_ms": 29661629
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0011",
+                "start_ms": 29702385,
+                "end_ms": 29706665
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0017",
+                "start_ms": 29737052,
+                "end_ms": 29740563
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 75,
+        "human_slider": null,
+        "basis": 75,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 15.0,
+        "contribution_label": "15.0",
+        "band": "Good",
+        "finding_text": "Buyer / Commercial Intent evaluated from 84 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0004",
+                "start_ms": 29662932,
+                "end_ms": 29667871
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0006",
+                "start_ms": 29674266,
+                "end_ms": 29677167
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0007",
+                "start_ms": 29677861,
+                "end_ms": 29682919
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 49,
+        "human_slider": null,
+        "basis": 49,
+        "status": "SCORABLE",
+        "confidence": 0.83,
+        "contribution": 7.35,
+        "contribution_label": "7.3",
+        "band": "Weak",
+        "finding_text": "Value Articulation evaluated from 6 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 50.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S03_1",
+            "text": "Screen share active",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0246",
+                "start_ms": 30069856,
+                "end_ms": 30073856
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S03_2",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0247",
+                "start_ms": 30278784,
+                "end_ms": 30282784
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S03_3",
+            "text": "Screen share active",
+            "confidence": 0.69,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0251",
+                "start_ms": 31114496,
+                "end_ms": 31118496
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 35,
+        "human_slider": null,
+        "basis": 35,
+        "status": "SCORABLE",
+        "confidence": 0.76,
+        "contribution": 5.25,
+        "contribution_label": "5.2",
+        "band": "Poor / High Concern",
+        "finding_text": "Objections and Handling evaluated from 37 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0002",
+                "start_ms": 29652356,
+                "end_ms": 29655503
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.71,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0008",
+                "start_ms": 29684283,
+                "end_ms": 29690029
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0015",
+                "start_ms": 29726855,
+                "end_ms": 29730384
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 60,
+        "human_slider": null,
+        "basis": 60,
+        "status": "SCORABLE",
+        "confidence": 0.86,
+        "contribution": 9.0,
+        "contribution_label": "9.0",
+        "band": "Mixed",
+        "finding_text": "Commercial Closure evaluated from 60 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0006",
+                "start_ms": 29674266,
+                "end_ms": 29677167
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0007",
+                "start_ms": 29677861,
+                "end_ms": 29682919
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0012",
+                "start_ms": 29707986,
+                "end_ms": 29713331
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 45,
+        "human_slider": null,
+        "basis": 45,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 4.5,
+        "contribution_label": "4.5",
+        "band": "Weak",
+        "finding_text": "Actionability / Next Steps evaluated from 73 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0001",
+                "start_ms": 29649000,
+                "end_ms": 29651913
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.7,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0005",
+                "start_ms": 29668772,
+                "end_ms": 29673036
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0009",
+                "start_ms": 29691247,
+                "end_ms": 29696370
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 81,
+        "human_slider": null,
+        "basis": 19.0,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 0.95,
+        "contribution_label": "0.9",
+        "band": "Good",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 37 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.89,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0002",
+                "start_ms": 29652356,
+                "end_ms": 29655503
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.71,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0008",
+                "start_ms": 29684283,
+                "end_ms": 29690029
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250519_client_m004_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.79,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250519_client_m004_0015",
+                "start_ms": 29726855,
+                "end_ms": 29730384
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.8,
+      "face_detection": 0.75,
+      "visual_clarity": 0.81,
+      "overall": 0.73
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250516_exec_m001",
+    "meeting_id": "vid_20250516_exec_m001",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 1",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 59.0,
+    "overall_band": "Mixed",
+    "evidence_coverage": 91.7,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 82,
+        "human_slider": null,
+        "basis": 82,
+        "status": "SCORABLE",
+        "confidence": 0.79,
+        "contribution": 16.4,
+        "contribution_label": "16.4",
+        "band": "Good",
+        "finding_text": "Requirements Discovery evaluated from 55 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0003",
+                "start_ms": 1888456,
+                "end_ms": 1893160
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0011",
+                "start_ms": 1934563,
+                "end_ms": 1940718
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0017",
+                "start_ms": 1971806,
+                "end_ms": 1975450
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 63,
+        "human_slider": null,
+        "basis": 63,
+        "status": "SCORABLE",
+        "confidence": 0.8,
+        "contribution": 12.6,
+        "contribution_label": "12.6",
+        "band": "Mixed",
+        "finding_text": "Buyer / Commercial Intent evaluated from 97 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0004",
+                "start_ms": 1894390,
+                "end_ms": 1900356
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0006",
+                "start_ms": 1906698,
+                "end_ms": 1910302
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0007",
+                "start_ms": 1911566,
+                "end_ms": 1915403
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 67,
+        "human_slider": null,
+        "basis": 67,
+        "status": "SCORABLE",
+        "confidence": 0.72,
+        "contribution": 10.05,
+        "contribution_label": "10.1",
+        "band": "Mixed",
+        "finding_text": "Value Articulation evaluated from 5 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 41.7,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S03_1",
+            "text": "Screen share active",
+            "confidence": 0.66,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0281",
+                "start_ms": 2591142,
+                "end_ms": 2595142
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S03_2",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0282",
+                "start_ms": 2828856,
+                "end_ms": 2832856
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S03_3",
+            "text": "Screen share active",
+            "confidence": 0.67,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0286",
+                "start_ms": 3779712,
+                "end_ms": 3783712
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 49,
+        "human_slider": null,
+        "basis": 49,
+        "status": "SCORABLE",
+        "confidence": 0.74,
+        "contribution": 7.35,
+        "contribution_label": "7.3",
+        "band": "Weak",
+        "finding_text": "Objections and Handling evaluated from 42 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0002",
+                "start_ms": 1881732,
+                "end_ms": 1887432
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.73,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0008",
+                "start_ms": 1916253,
+                "end_ms": 1921189
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.77,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0015",
+                "start_ms": 1959417,
+                "end_ms": 1965190
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 40,
+        "human_slider": null,
+        "basis": 40,
+        "status": "SCORABLE",
+        "confidence": 0.84,
+        "contribution": 6.0,
+        "contribution_label": "6.0",
+        "band": "Weak",
+        "finding_text": "Commercial Closure evaluated from 69 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0006",
+                "start_ms": 1906698,
+                "end_ms": 1910302
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0007",
+                "start_ms": 1911566,
+                "end_ms": 1915403
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0012",
+                "start_ms": 1941236,
+                "end_ms": 1945281
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 44,
+        "human_slider": null,
+        "basis": 44,
+        "status": "SCORABLE",
+        "confidence": 0.74,
+        "contribution": 4.4,
+        "contribution_label": "4.4",
+        "band": "Weak",
+        "finding_text": "Actionability / Next Steps evaluated from 83 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.85,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0001",
+                "start_ms": 1875000,
+                "end_ms": 1880926
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0005",
+                "start_ms": 1900772,
+                "end_ms": 1905450
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0009",
+                "start_ms": 1922453,
+                "end_ms": 1928519
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 55,
+        "human_slider": null,
+        "basis": 45.0,
+        "status": "SCORABLE",
+        "confidence": 0.74,
+        "contribution": 2.25,
+        "contribution_label": "2.2",
+        "band": "Mixed",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 42 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.88,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0002",
+                "start_ms": 1881732,
+                "end_ms": 1887432
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.73,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0008",
+                "start_ms": 1916253,
+                "end_ms": 1921189
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m001_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.77,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m001_0015",
+                "start_ms": 1959417,
+                "end_ms": 1965190
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.8,
+      "face_detection": 0.75,
+      "visual_clarity": 0.81,
+      "overall": 0.73
+    }
+  },
+  {
+    "analysis_id": "an_vid_20250516_exec_m002",
+    "meeting_id": "vid_20250516_exec_m002",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 2",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 59.3,
+    "overall_band": "Mixed",
+    "evidence_coverage": 91.7,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 65,
+        "human_slider": null,
+        "basis": 65,
+        "status": "SCORABLE",
+        "confidence": 0.88,
+        "contribution": 13.0,
+        "contribution_label": "13.0",
+        "band": "Mixed",
+        "finding_text": "Requirements Discovery evaluated from 52 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0003",
+                "start_ms": 13702820,
+                "end_ms": 13708735
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.81,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0011",
+                "start_ms": 13745878,
+                "end_ms": 13751390
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0017",
+                "start_ms": 13780537,
+                "end_ms": 13783935
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 55,
+        "human_slider": null,
+        "basis": 55,
+        "status": "SCORABLE",
+        "confidence": 0.79,
+        "contribution": 11.0,
+        "contribution_label": "11.0",
+        "band": "Mixed",
+        "finding_text": "Buyer / Commercial Intent evaluated from 91 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0004",
+                "start_ms": 13709344,
+                "end_ms": 13713367
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0006",
+                "start_ms": 13718366,
+                "end_ms": 13724398
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0007",
+                "start_ms": 13725507,
+                "end_ms": 13728593
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 58,
+        "human_slider": null,
+        "basis": 58,
+        "status": "SCORABLE",
+        "confidence": 0.72,
+        "contribution": 8.7,
+        "contribution_label": "8.7",
+        "band": "Mixed",
+        "finding_text": "Value Articulation evaluated from 5 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 41.7,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S03_1",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.76,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0262",
+                "start_ms": 13691000,
+                "end_ms": 13695000
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S03_2",
+            "text": "Screen share active",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0266",
+                "start_ms": 14586428,
+                "end_ms": 14590428
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S03_3",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0267",
+                "start_ms": 14810285,
+                "end_ms": 14814285
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 82,
+        "human_slider": null,
+        "basis": 82,
+        "status": "SCORABLE",
+        "confidence": 0.71,
+        "contribution": 12.3,
+        "contribution_label": "12.3",
+        "band": "Good",
+        "finding_text": "Objections and Handling evaluated from 39 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0002",
+                "start_ms": 13695431,
+                "end_ms": 13701268
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0008",
+                "start_ms": 13729740,
+                "end_ms": 13734574
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.8,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0015",
+                "start_ms": 13769679,
+                "end_ms": 13774011
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 53,
+        "human_slider": null,
+        "basis": 53,
+        "status": "SCORABLE",
+        "confidence": 0.87,
+        "contribution": 7.95,
+        "contribution_label": "8.0",
+        "band": "Weak",
+        "finding_text": "Commercial Closure evaluated from 65 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0006",
+                "start_ms": 13718366,
+                "end_ms": 13724398
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0007",
+                "start_ms": 13725507,
+                "end_ms": 13728593
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0012",
+                "start_ms": 13751935,
+                "end_ms": 13757571
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 42,
+        "human_slider": null,
+        "basis": 42,
+        "status": "SCORABLE",
+        "confidence": 0.72,
+        "contribution": 4.2,
+        "contribution_label": "4.2",
+        "band": "Weak",
+        "finding_text": "Actionability / Next Steps evaluated from 79 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0001",
+                "start_ms": 13688000,
+                "end_ms": 13693978
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0005",
+                "start_ms": 13714665,
+                "end_ms": 13717703
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.71,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0009",
+                "start_ms": 13735226,
+                "end_ms": 13741373
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 58,
+        "human_slider": null,
+        "basis": 42.0,
+        "status": "SCORABLE",
+        "confidence": 0.82,
+        "contribution": 2.1,
+        "contribution_label": "2.1",
+        "band": "Mixed",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 39 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.75,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0002",
+                "start_ms": 13695431,
+                "end_ms": 13701268
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.91,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0008",
+                "start_ms": 13729740,
+                "end_ms": 13734574
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_vid_20250516_exec_m002_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.8,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_vid_20250516_exec_m002_0015",
+                "start_ms": 13769679,
+                "end_ms": 13774011
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.81,
+      "face_detection": 0.77,
+      "visual_clarity": 0.83,
+      "overall": 0.73
+    }
+  },
+  {
+    "analysis_id": "an_mtg_001",
+    "meeting_id": "mtg_001",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 1",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 59.4,
+    "overall_band": "Mixed",
+    "evidence_coverage": 92.9,
+    "confidence": 0.86,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 45,
+        "human_slider": null,
+        "basis": 45,
+        "status": "SCORABLE",
+        "confidence": 0.89,
+        "contribution": 9.0,
+        "contribution_label": "9.0",
+        "band": "Weak",
+        "finding_text": "Requirements Discovery evaluated from 78 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0003",
+                "start_ms": 515646,
+                "end_ms": 518574
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.86,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0011",
+                "start_ms": 552222,
+                "end_ms": 557760
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.86,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0017",
+                "start_ms": 585843,
+                "end_ms": 591530
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 58,
+        "human_slider": null,
+        "basis": 58,
+        "status": "SCORABLE",
+        "confidence": 0.82,
+        "contribution": 11.6,
+        "contribution_label": "11.6",
+        "band": "Mixed",
+        "finding_text": "Buyer / Commercial Intent evaluated from 138 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.92,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0004",
+                "start_ms": 519392,
+                "end_ms": 523365
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0006",
+                "start_ms": 528137,
+                "end_ms": 532387
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0007",
+                "start_ms": 533555,
+                "end_ms": 536812
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 82,
+        "human_slider": null,
+        "basis": 82,
+        "status": "SCORABLE",
+        "confidence": 0.71,
+        "contribution": 12.3,
+        "contribution_label": "12.3",
+        "band": "Good",
+        "finding_text": "Value Articulation evaluated from 6 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 50.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S03_1",
+            "text": "Screen share active",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0396",
+                "start_ms": 845714,
+                "end_ms": 849714
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S03_2",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0397",
+                "start_ms": 1183428,
+                "end_ms": 1187428
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S03_3",
+            "text": "Screen share active",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0401",
+                "start_ms": 2534284,
+                "end_ms": 2538284
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 37,
+        "human_slider": null,
+        "basis": 37,
+        "status": "SCORABLE",
+        "confidence": 0.73,
+        "contribution": 5.55,
+        "contribution_label": "5.5",
+        "band": "Poor / High Concern",
+        "finding_text": "Objections and Handling evaluated from 59 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.72,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0002",
+                "start_ms": 509400,
+                "end_ms": 514998
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0008",
+                "start_ms": 538022,
+                "end_ms": 541226
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0015",
+                "start_ms": 575469,
+                "end_ms": 581210
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 72,
+        "human_slider": null,
+        "basis": 72,
+        "status": "SCORABLE",
+        "confidence": 0.85,
+        "contribution": 10.8,
+        "contribution_label": "10.8",
+        "band": "Good",
+        "finding_text": "Commercial Closure evaluated from 98 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.9,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0006",
+                "start_ms": 528137,
+                "end_ms": 532387
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0007",
+                "start_ms": 533555,
+                "end_ms": 536812
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.91,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0012",
+                "start_ms": 558853,
+                "end_ms": 563616
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 78,
+        "human_slider": null,
+        "basis": 78,
+        "status": "SCORABLE",
+        "confidence": 0.82,
+        "contribution": 7.8,
+        "contribution_label": "7.8",
+        "band": "Good",
+        "finding_text": "Actionability / Next Steps evaluated from 119 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.74,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0001",
+                "start_ms": 505000,
+                "end_ms": 508196
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0005",
+                "start_ms": 524130,
+                "end_ms": 527306
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0009",
+                "start_ms": 541679,
+                "end_ms": 547005
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 53,
+        "human_slider": null,
+        "basis": 47.0,
+        "status": "SCORABLE",
+        "confidence": 0.71,
+        "contribution": 2.35,
+        "contribution_label": "2.4",
+        "band": "Weak",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 59 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_001_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.72,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0002",
+                "start_ms": 509400,
+                "end_ms": 514998
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.74,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0008",
+                "start_ms": 538022,
+                "end_ms": 541226
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_001_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.9,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_001_0015",
+                "start_ms": 575469,
+                "end_ms": 581210
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.81,
+      "face_detection": 0.78,
+      "visual_clarity": 0.84,
+      "overall": 0.74
+    }
+  },
+  {
+    "analysis_id": "an_mtg_003",
+    "meeting_id": "mtg_003",
+    "name": "Sales Meeting \u2014 Standard \u2014 Meeting 3",
+    "status": "published",
+    "cookbook_id": "cb_sales_std",
+    "cookbook_name": "Sales Meeting \u2014 Standard",
+    "cookbook_version": "1.0.0",
+    "overall_score": 69.5,
+    "overall_band": "Mixed",
+    "evidence_coverage": 92.9,
+    "confidence": 0.85,
+    "recipes": [
+      {
+        "recipe_id": "R-S01",
+        "recipe_name": "Requirements Discovery",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 79,
+        "human_slider": null,
+        "basis": 79,
+        "status": "SCORABLE",
+        "confidence": 0.84,
+        "contribution": 15.8,
+        "contribution_label": "15.8",
+        "band": "Good",
+        "finding_text": "Requirements Discovery evaluated from 49 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S01_1",
+            "text": "How many teams does that affect today?",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0003",
+                "start_ms": 15354638,
+                "end_ms": 15359462
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S01_2",
+            "text": "What does onboarding look like for a new region?",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0011",
+                "start_ms": 15399678,
+                "end_ms": 15405657
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S01_3",
+            "text": "Are we agreed on the phased approach?",
+            "confidence": 0.75,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0017",
+                "start_ms": 15432849,
+                "end_ms": 15437150
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S02",
+        "recipe_name": "Buyer / Commercial Intent",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 20,
+        "polarity": "+",
+        "enabled": true,
+        "score": 49,
+        "human_slider": null,
+        "basis": 49,
+        "status": "SCORABLE",
+        "confidence": 0.85,
+        "contribution": 9.8,
+        "contribution_label": "9.8",
+        "band": "Weak",
+        "finding_text": "Buyer / Commercial Intent evaluated from 85 cited items.",
+        "why": "Weighted at 20% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S02_1",
+            "text": "Four, and it grows if the rollout lands on time.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0004",
+                "start_ms": 15360634,
+                "end_ms": 15365042
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S02_2",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0006",
+                "start_ms": 15372399,
+                "end_ms": 15377152
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S02_3",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0007",
+                "start_ms": 15377692,
+                "end_ms": 15381301
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S03",
+        "recipe_name": "Value Articulation",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 77,
+        "human_slider": null,
+        "basis": 77,
+        "status": "SCORABLE",
+        "confidence": 0.73,
+        "contribution": 11.55,
+        "contribution_label": "11.6",
+        "band": "Good",
+        "finding_text": "Value Articulation evaluated from 6 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 50.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S03_1",
+            "text": "Screen share active",
+            "confidence": 0.81,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0246",
+                "start_ms": 15557357,
+                "end_ms": 15561357
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S03_2",
+            "text": "Participant presenting at the screen",
+            "confidence": 0.85,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0247",
+                "start_ms": 15766714,
+                "end_ms": 15770714
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S03_3",
+            "text": "Screen share active",
+            "confidence": 0.79,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0251",
+                "start_ms": 16604142,
+                "end_ms": 16608142
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S04",
+        "recipe_name": "Objections and Handling",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 65,
+        "human_slider": null,
+        "basis": 65,
+        "status": "SCORABLE",
+        "confidence": 0.75,
+        "contribution": 9.75,
+        "contribution_label": "9.8",
+        "band": "Mixed",
+        "finding_text": "Objections and Handling evaluated from 37 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S04_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0002",
+                "start_ms": 15348979,
+                "end_ms": 15353153
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S04_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0008",
+                "start_ms": 15382099,
+                "end_ms": 15386787
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S04_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.89,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0015",
+                "start_ms": 15423772,
+                "end_ms": 15428003
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S05",
+        "recipe_name": "Commercial Closure",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 15,
+        "polarity": "+",
+        "enabled": true,
+        "score": 77,
+        "human_slider": null,
+        "basis": 77,
+        "status": "SCORABLE",
+        "confidence": 0.73,
+        "contribution": 11.55,
+        "contribution_label": "11.6",
+        "band": "Good",
+        "finding_text": "Commercial Closure evaluated from 60 cited items.",
+        "why": "Weighted at 15% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S05_1",
+            "text": "What would the commercial side look like at that scale?",
+            "confidence": 0.84,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0006",
+                "start_ms": 15372399,
+                "end_ms": 15377152
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S05_2",
+            "text": "We can cover the first two regions in the base package.",
+            "confidence": 0.78,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0007",
+                "start_ms": 15377692,
+                "end_ms": 15381301
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S05_3",
+            "text": "Pricing scales per region after the first two.",
+            "confidence": 0.81,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0012",
+                "start_ms": 15407155,
+                "end_ms": 15411586
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-S06",
+        "recipe_name": "Actionability / Next Steps",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 10,
+        "polarity": "+",
+        "enabled": true,
+        "score": 79,
+        "human_slider": null,
+        "basis": 79,
+        "status": "SCORABLE",
+        "confidence": 0.85,
+        "contribution": 7.9,
+        "contribution_label": "7.9",
+        "band": "Good",
+        "finding_text": "Actionability / Next Steps evaluated from 73 cited items.",
+        "why": "Weighted at 10% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-S06_1",
+            "text": "Let me share where we landed after the last session.",
+            "confidence": 0.82,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0001",
+                "start_ms": 15345000,
+                "end_ms": 15348206
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S06_2",
+            "text": "I can put a draft together by Thursday.",
+            "confidence": 0.88,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0005",
+                "start_ms": 15365818,
+                "end_ms": 15370913
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-S06_3",
+            "text": "Then let us agree the pilot scope first.",
+            "confidence": 0.83,
+            "polarity": "+",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0009",
+                "start_ms": 15387460,
+                "end_ms": 15393356
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      },
+      {
+        "recipe_id": "R-C02",
+        "recipe_name": "Compliance / Policy Circumvention Risk",
+        "recipe_version": "1.0.0",
+        "kind": "ai",
+        "weight": 5,
+        "polarity": "-",
+        "enabled": true,
+        "score": 38,
+        "human_slider": null,
+        "basis": 62.0,
+        "status": "SCORABLE",
+        "confidence": 0.84,
+        "contribution": 3.1,
+        "contribution_label": "3.1",
+        "band": "Poor / High Concern",
+        "finding_text": "Compliance / Policy Circumvention Risk evaluated from 37 cited items.",
+        "why": "Weighted at 5% under Sales Meeting \u2014 Standard.",
+        "evidence_coverage": 100.0,
+        "findings": [
+          {
+            "finding_id": "fd_mtg_003_R-C02_1",
+            "text": "Our reporting is inconsistent across the regions.",
+            "confidence": 0.83,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0002",
+                "start_ms": 15348979,
+                "end_ms": 15353153
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-C02_2",
+            "text": "I am not sure the timeline is realistic.",
+            "confidence": 0.88,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0008",
+                "start_ms": 15382099,
+                "end_ms": 15386787
+              }
+            ]
+          },
+          {
+            "finding_id": "fd_mtg_003_R-C02_3",
+            "text": "My concern is the migration window.",
+            "confidence": 0.89,
+            "polarity": "-",
+            "evidence_refs": [
+              {
+                "kind": "semantic_event",
+                "id": "ev_mtg_003_0015",
+                "start_ms": 15423772,
+                "end_ms": 15428003
+              }
+            ]
+          }
+        ],
+        "model_versions": {
+          "pixtral-visual": "2025.10",
+          "faster-whisper": "large-v3",
+          "pyannote-diarization": "3.1.1",
+          "insightface-arcface": "w600k_r50",
+          "recipe-evaluator": "v1",
+          "recipe_catalog": "triton-poc-1.0"
+        }
+      }
+    ],
+    "model_versions": {
+      "pixtral-visual": "2025.10",
+      "faster-whisper": "large-v3",
+      "pyannote-diarization": "3.1.1",
+      "insightface-arcface": "w600k_r50",
+      "recipe-evaluator": "v1",
+      "recipe_catalog": "triton-poc-1.0"
+    },
+    "created_at": "2025-05-21T16:00:00Z",
+    "elapsed_ms": 41,
+    "reused_base_inference": true,
+    "score_integrity": "complete",
+    "publishable": true,
+    "blocking_recipes": [],
+    "score_version": "score-v1.0.0",
+    "modality_confidence": {
+      "audio_quality": 0.55,
+      "diarization": 0.81,
+      "face_detection": 0.75,
+      "visual_clarity": 0.81,
+      "overall": 0.73
+    }
+  }
+]
