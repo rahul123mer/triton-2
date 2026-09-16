@@ -36,7 +36,7 @@ function windowDay(windowStart) {
   return String(windowStart || DAY).slice(0, 10)
 }
 
-export function windowBounds(date, windowId, customStart, customEnd) {
+export function windowBounds(date, windowId, customStart, customEnd, windows = timeWindows) {
   if (windowId === 'custom') {
     return {
       start: at(padClock(customStart || '00:00:00'), date),
@@ -44,11 +44,12 @@ export function windowBounds(date, windowId, customStart, customEnd) {
       label: `${customStart || '00:00'} – ${customEnd || '23:59'}`,
     }
   }
-  const preset = timeWindows.find((item) => item.windowId === windowId) || timeWindows[2]
+  const list = windows?.length ? windows : timeWindows
+  const preset = list.find((item) => item.windowId === windowId) || timeWindows.find((item) => item.windowId === windowId) || timeWindows[2]
   return {
     start: at(preset.start, date),
     end: at(preset.end, date),
-    label: `${preset.label} · ${preset.start.slice(0, 5)} – ${preset.end.slice(0, 5)}`,
+    label: `${preset.label} · ${String(preset.start).slice(0, 5)} – ${String(preset.end).slice(0, 5)}`,
   }
 }
 
@@ -439,14 +440,14 @@ export function addDays(date, count) {
 }
 
 /** Expand a date (or date range) plus a time window into per-day bounds. */
-export function rangeBoundsList(dateStart, dateEnd, windowId, customStart, customEnd) {
+export function rangeBoundsList(dateStart, dateEnd, windowId, customStart, customEnd, windows = timeWindows) {
   const first = dateStart || DAY
   const last = dateEnd && dateEnd >= first ? dateEnd : first
   const out = []
   let cursor = first
   let guard = 0
   while (cursor <= last && guard < 31) {
-    const bounds = windowBounds(cursor, windowId, customStart, customEnd)
+    const bounds = windowBounds(cursor, windowId, customStart, customEnd, windows)
     out.push({ ...bounds, date: cursor })
     cursor = addDays(cursor, 1)
     guard += 1

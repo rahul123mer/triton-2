@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   Bell,
   ChevronDown,
@@ -7,6 +7,7 @@ import {
   ChevronRight,
   LayoutDashboard,
   LineChart,
+  LogOut,
   Menu,
   MoreHorizontal,
   Settings2,
@@ -14,6 +15,7 @@ import {
   Video,
   X,
 } from 'lucide-react'
+import { useAuthStore } from '../auth/authStore'
 
 const navItems = [
   { id: 'overview', label: 'Overview', to: '/restaurant', icon: LayoutDashboard, end: true },
@@ -44,8 +46,10 @@ const navItems = [
     icon: Settings2,
     base: '/restaurant/settings',
     children: [
-      { id: 'settings-uploads', label: 'Uploads video', to: '/restaurant/settings/uploads' },
+      { id: 'settings-timings', label: 'Restaurant timings', to: '/restaurant/settings/timings' },
+      { id: 'settings-users', label: 'User Management', to: '/restaurant/settings/users' },
       { id: 'settings-tables', label: 'Tables', to: '/restaurant/settings/tables' },
+      { id: 'settings-uploads', label: 'Uploads video', to: '/restaurant/settings/uploads' },
       { id: 'settings-cookbooks', label: 'Cookbooks', to: '/restaurant/settings/cookbooks' },
       { id: 'settings-polygons', label: 'Polygons', to: '/restaurant/settings/polygons' },
     ],
@@ -61,8 +65,10 @@ const pages = [
   ['/restaurant/live/tables', 'Live Feeds · Tables', 'Dining-floor cameras with table zones and live occupancy status.'],
   ['/restaurant/cohorts/kitchen', 'Kitchen Staffs', 'Enrolled kitchen employees and detections still waiting to be resolved.'],
   ['/restaurant/cohorts/serving', 'Serving Staffs', 'Enrolled servers and detections still waiting to be resolved.'],
+  ['/restaurant/settings/timings', 'Restaurant timings', 'Morning, Lunch, Dinner and Evening service windows for the filter bar.'],
+  ['/restaurant/settings/users', 'User Management', 'Register people who can log in to SafeSpace Triton.'],
+  ['/restaurant/settings/tables', 'Tables', 'Register tables with Table ID, seats, section, camera and notes.'],
   ['/restaurant/settings/uploads', 'Uploads video', 'Upload camera recordings for processing and review the history.'],
-  ['/restaurant/settings/tables', 'Tables', 'Table codes, seat counts, cameras and reservation flags.'],
   ['/restaurant/settings/cookbooks', 'Cookbooks', 'Recipes that evaluate occupancy, service and kitchen events.'],
   ['/restaurant/settings/polygons', 'Polygons', 'Draw and rename the zones each camera watches.'],
   ['/restaurant', 'Overview', 'Performance snapshot for The Ember Room.'],
@@ -113,10 +119,20 @@ function NavGroup({ item, pathname, collapsed }) {
 
 export function AppShell() {
   const location = useLocation()
+  const navigate = useNavigate()
+  const session = useAuthStore((s) => s.session)
+  const logout = useAuthStore((s) => s.logout)
   const [navOpen, setNavOpen] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
+  const [accountOpen, setAccountOpen] = useState(false)
   useEffect(() => setNavOpen(false), [location.pathname])
   const { title, lead } = useMemo(() => pageMeta(location.pathname), [location.pathname])
+  const initial = (session?.name || 'U').trim().charAt(0).toUpperCase()
+
+  const onLogout = () => {
+    logout()
+    navigate('/login', { replace: true })
+  }
 
   return (
     <div className={`app-shell ss-shell${collapsed ? ' collapsed' : ''}${navOpen ? ' nav-open' : ''}`}>
@@ -164,15 +180,32 @@ export function AppShell() {
               <i className="ss-notify-dot" />
             </span>
             <span>Notifications</span>
-            <span className="ss-notify-avatar">R</span>
+            <span className="ss-notify-avatar">{initial}</span>
           </button>
           <div className="ss-user">
-            <div className="ss-user-photo" aria-hidden="true">R</div>
+            <div className="ss-user-photo" aria-hidden="true">{initial}</div>
             <div className="ss-user-copy">
-              <strong>Rahul</strong>
-              <span>rahul123mer@gmail.com</span>
+              <strong>{session?.name || 'User'}</strong>
+              <span>{session?.email || ''}</span>
             </div>
-            <button type="button" className="ss-user-more" aria-label="Account menu"><MoreHorizontal size={16} /></button>
+            <div className="ss-user-menu-wrap">
+              <button
+                type="button"
+                className="ss-user-more"
+                aria-label="Account menu"
+                aria-expanded={accountOpen}
+                onClick={() => setAccountOpen((value) => !value)}
+              >
+                <MoreHorizontal size={16} />
+              </button>
+              {accountOpen ? (
+                <div className="ss-user-menu" role="menu">
+                  <button type="button" role="menuitem" onClick={onLogout}>
+                    <LogOut size={14} /> Sign out
+                  </button>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </aside>

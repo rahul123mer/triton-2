@@ -2,7 +2,7 @@
 
 Frontend for **The Ember Room**: table occupancy, waiter visits, kitchen station dwell, Cookbooks/Recipes, analysis, reports, and camera evidence.
 
-The app lands on the restaurant workspace. Meeting-intelligence routes still exist in the codebase for Triton compatibility, but they are not in the primary sidebar.
+The app opens on the login screen, then the restaurant workspace. Meeting-intelligence routes still exist in the codebase for Triton compatibility, but they are not in the primary sidebar.
 
 ## Requirements
 
@@ -17,10 +17,23 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173). Vite redirects `/` to `/restaurant`.
+Open [http://localhost:5173](http://localhost:5173). The app opens on `/login`; after sign-in it goes to `/restaurant`.
+
+### Demo login accounts
+
+All emails use `@safespaceglobal.ai`. Passwords are for local/demo use only.
+
+| Name | Email | Password | Role |
+| --- | --- | --- | --- |
+| Rahul Mer | `rahul.mer@safespaceglobal.ai` | `SafeSpace@Rahul1` | Admin |
+| Sourav Sarkar | `sourav.sarkar@safespaceglobal.ai` | `SafeSpace@Sourav1` | Admin |
+| Anand Ijju | `anand.ijju@safespaceglobal.ai` | `SafeSpace@Anand1` | Manager |
+| Sasidhar Valluru | `sasidhar.valluru@safespaceglobal.ai` | `SafeSpace@Sasi1` | Manager |
+| Rohan | `rohan@safespaceglobal.ai` | `SafeSpace@Rohan1` | Analyst |
 
 | Route | Screen |
 | --- | --- |
+| `/login` | SafeSpace login (Triton) |
 | `/restaurant` | Overview, KPIs, live camera wall, floor plan |
 | `/restaurant/tables` | Dining floor and table list |
 | `/restaurant/tables/tbl-04` | Table T04 occupancy, visits, camera |
@@ -55,6 +68,7 @@ src/
   components/          Triton shell (sidebar, cards, player primitives)
   pages/               Existing Triton meeting screens
   restaurant/          Fine dining data, analytics, pages, camera UI
+                       settings.json = timings, users, tables, polygons
   mocks/               MSW handlers for meeting APIs
   lib/                 API client used by meeting screens
 public/
@@ -67,6 +81,14 @@ scripts/
 ```
 
 Restaurant analytics (`src/restaurant/analytics.js`) always derive KPIs, insights, and recipe results from `src/restaurant/data.js`. Do not hard-code totals in UI components.
+
+## Settings persistence
+
+Editable restaurant settings (timings, users, tables, polygons) live in `src/restaurant/settings.json`.
+
+- The UI applies changes live in the session.
+- **Save to settings.json** (on Timings, User Management, Tables, Polygons) writes that file through the Vite dev server.
+- After Save, a refresh reloads the saved values. This is not localStorage and not a database. Demo logins are stored in the same file (see Quick start above).
 
 ## Camera clips
 

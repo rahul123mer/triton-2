@@ -7,7 +7,7 @@ import { evaluateRecipe } from '../../analytics'
 import { formatClock } from '../../format'
 import { StatGrid, SubNav } from '../../widgets'
 import { useConfigStore } from '../../configStore'
-import { SETTINGS_NAV } from './UploadsPage'
+import { SETTINGS_NAV } from './settingsNav'
 
 const OUTPUT = {
   'rcp-table-occupancy': { feeds: 'Analytics → Tables', signal: 'Occupancy sessions, duration, covers' },

@@ -227,6 +227,36 @@ button, input, select, textarea { font-family: inherit; }
   cursor: pointer;
   padding: 4px;
 }
+.ss-user-menu-wrap { position: relative; margin-left: auto; }
+.ss-user-menu-wrap .ss-user-more { margin-left: 0; }
+.ss-user-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  min-width: 148px;
+  background: #0f2744;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  z-index: 20;
+}
+.ss-user-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #e2e8f0;
+  font: inherit;
+  font-size: 12.5px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-align: left;
+}
+.ss-user-menu button:hover { background: rgba(255,255,255,.08); }
 
 .ss-shell.collapsed .sidebar { width: 76px; padding: 16px 8px; }
 .ss-shell.collapsed .main-column { margin-left: 76px; }

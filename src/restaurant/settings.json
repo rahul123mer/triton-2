@@ -1,0 +1,748 @@
+{
+  "serviceWindows": [
+    {
+      "windowId": "morning",
+      "label": "Morning",
+      "start": "09:00:00",
+      "end": "12:00:00",
+      "enabled": true
+    },
+    {
+      "windowId": "lunch",
+      "label": "Lunch",
+      "start": "12:00:00",
+      "end": "15:00:00",
+      "enabled": true
+    },
+    {
+      "windowId": "dinner",
+      "label": "Dinner",
+      "start": "18:00:00",
+      "end": "21:00:00",
+      "enabled": true
+    },
+    {
+      "windowId": "evening",
+      "label": "Evening",
+      "start": "21:00:00",
+      "end": "23:00:00",
+      "enabled": true
+    }
+  ],
+  "users": [
+    {
+      "userId": "usr-rahul",
+      "name": "Rahul Mer",
+      "email": "rahul.mer@safespaceglobal.ai",
+      "password": "SafeSpace@Rahul1",
+      "role": "Admin",
+      "status": "active",
+      "createdOn": "2026-07-12",
+      "lastLogin": "2026-09-17T09:40:00+05:30"
+    },
+    {
+      "userId": "usr-sourav",
+      "name": "Sourav Sarkar",
+      "email": "sourav.sarkar@safespaceglobal.ai",
+      "password": "SafeSpace@Sourav1",
+      "role": "Admin",
+      "status": "active",
+      "createdOn": "2026-08-01",
+      "lastLogin": "2026-09-16T22:10:00+05:30"
+    },
+    {
+      "userId": "usr-anand",
+      "name": "Anand Ijju",
+      "email": "anand.ijju@safespaceglobal.ai",
+      "password": "SafeSpace@Anand1",
+      "role": "Manager",
+      "status": "active",
+      "createdOn": "2026-08-18",
+      "lastLogin": "2026-09-15T18:05:00+05:30"
+    },
+    {
+      "userId": "usr-sasi",
+      "name": "Sasidhar Valluru",
+      "email": "sasidhar.valluru@safespaceglobal.ai",
+      "password": "SafeSpace@Sasi1",
+      "role": "Manager",
+      "status": "active",
+      "createdOn": "2026-09-01",
+      "lastLogin": "2026-09-14T11:20:00+05:30"
+    },
+    {
+      "userId": "usr-rohan",
+      "name": "Rohan",
+      "email": "rohan@safespaceglobal.ai",
+      "password": "SafeSpace@Rohan1",
+      "role": "Analyst",
+      "status": "active",
+      "createdOn": "2026-09-10",
+      "lastLogin": null
+    }
+  ],
+  "tables": [
+    {
+      "tableId": "tbl-01",
+      "code": "T01",
+      "seats": 2,
+      "x": 8,
+      "y": 12,
+      "w": 16,
+      "h": 16,
+      "cameraId": "cam-df-01",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Booths",
+      "shape": "Round",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-02",
+      "code": "T02",
+      "seats": 4,
+      "x": 30,
+      "y": 10,
+      "w": 20,
+      "h": 18,
+      "cameraId": "cam-df-01",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Booths",
+      "shape": "Square",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-03",
+      "code": "T03",
+      "seats": 2,
+      "x": 56,
+      "y": 12,
+      "w": 16,
+      "h": 16,
+      "cameraId": "cam-df-01",
+      "reservedDinner": true,
+      "name": "",
+      "section": "Booths",
+      "shape": "Round",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-04",
+      "code": "T04",
+      "seats": 4,
+      "x": 78,
+      "y": 10,
+      "w": 18,
+      "h": 20,
+      "cameraId": "cam-df-01",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Booths",
+      "shape": "Square",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-05",
+      "code": "T05",
+      "seats": 6,
+      "x": 10,
+      "y": 42,
+      "w": 24,
+      "h": 20,
+      "cameraId": "cam-df-02",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Centre",
+      "shape": "Rectangle",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-06",
+      "code": "T06",
+      "seats": 4,
+      "x": 42,
+      "y": 44,
+      "w": 20,
+      "h": 18,
+      "cameraId": "cam-df-02",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Centre",
+      "shape": "Square",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-07",
+      "code": "T07",
+      "seats": 4,
+      "x": 72,
+      "y": 42,
+      "w": 22,
+      "h": 20,
+      "cameraId": "cam-df-02",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Centre",
+      "shape": "Square",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-08",
+      "code": "T08",
+      "seats": 2,
+      "x": 12,
+      "y": 74,
+      "w": 16,
+      "h": 16,
+      "cameraId": "cam-df-03",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Wide floor",
+      "shape": "Round",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-09",
+      "code": "T09",
+      "seats": 4,
+      "x": 40,
+      "y": 72,
+      "w": 20,
+      "h": 18,
+      "cameraId": "cam-df-03",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Wide floor",
+      "shape": "Square",
+      "notes": ""
+    },
+    {
+      "tableId": "tbl-10",
+      "code": "T10",
+      "seats": 8,
+      "x": 70,
+      "y": 70,
+      "w": 26,
+      "h": 22,
+      "cameraId": "cam-df-03",
+      "reservedDinner": false,
+      "name": "",
+      "section": "Wide floor",
+      "shape": "Rectangle",
+      "notes": ""
+    }
+  ],
+  "areaZones": {
+    "vid-kitchen-activity": [
+      {
+        "zoneId": "kit-area-plating",
+        "kind": "area",
+        "role": "station",
+        "label": "Final assembly",
+        "badge": "pass / plating",
+        "color": "#22c55e",
+        "points": [
+          [
+            2,
+            30
+          ],
+          [
+            42,
+            28
+          ],
+          [
+            44,
+            92
+          ],
+          [
+            2,
+            96
+          ]
+        ]
+      },
+      {
+        "zoneId": "kit-area-range",
+        "kind": "area",
+        "role": "station",
+        "label": "Cooking line",
+        "badge": "range",
+        "color": "#f59e0b",
+        "points": [
+          [
+            44,
+            18
+          ],
+          [
+            78,
+            16
+          ],
+          [
+            80,
+            72
+          ],
+          [
+            46,
+            76
+          ]
+        ]
+      },
+      {
+        "zoneId": "kit-area-prep",
+        "kind": "area",
+        "role": "station",
+        "label": "Food prep",
+        "badge": "prep board",
+        "color": "#3b82f6",
+        "points": [
+          [
+            72,
+            40
+          ],
+          [
+            98,
+            38
+          ],
+          [
+            98,
+            92
+          ],
+          [
+            74,
+            96
+          ]
+        ]
+      },
+      {
+        "zoneId": "kit-area-takeaway",
+        "kind": "area",
+        "role": "station",
+        "label": "Takeaway pack",
+        "badge": "to-go",
+        "color": "#a855f7",
+        "points": [
+          [
+            28,
+            70
+          ],
+          [
+            62,
+            68
+          ],
+          [
+            64,
+            98
+          ],
+          [
+            26,
+            98
+          ]
+        ]
+      }
+    ],
+    "vid-kitchen-movement": [
+      {
+        "zoneId": "kit-area-dish",
+        "kind": "area",
+        "role": "station",
+        "label": "Dish wash",
+        "badge": "3-compartment sink",
+        "color": "#06b6d4",
+        "points": [
+          [
+            18,
+            28
+          ],
+          [
+            62,
+            24
+          ],
+          [
+            66,
+            88
+          ],
+          [
+            16,
+            92
+          ]
+        ]
+      },
+      {
+        "zoneId": "kit-area-veg",
+        "kind": "area",
+        "role": "station",
+        "label": "Vegetable wash",
+        "badge": "veg sink",
+        "color": "#22c55e",
+        "points": [
+          [
+            62,
+            36
+          ],
+          [
+            98,
+            34
+          ],
+          [
+            98,
+            92
+          ],
+          [
+            64,
+            96
+          ]
+        ]
+      }
+    ],
+    "vid-dining-floor": [
+      {
+        "zoneId": "df-t01",
+        "kind": "area",
+        "role": "table",
+        "label": "T01",
+        "badge": "2 seated",
+        "color": "#22c55e",
+        "points": [
+          [
+            2,
+            48
+          ],
+          [
+            28,
+            44
+          ],
+          [
+            30,
+            78
+          ],
+          [
+            2,
+            82
+          ]
+        ]
+      },
+      {
+        "zoneId": "df-t02",
+        "kind": "area",
+        "role": "table",
+        "label": "T02",
+        "badge": "2 seated",
+        "color": "#3b82f6",
+        "points": [
+          [
+            28,
+            36
+          ],
+          [
+            52,
+            32
+          ],
+          [
+            54,
+            66
+          ],
+          [
+            26,
+            70
+          ]
+        ]
+      },
+      {
+        "zoneId": "df-t03",
+        "kind": "area",
+        "role": "table",
+        "label": "T03",
+        "badge": "2 seated",
+        "color": "#a855f7",
+        "points": [
+          [
+            52,
+            28
+          ],
+          [
+            74,
+            24
+          ],
+          [
+            76,
+            56
+          ],
+          [
+            50,
+            60
+          ]
+        ]
+      },
+      {
+        "zoneId": "df-t04",
+        "kind": "area",
+        "role": "table",
+        "label": "T04",
+        "badge": "2 seated",
+        "color": "#f59e0b",
+        "points": [
+          [
+            58,
+            58
+          ],
+          [
+            86,
+            54
+          ],
+          [
+            88,
+            88
+          ],
+          [
+            56,
+            92
+          ]
+        ]
+      }
+    ],
+    "vid-table-occupancy": [
+      {
+        "zoneId": "t04-area",
+        "kind": "area",
+        "role": "table",
+        "label": "T04",
+        "badge": "2 seated",
+        "color": "#f59e0b",
+        "points": [
+          [
+            58,
+            58
+          ],
+          [
+            86,
+            54
+          ],
+          [
+            88,
+            88
+          ],
+          [
+            56,
+            92
+          ]
+        ]
+      }
+    ],
+    "vid-waiter-visit": [
+      {
+        "zoneId": "wtr-table",
+        "kind": "area",
+        "role": "table",
+        "label": "T01",
+        "badge": "2 seated",
+        "color": "#22c55e",
+        "points": [
+          [
+            2,
+            48
+          ],
+          [
+            28,
+            44
+          ],
+          [
+            30,
+            78
+          ],
+          [
+            2,
+            82
+          ]
+        ]
+      }
+    ],
+    "vid-multi-table-service": [
+      {
+        "zoneId": "mt-t05",
+        "kind": "area",
+        "role": "table",
+        "label": "T05",
+        "badge": "4 seated",
+        "color": "#22c55e",
+        "points": [
+          [
+            4,
+            58
+          ],
+          [
+            38,
+            54
+          ],
+          [
+            40,
+            92
+          ],
+          [
+            2,
+            96
+          ]
+        ]
+      },
+      {
+        "zoneId": "mt-t06",
+        "kind": "area",
+        "role": "table",
+        "label": "T06",
+        "badge": "2 seated",
+        "color": "#3b82f6",
+        "points": [
+          [
+            8,
+            28
+          ],
+          [
+            40,
+            24
+          ],
+          [
+            42,
+            54
+          ],
+          [
+            6,
+            58
+          ]
+        ]
+      },
+      {
+        "zoneId": "mt-t07",
+        "kind": "area",
+        "role": "table",
+        "label": "T07",
+        "badge": "2 seated",
+        "color": "#f59e0b",
+        "points": [
+          [
+            58,
+            58
+          ],
+          [
+            92,
+            54
+          ],
+          [
+            94,
+            92
+          ],
+          [
+            56,
+            96
+          ]
+        ]
+      }
+    ],
+    "vid-dining-wide": [
+      {
+        "zoneId": "dw-t01",
+        "kind": "area",
+        "role": "table",
+        "label": "T01",
+        "badge": "2 seated",
+        "color": "#22c55e",
+        "points": [
+          [
+            28,
+            52
+          ],
+          [
+            44,
+            48
+          ],
+          [
+            46,
+            72
+          ],
+          [
+            26,
+            76
+          ]
+        ]
+      },
+      {
+        "zoneId": "dw-t05",
+        "kind": "area",
+        "role": "table",
+        "label": "T05",
+        "badge": "4 seated",
+        "color": "#3b82f6",
+        "points": [
+          [
+            46,
+            42
+          ],
+          [
+            66,
+            38
+          ],
+          [
+            68,
+            64
+          ],
+          [
+            44,
+            68
+          ]
+        ]
+      },
+      {
+        "zoneId": "dw-booth",
+        "kind": "area",
+        "role": "table",
+        "label": "T08",
+        "badge": "2 seated",
+        "color": "#f59e0b",
+        "points": [
+          [
+            68,
+            48
+          ],
+          [
+            92,
+            44
+          ],
+          [
+            94,
+            78
+          ],
+          [
+            66,
+            82
+          ]
+        ]
+      }
+    ],
+    "vid-reception": [
+      {
+        "zoneId": "rx-stand",
+        "kind": "area",
+        "role": "station",
+        "label": "Host stand",
+        "badge": "POS",
+        "color": "#a855f7",
+        "points": [
+          [
+            28,
+            48
+          ],
+          [
+            62,
+            44
+          ],
+          [
+            66,
+            92
+          ],
+          [
+            24,
+            96
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -7,14 +7,15 @@ import { formatClock, formatDateChip, formatDwell, eventTypeLabel, personTypeLab
 import { useRestaurantStore } from './store'
 import { useConfigStore } from './configStore'
 import { Avatar } from './widgets'
-import { cameras, lookup, timeWindows, resolveVideoZones, videos } from './data'
+import { cameras, lookup, resolveVideoZones, videos } from './data'
 
 export function useRestaurantWindow() {
   const date = useRestaurantStore((s) => s.date)
   const windowId = useRestaurantStore((s) => s.windowId)
   const customStart = useRestaurantStore((s) => s.customStart)
   const customEnd = useRestaurantStore((s) => s.customEnd)
-  return useMemo(() => windowBounds(date, windowId, customStart, customEnd), [date, windowId, customStart, customEnd])
+  const serviceWindows = useConfigStore((s) => s.serviceWindows)
+  return useMemo(() => windowBounds(date, windowId, customStart, customEnd, serviceWindows), [date, windowId, customStart, customEnd, serviceWindows])
 }
 
 /** Per-day bounds for the selected date or date range. Analytics uses this. */
@@ -24,15 +25,16 @@ export function useRestaurantRanges() {
   const windowId = useRestaurantStore((s) => s.windowId)
   const customStart = useRestaurantStore((s) => s.customStart)
   const customEnd = useRestaurantStore((s) => s.customEnd)
+  const serviceWindows = useConfigStore((s) => s.serviceWindows)
   return useMemo(() => {
-    const ranges = rangeBoundsList(date, dateEnd, windowId, customStart, customEnd)
+    const ranges = rangeBoundsList(date, dateEnd, windowId, customStart, customEnd, serviceWindows)
     const first = ranges[0]
     const last = ranges[ranges.length - 1]
     const periodLabel = ranges.length > 1
       ? `${formatDateChip(first.date)} – ${formatDateChip(last.date)} · ${ranges.length} days · ${first.label.split(' · ')[0]}`
       : `${formatDateChip(first.date)} · ${first.label}`
     return { ranges, periodLabel, isRange: ranges.length > 1, start: first.start, end: last.end, windowLabel: first.label }
-  }, [date, dateEnd, windowId, customStart, customEnd])
+  }, [date, dateEnd, windowId, customStart, customEnd, serviceWindows])
 }
 
 function useNativePicker() {
@@ -257,6 +259,16 @@ export function RestaurantFilters() {
   const customEnd = useRestaurantStore((s) => s.customEnd)
   const setWindowId = useRestaurantStore((s) => s.setWindowId)
   const setCustomRange = useRestaurantStore((s) => s.setCustomRange)
+  const serviceWindows = useConfigStore((s) => s.serviceWindows)
+  const windowTabs = useMemo(() => [
+    ...serviceWindows.filter((row) => row.enabled),
+    { windowId: 'custom', label: 'Custom' },
+  ], [serviceWindows])
+  useEffect(() => {
+    if (windowId !== 'custom' && !windowTabs.some((row) => row.windowId === windowId)) {
+      setWindowId(windowTabs[0]?.windowId || 'custom')
+    }
+  }, [windowId, windowTabs, setWindowId])
   const { periodLabel, isRange } = useRestaurantRanges()
   const bounds = { label: periodLabel }
   return (
@@ -265,7 +277,7 @@ export function RestaurantFilters() {
       <div className="rdi-field ss-window-field">
         <span>Time window</span>
         <div className="rdi-window" role="tablist" aria-label="Time window">
-          {timeWindows.map((item) => (
+          {windowTabs.map((item) => (
             <button
               key={item.windowId}
               type="button"

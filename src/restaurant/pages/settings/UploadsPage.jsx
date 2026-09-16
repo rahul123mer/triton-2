@@ -3,17 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { CheckCircle2, Film, RefreshCw, Trash2, Upload, X } from 'lucide-react'
 import { Button, Card, SectionLabel, StatusPill } from '../../../components/ui'
 import { EmptyFilter } from '../../components'
-import { cameras, lookup, timeWindows } from '../../data'
+import { cameras, lookup } from '../../data'
 import { formatClock, formatDateChip, formatDwell } from '../../format'
 import { RankTable, StatGrid, SubNav } from '../../widgets'
 import { useConfigStore } from '../../configStore'
 
-export const SETTINGS_NAV = [
-  { label: 'Uploads video', to: '/restaurant/settings/uploads' },
-  { label: 'Tables', to: '/restaurant/settings/tables' },
-  { label: 'Cookbooks', to: '/restaurant/settings/cookbooks' },
-  { label: 'Polygons', to: '/restaurant/settings/polygons' },
-]
+import { SETTINGS_NAV } from './settingsNav'
 
 const STAGES = [
   [0.18, 'Uploading'],
@@ -30,6 +25,7 @@ export function UploadsPage() {
   const updateUpload = useConfigStore((s) => s.updateUpload)
   const removeUpload = useConfigStore((s) => s.removeUpload)
   const log = useConfigStore((s) => s.log)
+  const serviceWindows = useConfigStore((s) => s.serviceWindows)
   const inputRef = useRef(null)
   const [file, setFile] = useState(null)
   const [cameraId, setCameraId] = useState('cam-df-01')
@@ -83,7 +79,7 @@ export function UploadsPage() {
       sizeMb,
       cameraId,
       recordedOn,
-      window: timeWindows.find((row) => row.windowId === windowId)?.label || 'Custom',
+      window: serviceWindows.find((row) => row.windowId === windowId)?.label || 'Custom',
     })
     simulate(uploadId, sizeMb)
     setFile(null)
@@ -125,7 +121,7 @@ export function UploadsPage() {
             <label className="field-label">Recorded on<input type="date" value={recordedOn} onChange={(e) => setRecordedOn(e.target.value)} /></label>
             <label className="field-label">Service window
               <select value={windowId} onChange={(e) => setWindowId(e.target.value)}>
-                {timeWindows.filter((row) => row.windowId !== 'custom').map((row) => <option key={row.windowId} value={row.windowId}>{row.label} · {row.start.slice(0, 5)}–{row.end.slice(0, 5)}</option>)}
+                {serviceWindows.filter((row) => row.enabled).map((row) => <option key={row.windowId} value={row.windowId}>{row.label} · {String(row.start).slice(0, 5)}–{String(row.end).slice(0, 5)}</option>)}
               </select>
             </label>
           </div>
